@@ -16,134 +16,133 @@
         <header>
             <h1>GTA V <span class="accent">GROUP ROUTINE</span></h1>
             <p class="subtitle">Maximiza ganancias en equipo (2-4 Jugadores)</p>
-            <div class="header-controls">
-                <a href="index.html" class="btn">Volver a Solo Routine</a>
-                <button id="reset-btn" class="btn danger">Reiniciar Rutina</button>
+            <a href="index.html" class="btn">Volver a Solo Routine</a>
+            <a href="requirements.html" class="btn">Ver Tutorial Requisitos</a>
+            <button id="reset-btn" class="btn danger">Reiniciar Rutina</button>
+    </div>
+    </header>
+
+    <div class="dashboard">
+        <!-- Sidebar / Requirements -->
+        <aside class="requirements-panel">
+            <h2>🛠️ Requisitos Grupo</h2>
+            <div class="checklist" id="requirements-list">
+                <label class="checkbox-item">
+                    <input type="checkbox" data-id="grp-req-kosatka" data-category="requirement">
+                    <span class="checkmark"></span>
+                    <span class="label-text">Kosatka (Cayo)</span>
+                </label>
+                <label class="checkbox-item">
+                    <input type="checkbox" data-id="grp-req-arcade" data-category="requirement">
+                    <span class="checkmark"></span>
+                    <span class="label-text">Arcade (Casino)</span>
+                </label>
+                <label class="checkbox-item">
+                    <input type="checkbox" data-id="grp-req-bunker" data-category="requirement">
+                    <span class="checkmark"></span>
+                    <span class="label-text">Búnker (Full Upgrade)</span>
+                </label>
+                <label class="checkbox-item">
+                    <input type="checkbox" data-id="grp-req-facility" data-category="requirement">
+                    <span class="checkmark"></span>
+                    <span class="label-text">Instalaciones (Facility)</span>
+                </label>
             </div>
-        </header>
+        </aside>
 
-        <div class="dashboard">
-            <!-- Sidebar / Requirements -->
-            <aside class="requirements-panel">
-                <h2>🛠️ Requisitos Grupo</h2>
-                <div class="checklist" id="requirements-list">
+        <!-- Main Routine -->
+        <main class="routine-panel">
+
+            <!-- Earnings Display -->
+            <div class="earnings-card">
+                <h3>Ganancia Estimada (Por Persona/Líder)</h3>
+                <div class="amount" id="total-earnings">$0</div>
+            </div>
+
+            <div class="phase-group">
+                <div class="phase-header red">
+                    <h3>🔴 Fase 1: Golpes Principales</h3>
+                </div>
+                <div class="checklist">
                     <label class="checkbox-item">
-                        <input type="checkbox" data-id="grp-req-kosatka" data-category="requirement">
+                        <input type="checkbox" data-id="grp-cayo" data-value="1100000" data-category="routine">
                         <span class="checkmark"></span>
-                        <span class="label-text">Kosatka (Cayo)</span>
+                        <div class="content">
+                            <span class="title">Cayo Perico (Grupo)</span>
+                            <span class="desc">Con Oro. Ganancia est. 50%.</span>
+                        </div>
+                        <span class="price">~$1.1m</span>
                     </label>
+
                     <label class="checkbox-item">
-                        <input type="checkbox" data-id="grp-req-arcade" data-category="requirement">
+                        <input type="checkbox" data-id="grp-casino" data-value="1200000" data-category="routine">
                         <span class="checkmark"></span>
-                        <span class="label-text">Arcade (Casino)</span>
+                        <div class="content">
+                            <span class="title">Diamond Casino Heist</span>
+                            <span class="desc">Big Con / Silent. Diamantes/Oro.</span>
+                        </div>
+                        <span class="price">~$1.2m</span>
                     </label>
+
                     <label class="checkbox-item">
-                        <input type="checkbox" data-id="grp-req-bunker" data-category="requirement">
+                        <input type="checkbox" data-id="grp-doomsday" data-value="1125000" data-category="routine">
                         <span class="checkmark"></span>
-                        <span class="label-text">Búnker (Full Upgrade)</span>
+                        <div class="content">
+                            <span class="title">Doomsday (Acto 3)</span>
+                            <span class="desc">Hard Mode. Ganancia est. 50%</span>
+                        </div>
+                        <span class="price">~$1.1m</span>
                     </label>
+                </div>
+            </div>
+
+            <div class="phase-group">
+                <div class="phase-header green">
+                    <h3>🟢 Fase 2: Ventas Masivas</h3>
+                    <span class="time-note">Sesión Pública + Bonus</span>
+                </div>
+                <div class="checklist">
                     <label class="checkbox-item">
-                        <input type="checkbox" data-id="grp-req-facility" data-category="requirement">
+                        <input type="checkbox" data-id="grp-bunker-sell" data-value="1500000" data-category="routine">
                         <span class="checkmark"></span>
-                        <span class="label-text">Instalaciones (Facility)</span>
+                        <div class="content">
+                            <span class="title">Venta Búnker (Full)</span>
+                            <span class="desc">Con escolta en pública.</span>
+                        </div>
+                        <span class="price">~$1.5m</span>
+                    </label>
+
+                    <label class="checkbox-item">
+                        <input type="checkbox" data-id="grp-mc-sell" data-value="500000" data-category="routine">
+                        <span class="checkmark"></span>
+                        <div class="content">
+                            <span class="title">Venta MC (Coca/Meta)</span>
+                            <span class="desc">Varios vehículos con amigos.</span>
+                        </div>
+                        <span class="price">~$500k+</span>
                     </label>
                 </div>
-            </aside>
+            </div>
 
-            <!-- Main Routine -->
-            <main class="routine-panel">
-
-                <!-- Earnings Display -->
-                <div class="earnings-card">
-                    <h3>Ganancia Estimada (Por Persona/Líder)</h3>
-                    <div class="amount" id="total-earnings">$0</div>
+            <div class="phase-group">
+                <div class="phase-header purple">
+                    <h3>🟣 Actividades Rápidas (Extras)</h3>
                 </div>
-
-                <div class="phase-group">
-                    <div class="phase-header red">
-                        <h3>🔴 Fase 1: Golpes Principales</h3>
-                    </div>
-                    <div class="checklist">
-                        <label class="checkbox-item">
-                            <input type="checkbox" data-id="grp-cayo" data-value="1100000" data-category="routine">
-                            <span class="checkmark"></span>
-                            <div class="content">
-                                <span class="title">Cayo Perico (Grupo)</span>
-                                <span class="desc">Con Oro. Ganancia est. 50%.</span>
-                            </div>
-                            <span class="price">~$1.1m</span>
-                        </label>
-
-                        <label class="checkbox-item">
-                            <input type="checkbox" data-id="grp-casino" data-value="1200000" data-category="routine">
-                            <span class="checkmark"></span>
-                            <div class="content">
-                                <span class="title">Diamond Casino Heist</span>
-                                <span class="desc">Big Con / Silent. Diamantes/Oro.</span>
-                            </div>
-                            <span class="price">~$1.2m</span>
-                        </label>
-
-                        <label class="checkbox-item">
-                            <input type="checkbox" data-id="grp-doomsday" data-value="1125000" data-category="routine">
-                            <span class="checkmark"></span>
-                            <div class="content">
-                                <span class="title">Doomsday (Acto 3)</span>
-                                <span class="desc">Hard Mode. Ganancia est. 50%</span>
-                            </div>
-                            <span class="price">~$1.1m</span>
-                        </label>
-                    </div>
+                <div class="checklist">
+                    <label class="checkbox-item">
+                        <input type="checkbox" data-id="grp-dre" data-value="1000000" data-category="routine">
+                        <span class="checkmark"></span>
+                        <div class="content">
+                            <span class="title">The Contract (Dr. Dre)</span>
+                            <span class="desc">Se puede hacer en grupo (el líder cobra más).</span>
+                        </div>
+                        <span class="price">+$1m</span>
+                    </label>
                 </div>
+            </div>
 
-                <div class="phase-group">
-                    <div class="phase-header green">
-                        <h3>🟢 Fase 2: Ventas Masivas</h3>
-                        <span class="time-note">Sesión Pública + Bonus</span>
-                    </div>
-                    <div class="checklist">
-                        <label class="checkbox-item">
-                            <input type="checkbox" data-id="grp-bunker-sell" data-value="1500000"
-                                data-category="routine">
-                            <span class="checkmark"></span>
-                            <div class="content">
-                                <span class="title">Venta Búnker (Full)</span>
-                                <span class="desc">Con escolta en pública.</span>
-                            </div>
-                            <span class="price">~$1.5m</span>
-                        </label>
-
-                        <label class="checkbox-item">
-                            <input type="checkbox" data-id="grp-mc-sell" data-value="500000" data-category="routine">
-                            <span class="checkmark"></span>
-                            <div class="content">
-                                <span class="title">Venta MC (Coca/Meta)</span>
-                                <span class="desc">Varios vehículos con amigos.</span>
-                            </div>
-                            <span class="price">~$500k+</span>
-                        </label>
-                    </div>
-                </div>
-
-                <div class="phase-group">
-                    <div class="phase-header purple">
-                        <h3>🟣 Actividades Rápidas (Extras)</h3>
-                    </div>
-                    <div class="checklist">
-                        <label class="checkbox-item">
-                            <input type="checkbox" data-id="grp-dre" data-value="1000000" data-category="routine">
-                            <span class="checkmark"></span>
-                            <div class="content">
-                                <span class="title">The Contract (Dr. Dre)</span>
-                                <span class="desc">Se puede hacer en grupo (el líder cobra más).</span>
-                            </div>
-                            <span class="price">+$1m</span>
-                        </label>
-                    </div>
-                </div>
-
-            </main>
-        </div>
+        </main>
+    </div>
     </div>
     <script src="script.js"></script>
 </body>

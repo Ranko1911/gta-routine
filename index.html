@@ -16,242 +16,241 @@
         <header>
             <h1>GTA V <span class="accent">ROUTINE TRACKER</span></h1>
             <p class="subtitle">Maximiza tus ingresos por hora</p>
-            <div class="header-controls">
-                <a href="group_routine.html" class="btn">Ver Rutina Grupo</a>
-                <button id="reset-btn" class="btn danger">Reiniciar Rutina</button>
+            <a href="group_routine.html" class="btn">Ver Rutina Grupo</a>
+            <a href="requirements.html" class="btn">Ver Tutorial Requisitos</a>
+            <button id="reset-btn" class="btn danger">Reiniciar Rutina</button>
+    </div>
+    </header>
+
+    <div class="dashboard">
+        <!-- Sidebar / Requirements -->
+        <aside class="requirements-panel">
+            <h2>🛠️ Requisitos</h2>
+            <div class="checklist" id="requirements-list">
+                <!-- Javascript will populate this, but hardcoding for structure clarity -->
+                <label class="checkbox-item">
+                    <input type="checkbox" data-id="req-kosatka" data-category="requirement">
+                    <span class="checkmark"></span>
+                    <span class="label-text">Submarino Kosatka</span>
+                </label>
+                <label class="checkbox-item">
+                    <input type="checkbox" data-id="req-agency" data-category="requirement">
+                    <span class="checkmark"></span>
+                    <span class="label-text">Agencia (Dr. Dre)</span>
+                </label>
+                <label class="checkbox-item">
+                    <input type="checkbox" data-id="req-acidlab" data-category="requirement">
+                    <span class="checkmark"></span>
+                    <span class="label-text">Laboratorio de Ácido (Mejorado)</span>
+                </label>
+                <label class="checkbox-item">
+                    <input type="checkbox" data-id="req-nightclub" data-category="requirement">
+                    <span class="checkmark"></span>
+                    <span class="label-text">Club Nocturno (Full)</span>
+                </label>
             </div>
-        </header>
+        </aside>
 
-        <div class="dashboard">
-            <!-- Sidebar / Requirements -->
-            <aside class="requirements-panel">
-                <h2>🛠️ Requisitos</h2>
-                <div class="checklist" id="requirements-list">
-                    <!-- Javascript will populate this, but hardcoding for structure clarity -->
+
+        <!-- Main Routine -->
+        <main class="routine-panel">
+
+            <!-- Earnings Display -->
+            <div class="earnings-card">
+                <h3>Ganancia Estimada Sesión</h3>
+                <div class="amount" id="total-earnings">$0</div>
+            </div>
+
+            <div class="phase-group">
+                <div class="phase-header green">
+                    <h3>🟢 Fase 1: Inicio (Calentamiento)</h3>
+                </div>
+                <div class="checklist">
                     <label class="checkbox-item">
-                        <input type="checkbox" data-id="req-kosatka" data-category="requirement">
+                        <input type="checkbox" data-id="casino-wheel" data-value="0" data-category="routine">
                         <span class="checkmark"></span>
-                        <span class="label-text">Submarino Kosatka</span>
+                        <div class="content">
+                            <span class="title">Ruleta de la Suerte (Casino)</span>
+                            <span class="desc">1 giro diario. Coche, Dinero, RP.</span>
+                        </div>
+                        <span class="price">Suerte</span>
+                    </label>
+
+                    <label class="checkbox-item">
+                        <input type="checkbox" data-id="casino-visitor" data-value="1000" data-category="routine">
+                        <span class="checkmark"></span>
+                        <div class="content">
+                            <span class="title">Bono Visitante (Casino)</span>
+                            <span class="desc">Recoge fichas en taquilla.</span>
+                        </div>
+                        <span class="price">+$1k</span>
+                    </label>
+
+                    <label class="checkbox-item">
+                        <input type="checkbox" data-id="hsw-time-trial" data-value="250000" data-category="routine">
+                        <span class="checkmark"></span>
+                        <div class="content">
+                            <span class="title">Contrarreloj HSW <span class="badge weekly">Semanal</span></span>
+                            <span class="desc">Busca la "H" morada. (1 vez/semana)</span>
+                        </div>
+                        <span class="price">+$250k</span>
+                    </label>
+
+                    <label class="checkbox-item">
+                        <input type="checkbox" data-id="stash-house" data-value="0" data-category="routine">
+                        <span class="checkmark"></span>
+                        <div class="content">
+                            <span class="title">Alijo Oculto (Stash House)</span>
+                            <span class="desc">Icono casa morada. Reabastece Búnker/Ácido.</span>
+                        </div>
+                        <span class="price">Suministros</span>
+                    </label>
+
+                    <label class="checkbox-item">
+                        <input type="checkbox" data-id="gs-cache" data-value="16000" data-category="routine">
+                        <span class="checkmark"></span>
+                        <div class="content">
+                            <span class="title">Caja G (G's Cache)</span>
+                            <span class="desc">Caja morada en el mapa.</span>
+                        </div>
+                        <span class="price">+$16k</span>
+                    </label>
+                </div>
+            </div>
+
+            <div class="phase-group">
+                <div class="phase-header yellow">
+                    <h3>🟡 Fase 2: Gestión Pasiva</h3>
+                </div>
+                <div class="checklist">
+                    <label class="checkbox-item">
+                        <input type="checkbox" data-id="acid-boost" data-value="0" data-category="routine">
+                        <span class="checkmark"></span>
+                        <div class="content">
+                            <span class="title">Lab. Ácido: Acelerar Producción</span>
+                            <span class="desc">Icono de matraz. 1 vez al día.</span>
+                        </div>
                     </label>
                     <label class="checkbox-item">
-                        <input type="checkbox" data-id="req-agency" data-category="requirement">
+                        <input type="checkbox" data-id="nightclub-safe" data-value="100000" data-category="routine">
                         <span class="checkmark"></span>
-                        <span class="label-text">Agencia (Dr. Dre)</span>
+                        <div class="content">
+                            <span class="title">Club Nocturno: Caja Fuerte</span>
+                            <span class="desc">Cobrar si tiene >$100k (Máx $250k).</span>
+                        </div>
+                        <span class="price">+$100k</span>
                     </label>
                     <label class="checkbox-item">
-                        <input type="checkbox" data-id="req-acidlab" data-category="requirement">
+                        <input type="checkbox" data-id="nightclub-pop" data-value="0" data-category="routine">
                         <span class="checkmark"></span>
-                        <span class="label-text">Laboratorio de Ácido (Mejorado)</span>
+                        <div class="content">
+                            <span class="title">Club Nocturno: Popularidad</span>
+                            <span class="desc">Entra en Modo Pasivo -> Echar al borracho.</span>
+                        </div>
                     </label>
                     <label class="checkbox-item">
-                        <input type="checkbox" data-id="req-nightclub" data-category="requirement">
+                        <input type="checkbox" data-id="salvage-tow" data-value="35000" data-category="routine">
                         <span class="checkmark"></span>
-                        <span class="label-text">Club Nocturno (Full)</span>
+                        <div class="content">
+                            <span class="title">Desguace: Grúa</span>
+                            <span class="desc">Remolcar un vehículo.</span>
+                        </div>
+                        <span class="price">+$35k</span>
                     </label>
                 </div>
-            </aside>
+            </div>
 
-
-            <!-- Main Routine -->
-            <main class="routine-panel">
-
-                <!-- Earnings Display -->
-                <div class="earnings-card">
-                    <h3>Ganancia Estimada Sesión</h3>
-                    <div class="amount" id="total-earnings">$0</div>
+            <div class="phase-group">
+                <div class="phase-header red">
+                    <h3>🔴 Fase 3: El Plato Principal</h3>
                 </div>
-
-                <div class="phase-group">
-                    <div class="phase-header green">
-                        <h3>🟢 Fase 1: Inicio (Calentamiento)</h3>
-                    </div>
-                    <div class="checklist">
-                        <label class="checkbox-item">
-                            <input type="checkbox" data-id="casino-wheel" data-value="0" data-category="routine">
-                            <span class="checkmark"></span>
-                            <div class="content">
-                                <span class="title">Ruleta de la Suerte (Casino)</span>
-                                <span class="desc">1 giro diario. Coche, Dinero, RP.</span>
-                            </div>
-                            <span class="price">Suerte</span>
-                        </label>
-
-                        <label class="checkbox-item">
-                            <input type="checkbox" data-id="casino-visitor" data-value="1000" data-category="routine">
-                            <span class="checkmark"></span>
-                            <div class="content">
-                                <span class="title">Bono Visitante (Casino)</span>
-                                <span class="desc">Recoge fichas en taquilla.</span>
-                            </div>
-                            <span class="price">+$1k</span>
-                        </label>
-
-                        <label class="checkbox-item">
-                            <input type="checkbox" data-id="hsw-time-trial" data-value="250000" data-category="routine">
-                            <span class="checkmark"></span>
-                            <div class="content">
-                                <span class="title">Contrarreloj HSW <span class="badge weekly">Semanal</span></span>
-                                <span class="desc">Busca la "H" morada. (1 vez/semana)</span>
-                            </div>
-                            <span class="price">+$250k</span>
-                        </label>
-
-                        <label class="checkbox-item">
-                            <input type="checkbox" data-id="stash-house" data-value="0" data-category="routine">
-                            <span class="checkmark"></span>
-                            <div class="content">
-                                <span class="title">Alijo Oculto (Stash House)</span>
-                                <span class="desc">Icono casa morada. Reabastece Búnker/Ácido.</span>
-                            </div>
-                            <span class="price">Suministros</span>
-                        </label>
-
-                        <label class="checkbox-item">
-                            <input type="checkbox" data-id="gs-cache" data-value="16000" data-category="routine">
-                            <span class="checkmark"></span>
-                            <div class="content">
-                                <span class="title">Caja G (G's Cache)</span>
-                                <span class="desc">Caja morada en el mapa.</span>
-                            </div>
-                            <span class="price">+$16k</span>
-                        </label>
-                    </div>
+                <div class="checklist">
+                    <label class="checkbox-item">
+                        <input type="checkbox" data-id="cayo-perico" data-value="1400000" data-category="routine">
+                        <span class="checkmark"></span>
+                        <div class="content">
+                            <span class="title">Golpe a Cayo Perico (Solo)</span>
+                            <span class="desc">Desagüe > Muelle Principal > Coca/Cuadros. (Oro = 2p).</span>
+                        </div>
+                        <span class="price">+$1.4m</span>
+                    </label>
                 </div>
+            </div>
 
-                <div class="phase-group">
-                    <div class="phase-header yellow">
-                        <h3>🟡 Fase 2: Gestión Pasiva</h3>
-                    </div>
-                    <div class="checklist">
-                        <label class="checkbox-item">
-                            <input type="checkbox" data-id="acid-boost" data-value="0" data-category="routine">
-                            <span class="checkmark"></span>
-                            <div class="content">
-                                <span class="title">Lab. Ácido: Acelerar Producción</span>
-                                <span class="desc">Icono de matraz. 1 vez al día.</span>
-                            </div>
-                        </label>
-                        <label class="checkbox-item">
-                            <input type="checkbox" data-id="nightclub-safe" data-value="100000" data-category="routine">
-                            <span class="checkmark"></span>
-                            <div class="content">
-                                <span class="title">Club Nocturno: Caja Fuerte</span>
-                                <span class="desc">Cobrar si tiene >$100k (Máx $250k).</span>
-                            </div>
-                            <span class="price">+$100k</span>
-                        </label>
-                        <label class="checkbox-item">
-                            <input type="checkbox" data-id="nightclub-pop" data-value="0" data-category="routine">
-                            <span class="checkmark"></span>
-                            <div class="content">
-                                <span class="title">Club Nocturno: Popularidad</span>
-                                <span class="desc">Entra en Modo Pasivo -> Echar al borracho.</span>
-                            </div>
-                        </label>
-                        <label class="checkbox-item">
-                            <input type="checkbox" data-id="salvage-tow" data-value="35000" data-category="routine">
-                            <span class="checkmark"></span>
-                            <div class="content">
-                                <span class="title">Desguace: Grúa</span>
-                                <span class="desc">Remolcar un vehículo.</span>
-                            </div>
-                            <span class="price">+$35k</span>
-                        </label>
-                    </div>
+            <div class="phase-group">
+                <div class="phase-header blue">
+                    <h3>🔵 Fase 4: Cooldown</h3>
+                    <span class="time-note">2h 24m espera</span>
                 </div>
+                <div class="checklist">
+                    <label class="checkbox-item">
+                        <input type="checkbox" data-id="acid-sell" data-value="500000" data-category="routine">
+                        <span class="checkmark"></span>
+                        <div class="content">
+                            <span class="title">Venta Lab. Ácido</span>
+                            <span class="desc">En pública para bono. Cierra app si te atacan.</span>
+                        </div>
+                        <span class="price">+$500k</span>
+                    </label>
 
-                <div class="phase-group">
-                    <div class="phase-header red">
-                        <h3>🔴 Fase 3: El Plato Principal</h3>
-                    </div>
-                    <div class="checklist">
-                        <label class="checkbox-item">
-                            <input type="checkbox" data-id="cayo-perico" data-value="1400000" data-category="routine">
-                            <span class="checkmark"></span>
-                            <div class="content">
-                                <span class="title">Golpe a Cayo Perico (Solo)</span>
-                                <span class="desc">Desagüe > Muelle Principal > Coca/Cuadros. (Oro = 2p).</span>
-                            </div>
-                            <span class="price">+$1.4m</span>
-                        </label>
-                    </div>
+                    <label class="checkbox-item">
+                        <input type="checkbox" data-id="ammu-bunker" data-value="50000" data-category="routine">
+                        <span class="checkmark"></span>
+                        <div class="content">
+                            <span class="title">Ammu-Nation (Búnker)</span>
+                            <span class="desc">Entregar partes de armas sobrantes.</span>
+                        </div>
+                        <span class="price">+$50k</span>
+                    </label>
+
+                    <label class="checkbox-item">
+                        <input type="checkbox" data-id="payphone-hit" data-value="45000" data-category="routine">
+                        <span class="checkmark"></span>
+                        <div class="content">
+                            <span class="title">Asesinato por Teléfono</span>
+                            <span class="desc">Llama a Franklin. Cumple el bono.</span>
+                        </div>
+                        <span class="price">+$45k</span>
+                    </label>
+
+                    <label class="checkbox-item">
+                        <input type="checkbox" data-id="mixed-goods" data-value="50000" data-category="routine">
+                        <span class="checkmark"></span>
+                        <div class="content">
+                            <span class="title">Exportar Bienes Variados</span>
+                            <span class="desc">Desde oficina de CEO.</span>
+                        </div>
+                        <span class="price">+$50k</span>
+                    </label>
                 </div>
-
-                <div class="phase-group">
-                    <div class="phase-header blue">
-                        <h3>🔵 Fase 4: Cooldown</h3>
-                        <span class="time-note">2h 24m espera</span>
-                    </div>
-                    <div class="checklist">
-                        <label class="checkbox-item">
-                            <input type="checkbox" data-id="acid-sell" data-value="500000" data-category="routine">
-                            <span class="checkmark"></span>
-                            <div class="content">
-                                <span class="title">Venta Lab. Ácido</span>
-                                <span class="desc">En pública para bono. Cierra app si te atacan.</span>
-                            </div>
-                            <span class="price">+$500k</span>
-                        </label>
-
-                        <label class="checkbox-item">
-                            <input type="checkbox" data-id="ammu-bunker" data-value="50000" data-category="routine">
-                            <span class="checkmark"></span>
-                            <div class="content">
-                                <span class="title">Ammu-Nation (Búnker)</span>
-                                <span class="desc">Entregar partes de armas sobrantes.</span>
-                            </div>
-                            <span class="price">+$50k</span>
-                        </label>
-
-                        <label class="checkbox-item">
-                            <input type="checkbox" data-id="payphone-hit" data-value="45000" data-category="routine">
-                            <span class="checkmark"></span>
-                            <div class="content">
-                                <span class="title">Asesinato por Teléfono</span>
-                                <span class="desc">Llama a Franklin. Cumple el bono.</span>
-                            </div>
-                            <span class="price">+$45k</span>
-                        </label>
-
-                        <label class="checkbox-item">
-                            <input type="checkbox" data-id="mixed-goods" data-value="50000" data-category="routine">
-                            <span class="checkmark"></span>
-                            <div class="content">
-                                <span class="title">Exportar Bienes Variados</span>
-                                <span class="desc">Desde oficina de CEO.</span>
-                            </div>
-                            <span class="price">+$50k</span>
-                        </label>
-                    </div>
+            </div>
+            <div class="phase-group">
+                <div class="phase-header purple">
+                    <h3>🟣 Opcionales / Extra</h3>
                 </div>
-                <div class="phase-group">
-                    <div class="phase-header purple">
-                        <h3>🟣 Opcionales / Extra</h3>
-                    </div>
-                    <div class="checklist">
-                        <label class="checkbox-item">
-                            <input type="checkbox" data-id="dr-dre" data-value="1000000" data-category="routine">
-                            <span class="checkmark"></span>
-                            <div class="content">
-                                <span class="title">Contrato Dr. Dre</span>
-                                <span class="desc">Si sobra tiempo.</span>
-                            </div>
-                            <span class="price">+$1m</span>
-                        </label>
-                        <label class="checkbox-item">
-                            <input type="checkbox" data-id="union-depository" data-value="270000"
-                                data-category="routine">
-                            <span class="checkmark"></span>
-                            <div class="content">
-                                <span class="title">Robo Union Depository</span>
-                                <span class="desc">Taller. 20 min.</span>
-                            </div>
-                            <span class="price">+$270k</span>
-                        </label>
-                    </div>
+                <div class="checklist">
+                    <label class="checkbox-item">
+                        <input type="checkbox" data-id="dr-dre" data-value="1000000" data-category="routine">
+                        <span class="checkmark"></span>
+                        <div class="content">
+                            <span class="title">Contrato Dr. Dre</span>
+                            <span class="desc">Si sobra tiempo.</span>
+                        </div>
+                        <span class="price">+$1m</span>
+                    </label>
+                    <label class="checkbox-item">
+                        <input type="checkbox" data-id="union-depository" data-value="270000" data-category="routine">
+                        <span class="checkmark"></span>
+                        <div class="content">
+                            <span class="title">Robo Union Depository</span>
+                            <span class="desc">Taller. 20 min.</span>
+                        </div>
+                        <span class="price">+$270k</span>
+                    </label>
                 </div>
-            </main>
-        </div>
+            </div>
+        </main>
+    </div>
     </div>
     <script src="script.js"></script>
 </body>
