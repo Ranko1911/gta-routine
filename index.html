@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="es">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -9,12 +10,14 @@
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="style.css">
 </head>
+
 <body>
     <div class="container">
         <header>
             <h1>GTA V <span class="accent">ROUTINE TRACKER</span></h1>
             <p class="subtitle">Maximiza tus ingresos por hora</p>
             <div class="header-controls">
+                <a href="group_routine.html" class="btn">Ver Rutina Grupo</a>
                 <button id="reset-btn" class="btn danger">Reiniciar Rutina</button>
             </div>
         </header>
@@ -48,9 +51,10 @@
                 </div>
             </aside>
 
+
             <!-- Main Routine -->
             <main class="routine-panel">
-                
+
                 <!-- Earnings Display -->
                 <div class="earnings-card">
                     <h3>Ganancia Estimada Sesión</h3>
@@ -62,6 +66,26 @@
                         <h3>🟢 Fase 1: Inicio (Calentamiento)</h3>
                     </div>
                     <div class="checklist">
+                        <label class="checkbox-item">
+                            <input type="checkbox" data-id="casino-wheel" data-value="0" data-category="routine">
+                            <span class="checkmark"></span>
+                            <div class="content">
+                                <span class="title">Ruleta de la Suerte (Casino)</span>
+                                <span class="desc">1 giro diario. Coche, Dinero, RP.</span>
+                            </div>
+                            <span class="price">Suerte</span>
+                        </label>
+
+                        <label class="checkbox-item">
+                            <input type="checkbox" data-id="casino-visitor" data-value="1000" data-category="routine">
+                            <span class="checkmark"></span>
+                            <div class="content">
+                                <span class="title">Bono Visitante (Casino)</span>
+                                <span class="desc">Recoge fichas en taquilla.</span>
+                            </div>
+                            <span class="price">+$1k</span>
+                        </label>
+
                         <label class="checkbox-item">
                             <input type="checkbox" data-id="hsw-time-trial" data-value="250000" data-category="routine">
                             <span class="checkmark"></span>
@@ -112,17 +136,26 @@
                             <span class="checkmark"></span>
                             <div class="content">
                                 <span class="title">Club Nocturno: Caja Fuerte</span>
-                                <span class="desc">Cobrar si hay >$100k.</span>
+                                <span class="desc">Cobrar si tiene >$100k (Máx $250k).</span>
                             </div>
                             <span class="price">+$100k</span>
                         </label>
-                         <label class="checkbox-item">
+                        <label class="checkbox-item">
                             <input type="checkbox" data-id="nightclub-pop" data-value="0" data-category="routine">
                             <span class="checkmark"></span>
                             <div class="content">
                                 <span class="title">Club Nocturno: Popularidad</span>
                                 <span class="desc">Entra en Modo Pasivo -> Echar al borracho.</span>
                             </div>
+                        </label>
+                        <label class="checkbox-item">
+                            <input type="checkbox" data-id="salvage-tow" data-value="35000" data-category="routine">
+                            <span class="checkmark"></span>
+                            <div class="content">
+                                <span class="title">Desguace: Grúa</span>
+                                <span class="desc">Remolcar un vehículo.</span>
+                            </div>
+                            <span class="price">+$35k</span>
                         </label>
                     </div>
                 </div>
@@ -137,7 +170,7 @@
                             <span class="checkmark"></span>
                             <div class="content">
                                 <span class="title">Golpe a Cayo Perico (Solo)</span>
-                                <span class="desc">Túnel desagüe > Principal > Muelle. ~1h.</span>
+                                <span class="desc">Desagüe > Muelle Principal > Coca/Cuadros. (Oro = 2p).</span>
                             </div>
                             <span class="price">+$1.4m</span>
                         </label>
@@ -147,7 +180,7 @@
                 <div class="phase-group">
                     <div class="phase-header blue">
                         <h3>🔵 Fase 4: Cooldown</h3>
-                        <span class="time-note">2.5h espera para Cayo</span>
+                        <span class="time-note">2h 24m espera</span>
                     </div>
                     <div class="checklist">
                         <label class="checkbox-item">
@@ -158,6 +191,16 @@
                                 <span class="desc">En pública para bono. Cierra app si te atacan.</span>
                             </div>
                             <span class="price">+$500k</span>
+                        </label>
+
+                        <label class="checkbox-item">
+                            <input type="checkbox" data-id="ammu-bunker" data-value="50000" data-category="routine">
+                            <span class="checkmark"></span>
+                            <div class="content">
+                                <span class="title">Ammu-Nation (Búnker)</span>
+                                <span class="desc">Entregar partes de armas sobrantes.</span>
+                            </div>
+                            <span class="price">+$50k</span>
                         </label>
 
                         <label class="checkbox-item">
@@ -181,7 +224,7 @@
                         </label>
                     </div>
                 </div>
-                 <div class="phase-group">
+                <div class="phase-group">
                     <div class="phase-header purple">
                         <h3>🟣 Opcionales / Extra</h3>
                     </div>
@@ -189,14 +232,15 @@
                         <label class="checkbox-item">
                             <input type="checkbox" data-id="dr-dre" data-value="1000000" data-category="routine">
                             <span class="checkmark"></span>
-                             <div class="content">
+                            <div class="content">
                                 <span class="title">Contrato Dr. Dre</span>
                                 <span class="desc">Si sobra tiempo.</span>
                             </div>
                             <span class="price">+$1m</span>
                         </label>
-                         <label class="checkbox-item">
-                            <input type="checkbox" data-id="union-depository" data-value="270000" data-category="routine">
+                        <label class="checkbox-item">
+                            <input type="checkbox" data-id="union-depository" data-value="270000"
+                                data-category="routine">
                             <span class="checkmark"></span>
                             <div class="content">
                                 <span class="title">Robo Union Depository</span>
@@ -211,4 +255,5 @@
     </div>
     <script src="script.js"></script>
 </body>
+
 </html>
