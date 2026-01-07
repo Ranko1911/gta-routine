@@ -1,0 +1,213 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>GTA V Elite Weekly</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+    <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
+</head>
+
+<body>
+    <div class="app-container">
+
+        <!-- TOP BAR -->
+        <header class="top-bar">
+            <div class="logo-area">
+                <h1>ELITE <span class="highlight">WEEKLY</span></h1>
+                <span class="version-tag">Reset: Jueves</span>
+            </div>
+
+            <div class="global-stats">
+                <div class="stat-item">
+                    <span class="label">GANANCIA SEMANAL</span>
+                    <span class="value" id="weekly-earnings">$0</span>
+                </div>
+            </div>
+
+            <div class="actions">
+                <button id="reset-btn-weekly" class="btn icon-btn" title="Reiniciar Semana">
+                    <ion-icon name="refresh-circle-outline"></ion-icon>
+                </button>
+                <a href="index.html" class="btn icon-btn" title="Daily Routine">
+                    <ion-icon name="person-outline"></ion-icon>
+                </a>
+            </div>
+        </header>
+
+        <div class="main-grid">
+
+            <!-- COL 1: TIME TRIALS & CHALLENGES -->
+            <div class="grid-column">
+                <div class="card glass-panel glow-border">
+                    <div class="card-header">
+                        <div class="header-content">
+                            <span class="phase-tag">CONTRARRELOJES</span>
+                            <h2>SPEED RUN</h2>
+                        </div>
+                    </div>
+                    <div class="card-body">
+                        <div class="task-list">
+                            <!-- HSW Removed for PC Adaptation -->
+
+                            <label class="task-item large">
+                                <input type="checkbox" data-id="week-timetrial" data-value="102000"
+                                    data-category="weekly-routine">
+                                <span class="custom-check"></span>
+                                <div class="task-content">
+                                    <div class="task-main">Contrarreloj Standard</div>
+                                    <div class="task-sub">Rotación Semanal.</div>
+                                </div>
+                                <span class="profit-badge">$102k</span>
+                            </label>
+
+                            <label class="task-item">
+                                <input type="checkbox" data-id="week-rc" data-value="102000"
+                                    data-category="weekly-routine">
+                                <span class="custom-check"></span>
+                                <div class="task-content">
+                                    <div class="task-main">RC Bandito</div>
+                                    <div class="task-sub">Requiere RC Bandito.</div>
+                                </div>
+                                <span class="profit-badge">$102k</span>
+                            </label>
+
+                            <label class="task-item">
+                                <input type="checkbox" data-id="week-skydive" data-value="5000"
+                                    data-category="weekly-routine">
+                                <span class="custom-check"></span>
+                                <div class="task-content">
+                                    <div class="task-main">Junk Energy Skydive</div>
+                                    <div class="task-sub">Saltos paracaídas (Diario/Sem).</div>
+                                </div>
+                                <span class="profit-badge">$5k+</span>
+                            </label>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="card glass-panel">
+                    <div class="card-header">
+                        <div class="header-content">
+                            <span class="phase-tag">BONUS</span>
+                            <h2>WEEKLY CHALLENGE</h2>
+                        </div>
+                    </div>
+                    <div class="card-body">
+                        <div class="task-list">
+                            <label class="task-item">
+                                <input type="checkbox" data-id="week-challenge" data-value="100000"
+                                    data-category="weekly-routine">
+                                <span class="custom-check"></span>
+                                <div class="task-content">
+                                    <div class="task-main">Desafío Semanal</div>
+                                    <div class="task-sub">Revisar Newswire/Menú I.</div>
+                                </div>
+                                <span class="profit-badge">~$100k</span>
+                            </label>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- COL 2: SALVAGE YARD -->
+            <div class="grid-column">
+                <div class="card glass-panel phase-card phase-2">
+                    <div class="card-header">
+                        <div class="header-content">
+                            <span class="phase-tag">DESGUACE</span>
+                            <h2>ROBOS DE VEHÍCULOS</h2>
+                        </div>
+                        <div class="time-est">1h/coche</div>
+                    </div>
+                    <div class="card-body">
+                        <div class="task-list">
+                            <div class="alert-box">
+                                <ion-icon name="alert-circle-outline"></ion-icon>
+                                <small>Reseteo cada Jueves. Máx 3 coches/semana.</small>
+                            </div>
+
+                            <label class="task-item">
+                                <input type="checkbox" data-id="week-salvage-1" data-value="350000"
+                                    data-category="weekly-routine">
+                                <span class="custom-check"></span>
+                                <div class="task-content">
+                                    <div class="task-main">Robo Vehículo #1</div>
+                                    <div class="task-sub">High Tier (McTony/Cargo Ship).</div>
+                                </div>
+                                <span class="profit-badge gold">~$350k</span>
+                            </label>
+
+                            <label class="task-item">
+                                <input type="checkbox" data-id="week-salvage-2" data-value="280000"
+                                    data-category="weekly-routine">
+                                <span class="custom-check"></span>
+                                <div class="task-content">
+                                    <div class="task-main">Robo Vehículo #2</div>
+                                    <div class="task-sub">Mid Tier.</div>
+                                </div>
+                                <span class="profit-badge">~$280k</span>
+                            </label>
+
+                            <label class="task-item">
+                                <input type="checkbox" data-id="week-salvage-3" data-value="240000"
+                                    data-category="weekly-routine">
+                                <span class="custom-check"></span>
+                                <div class="task-content">
+                                    <div class="task-main">Robo Vehículo #3</div>
+                                    <div class="task-sub">Standard Tier.</div>
+                                </div>
+                                <span class="profit-badge">~$240k</span>
+                            </label>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- COL 3: BIG SALES -->
+            <div class="grid-column">
+                <div class="card glass-panel">
+                    <div class="card-header">
+                        <div class="header-content">
+                            <span class="phase-tag">VENTAS MASIVAS</span>
+                            <h2>STOCK ACUMULADO</h2>
+                        </div>
+                    </div>
+                    <div class="card-body">
+                        <div class="task-list">
+                            <label class="task-item">
+                                <input type="checkbox" data-id="week-nightclub-sell" data-value="1500000"
+                                    data-category="weekly-routine">
+                                <span class="custom-check"></span>
+                                <div class="task-content">
+                                    <div class="task-main">Venta Club Nocturno</div>
+                                    <div class="task-sub">Almacén lleno (>1M).</div>
+                                </div>
+                                <span class="profit-badge gold">~$1.5M</span>
+                            </label>
+
+                            <label class="task-item">
+                                <input type="checkbox" data-id="week-warehouse-sell" data-value="2200000"
+                                    data-category="weekly-routine">
+                                <span class="custom-check"></span>
+                                <div class="task-content">
+                                    <div class="task-main">Venta Almacén Grande</div>
+                                    <div class="task-sub">Cajas de CEO.</div>
+                                </div>
+                                <span class="profit-badge luck">~$2.2M</span>
+                            </label>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </div>
+    <script src="script.js"></script>
+</body>
+
+</html>

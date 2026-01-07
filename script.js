@@ -9,9 +9,11 @@ document.addEventListener('DOMContentLoaded', () => {
         setInterval(tickTimers, 1000);
     }
 
+    // --- DOM ELEMENTS ---
     const checkboxes = document.querySelectorAll('input[type="checkbox"]');
     const resetBtn = document.getElementById('reset-btn');
     const resetBtnGrp = document.getElementById('reset-btn-grp');
+    const resetBtnWeekly = document.getElementById('reset-btn-weekly');
 
     // --- STATE MANAGEMENT ---
     function restoreCheckboxState() {
@@ -42,7 +44,10 @@ document.addEventListener('DOMContentLoaded', () => {
     function attachReset(btn, category) {
         if (!btn) return;
         btn.addEventListener('click', () => {
-            if (confirm('¿Reiniciar progreso de la sesión?')) {
+            let msg = '¿Reiniciar progreso de la sesión?';
+            if (category === 'weekly-routine') msg = '¿Reiniciar progreso SEMANAL?';
+
+            if (confirm(msg)) {
                 const STORAGE_PREFIX = 'gta_elite_v26_';
                 checkboxes.forEach(cb => {
                     if (cb.dataset.category === category) {
@@ -57,6 +62,8 @@ document.addEventListener('DOMContentLoaded', () => {
 
     attachReset(resetBtn, 'routine');
     attachReset(resetBtnGrp, 'group-routine');
+    attachReset(resetBtnWeekly, 'weekly-routine');
+
 
     // Run Init
     init();
@@ -68,10 +75,11 @@ document.addEventListener('DOMContentLoaded', () => {
 
 const STORAGE_PREFIX = 'gta_elite_v26_';
 
-// --- CALCULATIONS (Exposed if needed, but mostly internal to DOMContentLoaded via event listeners) ---
+// --- CALCULATIONS ---
 function updateCalculations() {
     const earningsDisplay = document.getElementById('total-earnings');
     const grpEarningsDisplay = document.getElementById('grp-earnings');
+    const weeklyEarningsDisplay = document.getElementById('weekly-earnings');
     const progressBar = document.getElementById('global-progress');
     const progressText = document.getElementById('progress-text');
     const checkboxes = document.querySelectorAll('input[type="checkbox"]');
@@ -81,8 +89,9 @@ function updateCalculations() {
     let totalCount = 0;
 
     // Determine Context
-    const isGroupPage = !!grpEarningsDisplay;
-    const targetCategory = isGroupPage ? 'group-routine' : 'routine';
+    let targetCategory = 'routine';
+    if (grpEarningsDisplay) targetCategory = 'group-routine';
+    if (weeklyEarningsDisplay) targetCategory = 'weekly-routine';
 
     checkboxes.forEach(cb => {
         if (cb.dataset.category === targetCategory) {
@@ -110,6 +119,10 @@ function updateCalculations() {
     if (grpEarningsDisplay) {
         grpEarningsDisplay.textContent = formattedMoney;
         popElement(grpEarningsDisplay);
+    }
+    if (weeklyEarningsDisplay) {
+        weeklyEarningsDisplay.textContent = formattedMoney;
+        popElement(weeklyEarningsDisplay);
     }
 
     // Update Progress
@@ -188,10 +201,8 @@ function tickTimers() {
 function updateTimerUI(id, endTime) {
     const btn = document.querySelector(`button[onclick*="'${id}'"]`);
     if (btn) {
-        // Change button to "Cancel" state
         btn.textContent = 'CANCELAR';
         btn.classList.add('active');
-        // We DON'T disable it anymore, so it can be clicked to cancel
         btn.disabled = false;
     }
     const displayWrapper = document.getElementById(`timer-${id}`);
@@ -216,7 +227,6 @@ function resetTimerUI(id) {
         if (display.classList.contains('timer-display')) {
             display.textContent = '00:00:00';
         } else {
-            // Mini timer reset
             const span = displayWrapper.querySelector('span:first-child');
             if (span) span.textContent = `CD: Ready`;
         }
