@@ -524,6 +524,14 @@ body {
     transition: transform 0.3s;
 }
 
+.card.collapsed .card-body {
+    display: none;
+}
+
+.card.collapsed .toggle-icon {
+    transform: rotate(-180deg);
+}
+
 /* --- RESPONSIVE --- */
 @media (max-width: 1024px) {
     .main-grid {

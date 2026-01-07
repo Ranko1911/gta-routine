@@ -275,3 +275,10 @@ function updateTimerDisplay(id, ms) {
 function pad(num) {
     return num.toString().padStart(2, '0');
 }
+
+window.toggleCard = function (header) {
+    const card = header.closest('.card');
+    if (card) {
+        card.classList.toggle('collapsed');
+    }
+};
