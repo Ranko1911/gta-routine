@@ -455,6 +455,70 @@ body {
     height: 42px;
 }
 
+/* Timer Widget (Large) */
+.timer-widget {
+    margin-top: 1rem;
+    background: rgba(0, 0, 0, 0.3);
+    border-radius: var(--radius-sm);
+    padding: 1rem;
+    text-align: center;
+    border: 1px solid var(--glass-border);
+}
+
+.timer-header {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 0.5rem;
+    color: var(--text-tertiary);
+    font-size: 0.8rem;
+    margin-bottom: 0.5rem;
+    letter-spacing: 1px;
+}
+
+.timer-display {
+    font-family: monospace;
+    font-size: 2rem;
+    font-weight: 700;
+    color: var(--text-primary);
+    margin-bottom: 1rem;
+    text-shadow: 0 0 10px rgba(255, 255, 255, 0.1);
+}
+
+.timer-display.active {
+    color: var(--accent-green);
+    text-shadow: 0 0 15px rgba(0, 255, 157, 0.3);
+}
+
+.accent-btn {
+    background: var(--grad-green);
+    background-color: var(--accent-green);
+    color: #000;
+    border: none;
+    width: 100%;
+}
+
+.accent-btn:hover {
+    box-shadow: 0 0 15px rgba(0, 255, 157, 0.4);
+    transform: translateY(-1px);
+    background: var(--accent-green);
+}
+
+/* Requirements Card Specifics */
+.check-row {
+    display: flex;
+    gap: 1rem;
+    padding: 0.5rem 0;
+    color: var(--text-secondary);
+}
+
+.custom-check-static {
+    color: var(--accent-blue);
+}
+
+.toggle-icon {
+    transition: transform 0.3s;
+}
 
 /* --- RESPONSIVE --- */
 @media (max-width: 1024px) {
