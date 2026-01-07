@@ -69,10 +69,14 @@ body {
     padding: 1px;
     background: linear-gradient(45deg, var(--accent-green), transparent, var(--accent-blue));
     -webkit-mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+    mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+    -webkit-mask-composite: xor;
     mask-composite: exclude;
     pointer-events: none;
     opacity: 0.5;
 }
+
+/* Updated: 2026-01-07 16:30 */
 
 /* --- TOP BAR --- */
 .top-bar {
