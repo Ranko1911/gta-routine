@@ -61,7 +61,7 @@ document.addEventListener('DOMContentLoaded', () => {
             if (category === 'weekly-routine') msg = '¿Reiniciar progreso SEMANAL?';
 
             if (confirm(msg)) {
-                const STORAGE_PREFIX = 'gta_elite_v26_';
+                const STORAGE_PREFIX = 'gta_elite_v26.2_'; // Version Bump
                 checkboxes.forEach(cb => {
                     if (cb.dataset.category === category) {
                         cb.checked = false;
