@@ -1,12 +1,25 @@
 document.addEventListener('DOMContentLoaded', () => {
     // --- INITIALIZATION ---
     function init() {
+        injectCustomChecks(); // Fix legacy HTML missing custom spans
         restoreCheckboxState();
         restoreTimers(); // Restores UI for running timers
         updateCalculations();
 
         // Start Global Ticker
         setInterval(tickTimers, 1000);
+    }
+
+    // Fix for missing custom-check spans in older HTML structures
+    function injectCustomChecks() {
+        document.querySelectorAll('.task-item').forEach(label => {
+            const input = label.querySelector('input[type="checkbox"]');
+            if (input && !label.querySelector('.custom-check')) {
+                const span = document.createElement('span');
+                span.className = 'custom-check';
+                input.insertAdjacentElement('afterend', span);
+            }
+        });
     }
 
     // --- DOM ELEMENTS ---
