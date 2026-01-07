@@ -4,107 +4,260 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>GTA V Requirements Tutorial</title>
+    <title>GTA V Elite Requirements</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600;800&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="style.css">
+    <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
 </head>
 
 <body>
-    <div class="container">
-        <header>
-            <h1>GTA V <span class="accent">REQ. TUTORIAL</span></h1>
-            <p class="subtitle">Guía de compras y configuración</p>
-            <div class="header-controls">
-                <a href="index.html" class="btn">Volver a Solo Routine</a>
-                <a href="group_routine.html" class="btn">Volver a Group Routine</a>
+    <div class="app-container">
+
+        <!-- TOP BAR -->
+        <header class="top-bar">
+            <div class="logo-area">
+                <h1>ELITE <span class="highlight">REQ.</span></h1>
+                <span class="version-tag">Guía de Compra</span>
+            </div>
+
+            <div class="global-stats">
+                <!-- Spacer or simple text -->
+                <div class="stat-item">
+                    <span class="label">ESTADO ACTUAL</span>
+                    <span class="value">INFRAESTRUCTURA</span>
+                </div>
+            </div>
+
+            <div class="actions">
+                <a href="index.html" class="btn icon-btn" title="Volver a Solo Routine">
+                    <ion-icon name="person-outline"></ion-icon>
+                </a>
+                <a href="group_routine.html" class="btn icon-btn" title="Volver a Group Routine">
+                    <ion-icon name="people-outline"></ion-icon>
+                </a>
             </div>
         </header>
 
-        <div class="tutorial-content">
-            <section class="tutorial-section">
-                <h2>🐋 1. Submarino Kosatka</h2>
-                <p><strong>Ubicación:</strong> Warstock Cache & Carry</p>
-                <p><strong>Precio:</strong> ~$2,200,000</p>
-                <p><strong>Desbloqueo:</strong> Habla con Miguel Madrazo en "The Music Locker".</p>
-                <div class="tip-box">
-                    <strong>Esencial:</strong> Compra el helicóptero <em>Sparrow</em> ($1,815,000) para entrar/salir
-                    rápido.
+        <div class="main-grid">
+
+            <!-- COL 1: THE BIG PLAYERS -->
+            <div class="grid-column">
+
+                <!-- KOSATKA -->
+                <div class="card glass-panel glow-border">
+                    <div class="card-header">
+                        <div class="header-content">
+                            <span class="phase-tag">COSTO: ~$4.1M</span>
+                            <h2><ion-icon name="boat-outline"></ion-icon> SUBMARINO KOSATKA</h2>
+                        </div>
+                    </div>
+                    <div class="card-body">
+                        <div class="task-list">
+                            <div class="alert-box">
+                                <ion-icon name="information-circle-outline"></ion-icon>
+                                <small>Desbloqueo: Miguel Madrazo (Music Locker).</small>
+                            </div>
+                            <label class="task-item">
+                                <span class="custom-check"></span>
+                                <div class="task-content">
+                                    <div class="task-main">Compra Base</div>
+                                    <div class="task-sub">Warstock Cache & Carry</div>
+                                </div>
+                                <span class="profit-badge">$2.2M</span>
+                            </label>
+                            <label class="task-item">
+                                <span class="custom-check"></span>
+                                <div class="task-content">
+                                    <div class="task-main">Helicóptero Sparrow</div>
+                                    <div class="task-sub">CRÍTICO para hacer preps rápido.</div>
+                                </div>
+                                <span class="profit-badge gold">$1.8M</span>
+                            </label>
+                        </div>
+                    </div>
                 </div>
-            </section>
 
-            <section class="tutorial-section">
-                <h2>🏢 2. La Agencia</h2>
-                <p><strong>Ubicación:</strong> Dynasty 8 Executive</p>
-                <p><strong>Precio:</strong> ~$2,000,000+</p>
-                <p><strong>Uso:</strong> Contrato Dr. Dre, Asesinatos, Seguridad.</p>
-                <div class="tip-box">
-                    Instala la <strong>Armería</strong> para descuentos en chalecos y armas.
+                <!-- AGENCY -->
+                <div class="card glass-panel">
+                    <div class="card-header">
+                        <div class="header-content">
+                            <span class="phase-tag">COSTO: ~$2.5M</span>
+                            <h2><ion-icon name="briefcase-outline"></ion-icon> LA AGENCIA</h2>
+                        </div>
+                    </div>
+                    <div class="card-body">
+                        <div class="task-list">
+                            <label class="task-item">
+                                <span class="custom-check"></span>
+                                <div class="task-content">
+                                    <div class="task-main">Oficina (Dynasty 8)</div>
+                                    <div class="task-sub">Recomendado: Hawick / Little Seoul.</div>
+                                </div>
+                                <span class="profit-badge">$2.0M</span>
+                            </label>
+                            <label class="task-item">
+                                <span class="custom-check"></span>
+                                <div class="task-content">
+                                    <div class="task-main">Armería</div>
+                                    <div class="task-sub">Descuentos en Chalecos/Armas.</div>
+                                </div>
+                                <span class="profit-badge savings">Utility</span>
+                            </label>
+                        </div>
+                    </div>
                 </div>
-            </section>
 
-            <section class="tutorial-section">
-                <h2>🧪 3. Laboratorio de Ácido</h2>
-                <p><strong>Cómo obtenerlo:</strong> Completa las 6 misiones "First Dose" (Dax) en Sandy Shores.</p>
-                <p><strong>Instalación:</strong> Paga $750,000 en el Freakshop.</p>
-                <div class="tip-box danger">
-                    <strong>CRÍTICO:</strong> Completa 10 "Fooligan Jobs" para desbloquear la Mejora de Equipo. Sin
-                    esto, el negocio no rinde.
+            </div>
+
+            <!-- COL 2: PASSIVE INCOME -->
+            <div class="grid-column">
+
+                <!-- NIGHTCLUB -->
+                <div class="card glass-panel">
+                    <div class="card-header">
+                        <div class="header-content">
+                            <span class="phase-tag">EL REY PASIVO</span>
+                            <h2><ion-icon name="musical-notes-outline"></ion-icon> CLUB NOCTURNO</h2>
+                        </div>
+                    </div>
+                    <div class="card-body">
+                        <div class="task-list">
+                            <label class="task-item">
+                                <div class="task-content">
+                                    <div class="task-main">Ubicación: Vinewood</div>
+                                    <div class="task-sub">Centro de la ciudad es vital.</div>
+                                </div>
+                            </label>
+                            <div class="task-block">
+                                <div class="mini-timer">
+                                    <span>Requiere 5 técnicos activos para máx. ganancia.</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
                 </div>
-            </section>
 
-            <section class="tutorial-section">
-                <h2>🏍️ 4. Negocios MC</h2>
-                <p><strong>Ubicación:</strong> Maze Bank Foreclosures (Sede) -> Portátil Open Road.</p>
-                <p><strong>Prioridad:</strong> Cocaína > Metanfetamina > Dinero Falso.</p>
-                <div class="tip-box">
-                    Necesarios para llenar el Club Nocturno. Cómpralos baratos en el desierto.
+                <!-- BUNKER -->
+                <div class="card glass-panel">
+                    <div class="card-header">
+                        <div class="header-content">
+                            <span class="phase-tag">ARMAS</span>
+                            <h2><ion-icon name="shield-outline"></ion-icon> BÚNKER</h2>
+                        </div>
+                    </div>
+                    <div class="card-body">
+                        <div class="task-list">
+                            <label class="task-item">
+                                <div class="task-content">
+                                    <div class="task-main">Chumash / Farmhouse</div>
+                                    <div class="task-sub">Nunca Paleto Bay.</div>
+                                </div>
+                                <span class="profit-badge gold">Mejoras</span>
+                            </label>
+                        </div>
+                    </div>
                 </div>
-            </section>
 
-            <section class="tutorial-section">
-                <h2>🛡️ 5. Búnker</h2>
-                <p><strong>Ubicación:</strong> Maze Bank Foreclosures.</p>
-                <p><strong>Recomendado:</strong> Chumash o Farmhouse.</p>
-                <div class="tip-box danger">
-                    <strong>EVITA:</strong> Paleto Bay (demasiado lejos).
+                <!-- MC BUSINESS -->
+                <div class="card glass-panel">
+                    <div class="card-header">
+                        <div class="header-content">
+                            <span class="phase-tag">FEEDER</span>
+                            <h2><ion-icon name="bicycle-outline"></ion-icon> NEGOCIOS MC</h2>
+                        </div>
+                    </div>
+                    <div class="card-body">
+                        <div class="checklist">
+                            <label class="check-row">
+                                <ion-icon name="checkmark-circle-outline"></ion-icon> Cocaína (Alamo Sea)
+                            </label>
+                            <label class="check-row">
+                                <ion-icon name="checkmark-circle-outline"></ion-icon> Metanfetamina
+                            </label>
+                            <label class="check-row">
+                                <ion-icon name="checkmark-circle-outline"></ion-icon> Dinero Falso
+                            </label>
+                        </div>
+                    </div>
                 </div>
-            </section>
 
-            <section class="tutorial-section">
-                <h2>🕺 6. Club Nocturno</h2>
-                <p><strong>Ubicación:</strong> Maze Bank Foreclosures.</p>
-                <p><strong>Recomendado:</strong> Vinewood / Centro.</p>
-                <div class="tip-box">
-                    Contrata los 5 técnicos para generar dinero pasivo usando tus otros negocios (Búnker, MC, etc).
+            </div>
+
+            <!-- COL 3: SPECIALTY -->
+            <div class="grid-column">
+
+                <!-- ACID LAB -->
+                <div class="card glass-panel glow-border" style="--accent-green: var(--accent-purple);">
+                    <div class="card-header">
+                        <div class="header-content">
+                            <span class="phase-tag">SOLO FRIENDLY</span>
+                            <h2><ion-icon name="flask-outline"></ion-icon> LAB. ÁCIDO</h2>
+                        </div>
+                    </div>
+                    <div class="card-body">
+                        <div class="task-list">
+                            <label class="task-item">
+                                <span class="custom-check"></span>
+                                <div class="task-content">
+                                    <div class="task-main">Misiones "First Dose"</div>
+                                    <div class="task-sub">6 misiones. Desbloquea Brickade.</div>
+                                </div>
+                                <span class="profit-badge">Gratis</span>
+                            </label>
+                            <label class="task-item">
+                                <span class="custom-check"></span>
+                                <div class="task-content">
+                                    <div class="task-main">Instalar Lab</div>
+                                    <div class="task-sub">En "The Freakshop".</div>
+                                </div>
+                                <span class="profit-badge">$750k</span>
+                            </label>
+                            <label class="task-item large" style="background: rgba(189, 0, 255, 0.1);">
+                                <span class="custom-check"></span>
+                                <div class="task-content">
+                                    <div class="task-main">MEJORA DE EQUIPO</div>
+                                    <div class="task-sub">Completa 10 Fooligan Jobs.</div>
+                                </div>
+                                <span class="profit-badge luck">OBLIGATORIO</span>
+                            </label>
+                        </div>
+                    </div>
                 </div>
-            </section>
 
-            <section class="tutorial-section">
-                <h2>🕹️ 7. Salón Recreativo (Arcade)</h2>
-                <p><strong>Ubicación:</strong> Maze Bank Foreclosures.</p>
-                <p><strong>Recomendado:</strong> Videogeddon (La Mesa).</p>
-                <p><strong>Uso:</strong> Golpe al Casino Diamond.</p>
-                <div class="tip-box">
-                    Compra la <strong>Terminal de Control Maestro</strong> para gestionar todo tu imperio desde aquí.
+                <!-- ARCADE -->
+                <div class="card glass-panel">
+                    <div class="card-header">
+                        <div class="header-content">
+                            <span class="phase-tag">GESTIÓN</span>
+                            <h2><ion-icon name="game-controller-outline"></ion-icon> ARCADE</h2>
+                        </div>
+                    </div>
+                    <div class="card-body">
+                        <div class="task-list">
+                            <label class="task-item">
+                                <div class="task-content">
+                                    <div class="task-main">Terminal Maestra (MCT)</div>
+                                    <div class="task-sub">Controla todos los negocios.</div>
+                                </div>
+                                <span class="profit-badge">$1.7M</span>
+                            </label>
+                        </div>
+                    </div>
                 </div>
-            </section>
 
-            <section class="tutorial-section">
-                <h2>🚗 8. Desguace</h2>
-                <p><strong>Ubicación:</strong> Maze Bank Foreclosures.</p>
-                <p><strong>Uso:</strong> Robos de coches y servicio de grúa.</p>
-            </section>
+            </div>
 
-            <section class="tutorial-section">
-                <h2>☢️ 9. Instalaciones (Facility)</h2>
-                <p><strong>Ubicación:</strong> Maze Bank Foreclosures.</p>
-                <p><strong>Recomendado:</strong> Ron Alternates Wind Farm.</p>
-                <p><strong>Uso:</strong> Golpe Doomsday (Acto III).</p>
-            </section>
         </div>
     </div>
+    <script src="script.js"></script>
+    <script>
+        // Inline toggle for requirements card
+        function toggleCard(header) {
+            header.parentElement.classList.toggle('collapsed');
+        }
+    </script>
 </body>
 
 </html>

@@ -1,70 +1,87 @@
-# 💰 Rutina de Grupo (2-4 Jugadores) - GTA V Enhanced
+# 🛡️ PROTOCOLO DE SQUAD: GTA ONLINE ENHANCED 2026
 
-Esta rutina está optimizada para maximizar las ganancias cooperativas, aprovechando el acceso a botines secundarios (Oro) y bonificaciones de venta en grupo.
+*Optimización Táctica para 2-4 Operadores*
 
----
-
-## 👥 1. Golpes Principales (The Big Scores)
-
-### 🔴 Golpe a Cayo Perico (Grupo)
-
-* **Jugadores:** 2-4
-* **Botín:** Pantera/Diamante/Collar + **ORO** (Solo accesible con 2+ personas).
-* **Estrategia:**
-  * Entrada: Longfin/Kosatka -> Túnel de Desagüe.
-  * Dentro: Matar sigilosamente y usar **tarjetas de acceso** para abrir almacenes de **ORO**.
-  * Salida: Nadar mar adentro.
-* **Ganancia Total:** ~$2,000,000+ (a repartir).
-* **Cooldown:** 48 min (mucho menor que Solo).
-
-### 💎 Golpe al Casino Diamond
-
-* **Jugadores:** 2 (Experto) - 4
-* **Enfoque Recomendado:** "The Big Con" (Gruppe Sechs) o "Silent & Sneaky".
-* **Botín:** Diamantes (Evento) > Oro > Arte > Dinero.
-* **Estrategia:**
-  * **Gruppe Sechs:** Entrada disfrazados, llegar a la bóveda sin disparar.
-  * **Hacker:** Usa a **Avi Schwartzman** o **Paige Harris** para máximo tiempo.
-* **Ganancia Total:** ~$2,100,000 - $3,600,000 (a repartir).
+Esta rutina maximiza el beneficio por minuto sincronizando los cooldowns de los golpes más rentables y aprovechando la fuerza bruta para ventas masivas en sesiones públicas.
 
 ---
 
-## 🚛 2. Ventas de Negocios (Suministro Global)
+## 📋 1. Infraestructura de Squad
 
-*Aprovecha que tienes amigos para vender inventarios LLENOS sin miedo al límite de tiempo o vehículos múltiples.*
+Roles asignados para eficiencia máxima:
 
-### 🔫 Venta de Búnker (Full)
-
-* **Requisito:** Barra de existencias llena ($700k valor base).
-* **Venta:** **Sesión Pública** con tus amigos escoltando en Oppressors/Jets.
-* **Bonificación:** +50% por Alta Demanda (Lobby con >20 jugadores).
-* **Ganancia:** **~$1,575,000** (para el dueño) + ~$30k-$50k (para ayudantes).
-
-### 🏍️ Negocios de Club de Moteros (MC)
-
-* **Prioridad:** Cocaína > Metanfetamina > Dinero Falso.
-* **Estrategia:** Vender lleno. Tus amigos conducen los camiones/aviones extra.
-* **Ganancia:** Variada, pero masiva en volumen.
+* **Líder (CEO/Presidente):** Rota entre jugadores para activar sus golpes.
+* **Hacker:** Se encarga de los hacks en Casino/Cayo (resuelve huellas rápido).
+* **Transportista:** Piloto designado para Sparrow/Avenger.
 
 ---
 
-## 💾 3. El Golpe del Juicio Final (Doomsday)
+## 🟢 FASE 1: SINCRONIZACIÓN Y RECURSOS (15 Min)
 
-*Si el equipo es sólido y busca un reto.*
+*Objetivo: Reunir al equipo y asegurar suministros gratis.*
 
-* **Acto III (The Doomsday Scenario):**
-* **Dificultad:** Alta.
-* **Ganancia:** ~$2,250,000 (Hard Mode).
+1. **Challenges Diarios (Inventario -> Desafíos):** Si coinciden, $30k extra para todos.
+2. **Alijo Oculto / Stash House (¡En Grupo!):**
+    * Todos van a la misma casa.
+    * *Beneficio:* Todos reciben suministros o $30k en efectivo.
+3. **Caja G (G's Cache):** Limpiarla en grupo es instantáneo.
 
 ---
 
-## 📊 Resumen de Ganancias (Ejemplo para Líder)
+## 🟡 FASE 2: GOLPES ASIMÉTRICOS (90 - 120 Min)
 
-| Actividad | Tiempo | Ganancia Potencial |
+*El núcleo de la ganancia. Alternar liderazgo para evitar cooldowns.*
+
+### A. Golpe a Cayo Perico (Dúo/Trío)
+
+* **Condición:** Mínimo 2 personas para tarjetas de acceso (Oro).
+* **Botín:** Pantera > Diamante Rosa > Collar.
+* **Secundario:** **ORO** (Llenar bolsas es prioridad).
+* **Ruta:** Túnel de Desagüe -> Compuesto (Sigilo) -> Salir nadando.
+* **Beneficio Squad:** **~$2.2M - $2.5M Total** (Repartido).
+* *Cooldown:* 48 Minutos (¡Esencial!).
+
+### B. The Diamond Casino Heist
+
+* **Enfoque:** "The Big Con" (Gruppe Sechs) o "Silent & Sneaky".
+* **Botín:** Diamantes (Evento) > Oro > Arte.
+* **Hacker:** Avi Schwartzman o Paige.
+* **Bóveda:** 2 personas recogen, 1 taladra (si hay cajas fuertes).
+* **Beneficio Squad:** **~$2.5M - $3.0M Total**.
+
+---
+
+## 🔴 FASE 3: VENTAS DE ALTO RIESGO (30 Min)
+
+*Aprovecha la escolta armada para el bono "High Demand" (+50%).*
+
+1. **Venta de Búnker (Full $1M+):**
+    * Líder vende. Equipo escolta en Oppressors/Jets.
+    * *Beneficio Líder:* **~$1.5M**.
+    * *Beneficio Ayudantes:* ~$35k c/u.
+2. **Ventas MC (Cocaína/Meta/Dinero):**
+    * Solo si está lleno. Requiere 3-4 conductores.
+    * *Beneficio:* Rentable por volumen.
+
+---
+
+## 🔵 FASE 4: CAOS RENTABLE (Relleno)
+
+*Si sobran 15-20 mins mientras bajan cooldowns.*
+
+1. **Contrato VIP (Dr. Dre):** Las misiones de preparación son rapidísimas entre 4.
+2. **Payphone Hits:** $45k para el líder, bonus para el resto.
+3. **Eventos de Modo Libre:** "Daño Criminal" o "Desafío de Supervivencia". Divertido y paga bien.
+
+---
+
+## 💰 TABLA DE PAGOS (Estimado por Hora/Persona)
+
+*Asumiendo rotación eficiente:*
+
+| Rol | Actividad | Ganancia Est. |
 | :--- | :--- | :--- |
-| Cayo Perico (50% corte) | 60 min | $1,100,000+ |
-| Casino Heist (50% corte) | 90 min | $1,200,000+ |
-| Venta Búnker (Full) | 15 min | $1,500,000 |
-| **TOTAL** | **Variable** | **Millones...** |
+| **Líder** | Cayo + Casino + Ventas | **$2.5M - $3M / hora** |
+| **Ayudante** | Cortes 15-20% + Salarios | **$500k - $800k / hora** |
 
-*Nota: Rota el liderazgo de los golpes para que todos ganen dinero.*
+*Nota: ¡Rotad el Host para que todos sean ricos!*

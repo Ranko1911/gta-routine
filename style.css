@@ -1,300 +1,440 @@
-/* CSS Variables */
+/* ELITE PROTOCOL THEME 2026 */
 :root {
-    --bg-dark: #0f1115;
-    --card-bg: #1c1f26;
-    --card-hover: #252932;
+    /* Colors */
+    --bg-main: #0a0b10;
+    --bg-panel: rgba(22, 24, 30, 0.7);
+    --glass-border: rgba(255, 255, 255, 0.08);
+    
+    --accent-green: #00ff9d;
+    --accent-purple: #bd00ff;
+    --accent-blue: #00d2ff;
+    --accent-gold: #ffd700;
+    --accent-red: #ff3b3b;
+    
     --text-primary: #ffffff;
-    --text-secondary: #a0a0a0;
-    --accent-green: #2ecc71;
-    --accent-purple: #9b59b6;
-    --accent-blue: #3498db;
-    --accent-red: #e74c3c;
-    --accent-yellow: #f1c40f;
-    --border-color: #333;
+    --text-secondary: #8b9bb4;
+    --text-tertiary: #5c6b7f;
+
+    /* Gradients */
+    --grad-green: linear-gradient(135deg, rgba(0, 255, 157, 0.2), rgba(0, 255, 157, 0));
+    --grad-gold: linear-gradient(135deg, rgba(255, 215, 0, 0.2), rgba(255, 215, 0, 0));
+    
+    /* Spacing */
+    --gap-grid: 1.5rem;
+    --radius-card: 16px;
+    --radius-sm: 8px;
+}
+
+* {
+    box-sizing: border-box;
 }
 
 body {
-    background-color: var(--bg-dark);
+    background-color: var(--bg-main);
+    background-image: 
+        radial-gradient(circle at 10% 20%, rgba(189, 0, 255, 0.05) 0%, transparent 40%),
+        radial-gradient(circle at 90% 80%, rgba(0, 255, 157, 0.05) 0%, transparent 40%);
     color: var(--text-primary);
-    font-family: 'Inter', system-ui, -apple-system, sans-serif;
+    font-family: 'Outfit', sans-serif;
     margin: 0;
     padding: 0;
     min-height: 100vh;
 }
 
-.container {
-    max-width: 1200px;
+/* --- UTILITIES --- */
+.app-container {
+    max-width: 1400px;
     margin: 0 auto;
     padding: 2rem;
 }
 
-/* Header */
-header {
+.glass-panel {
+    background: var(--bg-panel);
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+    border: 1px solid var(--glass-border);
+    border-radius: var(--radius-card);
+    box-shadow: 0 4px 20px rgba(0,0,0,0.3);
+}
+
+.glow-border {
+    position: relative;
+}
+.glow-border::after {
+    content: '';
+    position: absolute;
+    inset: -1px;
+    border-radius: var(--radius-card);
+    padding: 1px;
+    background: linear-gradient(45deg, var(--accent-green), transparent, var(--accent-blue));
+    -webkit-mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+    mask-composite: exclude;
+    pointer-events: none;
+    opacity: 0.5;
+}
+
+/* --- TOP BAR --- */
+.top-bar {
     display: flex;
     justify-content: space-between;
     align-items: center;
     margin-bottom: 2rem;
-    border-bottom: 1px solid var(--border-color);
     padding-bottom: 1rem;
+    border-bottom: 1px solid var(--glass-border);
 }
 
-h1 {
-    font-size: 2rem;
+.logo-area h1 {
+    font-size: 1.8rem;
     margin: 0;
+    letter-spacing: -1px;
     font-weight: 800;
 }
-
-h1 .accent {
-    color: var(--accent-green);
-    text-shadow: 0 0 10px rgba(46, 204, 113, 0.3);
-}
-
-.subtitle {
-    color: var(--text-secondary);
-    margin: 0.5rem 0 0;
-}
-
-.btn {
-    padding: 0.5rem 1rem;
-    border-radius: 6px;
-    border: none;
-    font-weight: 600;
-    cursor: pointer;
-    transition: all 0.2s;
-}
-
-.btn.danger {
-    background: rgba(231, 76, 60, 0.1);
-    color: var(--accent-red);
-    border: 1px solid var(--accent-red);
-}
-
-.btn.danger:hover {
-    background: var(--accent-red);
-    color: white;
-}
-
-/* Layout */
-.dashboard {
-    display: grid;
-    grid-template-columns: 300px 1fr;
-    gap: 2rem;
-}
-
-@media (max-width: 768px) {
-    .dashboard {
-        grid-template-columns: 1fr;
-    }
-}
-
-/* Requirements Panel */
-.requirements-panel {
-    background: var(--card-bg);
-    padding: 1.5rem;
-    border-radius: 12px;
-    height: fit-content;
-    border: 1px solid var(--border-color);
-}
-
-.requirements-panel h2 {
-    margin-top: 0;
-    font-size: 1.2rem;
-    margin-bottom: 1.5rem;
-    padding-bottom: 0.5rem;
-    border-bottom: 1px solid var(--border-color);
-}
-
-/* Routine Panel */
-.routine-panel {
-    display: flex;
-    flex-direction: column;
-    gap: 1.5rem;
-}
-
-/* Earnings Card */
-.earnings-card {
-    background: linear-gradient(135deg, rgba(46, 204, 113, 0.1) 0%, rgba(39, 174, 96, 0.05) 100%);
-    border: 1px solid var(--accent-green);
-    padding: 1.5rem;
-    border-radius: 12px;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-}
-
-.earnings-card h3 {
-    margin: 0;
-    color: var(--accent-green);
-    font-size: 1.1rem;
-    text-transform: uppercase;
-    letter-spacing: 1px;
-}
-
-.earnings-card .amount {
-    font-size: 2rem;
-    font-weight: 800;
-    color: white;
-    text-shadow: 0 0 20px rgba(46, 204, 113, 0.4);
-}
-
-/* Phase Groups */
-.phase-group {
-    background: var(--card-bg);
-    border-radius: 12px;
-    overflow: hidden;
-    border: 1px solid var(--border-color);
-}
-
-.phase-header {
-    padding: 1rem 1.5rem;
-    background: rgba(255, 255, 255, 0.03);
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    border-bottom: 1px solid var(--border-color);
-}
-
-.phase-header h3 {
-    margin: 0;
-    font-size: 1.1rem;
-}
-
-.phase-header.green h3 { color: var(--accent-green); }
-.phase-header.yellow h3 { color: var(--accent-yellow); }
-.phase-header.red h3 { color: var(--accent-red); }
-.phase-header.blue h3 { color: var(--accent-blue); }
-.phase-header.purple h3 { color: var(--accent-purple); }
-
-.time-note {
-    font-size: 0.8rem;
-    color: var(--text-secondary);
-    background: rgba(255, 255, 255, 0.1);
-    padding: 2px 8px;
-    border-radius: 4px;
-}
-
-/* Checkbox Items */
-.checklist {
-    display: flex;
-    flex-direction: column;
-}
-
-.checkbox-item {
-    display: flex;
-    align-items: center;
-    padding: 1rem 1.5rem;
-    cursor: pointer;
-    transition: background 0.2s;
-    border-bottom: 1px solid rgba(255, 255, 255, 0.05);
-    position: relative;
-    user-select: none;
-}
-
-.checkbox-item:last-child {
-    border-bottom: none;
-}
-
-.checkbox-item:hover {
-    background: var(--card-hover);
-}
-
-.checkbox-item input {
-    position: absolute;
-    opacity: 0;
-    cursor: pointer;
-    height: 0;
-    width: 0;
-}
-
-.checkmark {
-    position: relative;
-    height: 24px;
-    width: 24px;
-    background-color: rgba(255, 255, 255, 0.1);
-    border-radius: 6px;
-    margin-right: 15px;
-    flex-shrink: 0;
-    border: 2px solid transparent;
-    transition: all 0.2s;
-}
-
-.checkbox-item:hover input ~ .checkmark {
-    background-color: rgba(255, 255, 255, 0.2);
-}
-
-.checkbox-item input:checked ~ .checkmark {
-    background-color: var(--accent-green);
-    box-shadow: 0 0 10px rgba(46, 204, 113, 0.4);
-}
-
-.checkmark:after {
-    content: "";
-    position: absolute;
-    display: none;
-}
-
-.checkbox-item input:checked ~ .checkmark:after {
-    display: block;
-}
-
-.checkbox-item .checkmark:after {
-    left: 8px;
-    top: 4px;
-    width: 5px;
-    height: 10px;
-    border: solid white;
-    border-width: 0 3px 3px 0;
-    transform: rotate(45deg);
-}
-
-.content {
-    flex-grow: 1;
-    display: flex;
-    flex-direction: column;
-}
-
-.title {
-    font-weight: 600;
-    font-size: 1rem;
-}
-
-.desc {
-    font-size: 0.85rem;
-    color: var(--text-secondary);
-    margin-top: 2px;
-}
-
-.price {
-    font-weight: 700;
-    color: var(--accent-green);
-    margin-left: 10px;
-    background: rgba(46, 204, 113, 0.1);
-    padding: 4px 8px;
-    border-radius: 4px;
-    font-size: 0.9rem;
-    white-space: nowrap;
-}
-
-.badge {
-    font-size: 0.7rem;
+.highlight { color: var(--accent-green); }
+.version-tag { 
+    font-size: 0.7rem; 
+    color: var(--text-tertiary); 
+    border: 1px solid var(--glass-border);
     padding: 2px 6px;
     border-radius: 4px;
     margin-left: 8px;
-    text-transform: uppercase;
-    font-weight: 800;
+    vertical-align: middle;
 }
 
-.badge.weekly {
-    background: var(--accent-purple);
-    color: white;
+.global-stats {
+    display: flex;
+    gap: 3rem;
+    align-items: center;
+    flex-grow: 1;
+    justify-content: center;
 }
 
-/* Checked State Styling */
-.checkbox-item input:checked ~ .content .title {
-    text-decoration: line-through;
+.stat-item {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.stat-item .label {
+    font-size: 0.75rem;
+    color: var(--text-secondary);
+    letter-spacing: 1px;
+    margin-bottom: 4px;
+}
+
+.stat-item .value {
+    font-size: 1.5rem;
+    font-weight: 600;
+    text-shadow: 0 0 15px rgba(255,255,255,0.1);
+}
+
+/* Progress Bar */
+.progress-container {
+    width: 300px;
+    align-items: stretch;
+}
+.progress-labels {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 6px;
+}
+.progress-bar-bg {
+    height: 8px;
+    background: rgba(255,255,255,0.05);
+    border-radius: 4px;
+    overflow: hidden;
+}
+.progress-bar-fill {
+    height: 100%;
+    background: linear-gradient(90deg, var(--accent-green), var(--accent-blue));
+    width: 0%;
+    transition: width 0.4s ease;
+    box-shadow: 0 0 10px var(--accent-green);
+}
+
+/* --- GRID LAYOUT --- */
+.main-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: var(--gap-grid);
+    align-items: start;
+}
+
+.grid-column {
+    display: flex;
+    flex-direction: column;
+    gap: var(--gap-grid);
+}
+
+/* --- CARDS --- */
+.card-header {
+    padding: 1.2rem 1.5rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-bottom: 1px solid var(--glass-border);
+}
+
+.card-header h2 {
+    margin: 0;
+    font-size: 1rem;
+    font-weight: 600;
+    display: flex;
+    align-items: center;
+    gap: 10px;
     color: var(--text-secondary);
 }
 
-.checkbox-item input:checked ~ .price {
-    opacity: 0.5;
+.header-content { display: flex; flex-direction: column; }
+.phase-tag {
+    font-size: 0.7rem;
+    color: var(--accent-green);
+    font-weight: 800;
+    margin-bottom: 4px;
 }
+.time-est {
+    background: rgba(255,255,255,0.1);
+    font-size: 0.8rem;
+    padding: 2px 8px;
+    border-radius: 4px;
+    color: var(--text-secondary);
+}
+
+.card-body { padding: 0.5rem 0; }
+
+/* Collapsible Requirements */
+.requirements-card.collapsed .card-body { display: none; }
+.requirements-card .toggle-icon { transition: transform 0.3s; }
+.requirements-card.collapsed .toggle-icon { transform: rotate(-90deg); }
+.requirements-card .card-header { cursor: pointer; user-select: none; }
+
+/* Checklist Items */
+.check-row {
+    padding: 0.8rem 1.5rem;
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    cursor: pointer;
+    transition: background 0.2s;
+    font-size: 0.9rem;
+    color: var(--text-secondary);
+}
+.check-row:hover { background: rgba(255,255,255,0.03); }
+
+/* Task Items */
+.task-list, .highlight-task { display: flex; flex-direction: column; }
+
+.task-item {
+    display: flex;
+    align-items: center;
+    padding: 1rem 1.5rem;
+    gap: 15px;
+    cursor: pointer;
+    border-bottom: 1px solid var(--glass-border);
+    transition: all 0.2s;
+    position: relative;
+}
+.task-item:last-child { border-bottom: none; }
+.task-item:hover { background: rgba(255,255,255,0.03); }
+
+/* Checkbox Styling */
+input[type="checkbox"] { display: none; }
+.custom-check { /* Requirement check */
+    width: 18px; height: 18px;
+    border: 2px solid var(--text-tertiary);
+    border-radius: 4px;
+    position: relative;
+}
+.custom-check:after { /* Checkmark for reqs */
+    content: '';
+    position: absolute;
+    display: none;
+    left: 5px; top: 1px;
+    width: 4px; height: 10px;
+    border: solid var(--accent-green);
+    border-width: 0 2px 2px 0;
+    transform: rotate(45deg);
+}
+input:checked ~ .custom-check { border-color: var(--accent-green); }
+input:checked ~ .custom-check:after { display: block; }
+
+/* Task Item Dot Check */
+.task-item:before {
+    content: '';
+    width: 8px; height: 8px;
+    border-radius: 50%;
+    background: var(--text-tertiary);
+    opacity: 0.3;
+    transition: all 0.2s;
+}
+.task-item:has(input:checked):before {
+    background: var(--accent-green);
+    opacity: 1;
+    box-shadow: 0 0 8px var(--accent-green);
+}
+
+.task-item input:checked + .task-content .task-main {
+    text-decoration: line-through;
+    color: var(--text-tertiary);
+}
+.task-item input:checked ~ div > .task-main {
+     text-decoration: line-through;
+    color: var(--text-tertiary);
+}
+
+/* Phase Task Content */
+.task-content { flex-grow: 1; }
+.task-main { font-weight: 600; margin-bottom: 4px; transition: color 0.2s; }
+.task-sub { font-size: 0.8rem; color: var(--text-tertiary); }
+
+/* Badges */
+.profit-badge {
+    font-size: 0.8rem;
+    padding: 4px 8px;
+    border-radius: 6px;
+    background: rgba(255, 255, 255, 0.05);
+    color: var(--text-secondary);
+    font-weight: 600;
+}
+.profit-badge.gold { color: var(--accent-gold); background: rgba(255, 215, 0, 0.1); }
+.profit-badge.luck { color: var(--accent-purple); border: 1px solid rgba(189, 0, 255, 0.3); }
+.profit-badge.savings { color: var(--accent-blue); }
+
+.badge-public {
+    font-size: 0.7rem;
+    color: var(--accent-red);
+    border: 1px solid var(--accent-red);
+    padding: 2px 6px;
+    border-radius: 4px;
+}
+
+/* Specific Highlight: Cayo */
+.highlight-task .task-item.large {
+    padding: 1.5rem;
+    background: var(--grad-gold);
+}
+.highlight-task .task-main { font-size: 1.1rem; color: var(--accent-gold); }
+
+/* Actions & Links */
+.actions button {
+    background: transparent;
+    border: 1px solid var(--glass-border);
+    color: var(--text-secondary);
+    width: 40px; height: 40px;
+    border-radius: 8px;
+    cursor: pointer;
+    font-size: 1.2rem;
+    display: flex; align-items: center; justify-content: center;
+    transition: all 0.2s;
+}
+.actions button:hover {
+    border-color: var(--accent-red);
+    color: var(--accent-red);
+}
+
+.quick-links {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 1rem;
+}
+.link-btn {
+    background: var(--bg-panel);
+    border: 1px solid var(--glass-border);
+    color: var(--text-secondary);
+    padding: 1rem;
+    border-radius: 12px;
+    text-align: center;
+    text-decoration: none;
+    font-size: 0.9rem;
+    display: flex; flex-direction: column; align-items: center; gap: 8px;
+    transition: all 0.2s;
+}
+.link-btn:hover {
+    background: rgba(255,255,255,0.05);
+    border-color: var(--text-secondary);
+    color: var(--text-primary);
+}
+.link-btn ion-icon { font-size: 1.5rem; }
+
+/* TIMERS */
+.timer-widget {
+    padding: 1.5rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 10px;
+    background: rgba(0,0,0,0.2);
+    border-top: 1px solid var(--glass-border);
+}
+.timer-header {
+    display: flex;
+    gap: 8px;
+    align-items: center;
+    color: var(--text-tertiary);
+    font-size: 0.8rem;
+    font-weight: 600;
+}
+.timer-display {
+    font-size: 2.5rem;
+    font-family: monospace;
+    font-weight: 800;
+    color: var(--text-secondary);
+}
+.timer-display.active { color: var(--accent-blue); text-shadow: 0 0 10px rgba(0, 210, 255, 0.4); }
+
+.btn.accent-btn {
+    background: var(--accent-blue);
+    color: #000;
+    font-weight: 800;
+    border: none;
+    padding: 8px 16px;
+    border-radius: 6px;
+    cursor: pointer;
+    text-transform: uppercase;
+    font-size: 0.8rem;
+}
+.btn.accent-btn:hover { filter: brightness(1.2); }
+
+/* Mini task block timer */
+.task-block {
+    display: flex;
+    flex-direction: column;
+    border-bottom: 1px solid var(--glass-border);
+}
+.task-block .task-item { border-bottom: none; }
+.mini-timer {
+    padding: 0 1.5rem 1rem;
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    gap: 12px;
+    font-size: 0.85rem;
+    color: var(--text-tertiary);
+}
+.mini-timer .active { color: var(--accent-green); font-weight: 600; }
+.sm-btn {
+    background: rgba(255,255,255,0.1);
+    border: 1px solid transparent;
+    color: var(--text-secondary);
+    padding: 4px 10px;
+    border-radius: 4px;
+    cursor: pointer;
+}
+.sm-btn:hover { border-color: var(--text-tertiary); }
+
+
+/* RESPONSIVE */
+@media (max-width: 1100px) {
+    .main-grid {
+        grid-template-columns: 1fr;
+    }
+    .top-bar { flex-direction: column; gap: 1rem; text-align: center; }
+    .global-stats { flex-direction: column; gap: 1rem; }
+}
+
+/* ANIMATIONS */
+@keyframes pop {
+    0% { transform: scale(1); }
+    50% { transform: scale(1.1); }
+    100% { transform: scale(1); }
+}
+.pop { animation: pop 0.2s ease; }

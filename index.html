@@ -4,255 +4,322 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>GTA V Routine Tracker</title>
+    <title>GTA V Elite Protocol Tracker</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600;800&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="style.css">
+    <!-- Ionicons for better visuals -->
+    <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
 </head>
 
 <body>
-    <div class="container">
-        <header>
-            <h1>GTA V <span class="accent">ROUTINE TRACKER</span></h1>
-            <p class="subtitle">Maximiza tus ingresos por hora</p>
-            <a href="group_routine.html" class="btn">Ver Rutina Grupo</a>
-            <a href="requirements.html" class="btn">Ver Tutorial Requisitos</a>
-            <button id="reset-btn" class="btn danger">Reiniciar Rutina</button>
+    <div class="app-container">
+
+        <!-- TOP BAR: Stats & Controls -->
+        <header class="top-bar">
+            <div class="logo-area">
+                <h1>ELITE <span class="highlight">PROTOCOL</span></h1>
+                <span class="version-tag">v26.1</span>
+            </div>
+
+            <div class="global-stats">
+                <div class="stat-item">
+                    <span class="label">SESIÓN ACTUAL</span>
+                    <span class="value" id="total-earnings">$0</span>
+                </div>
+                <div class="stat-item progress-container">
+                    <div class="progress-labels">
+                        <span class="label">PROGRESO</span>
+                        <span class="value" id="progress-text">0%</span>
+                    </div>
+                    <div class="progress-bar-bg">
+                        <div class="progress-bar-fill" id="global-progress"></div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="actions">
+                <button id="reset-btn" class="btn icon-btn" title="Reiniciar Día">
+                    <ion-icon name="refresh-outline"></ion-icon>
+                </button>
+            </div>
+        </header>
+
+        <div class="main-grid">
+
+            <!-- LEFT COLUMN: Requirements & Phase 1 -->
+            <div class="grid-column">
+
+                <!-- REQUIREMENTS (Collapsible or Compact) -->
+                <div class="card glass-panel requirements-card">
+                    <div class="card-header" onclick="toggleCard(this)">
+                        <h2><ion-icon name="construct-outline"></ion-icon> REQUISITOS</h2>
+                        <ion-icon name="chevron-down-outline" class="toggle-icon"></ion-icon>
+                    </div>
+                    <div class="card-body">
+                        <div class="checklist">
+                            <label class="check-row">
+                                <input type="checkbox" data-id="req-kosatka" data-category="requirement">
+                                <span class="custom-check"></span>
+                                <div>Submarino Kosatka + Sparrow</div>
+                            </label>
+                            <label class="check-row">
+                                <input type="checkbox" data-id="req-agency" data-category="requirement">
+                                <span class="custom-check"></span>
+                                <div>Agencia (Dre + Payphone)</div>
+                            </label>
+                            <label class="check-row">
+                                <input type="checkbox" data-id="req-acidlab" data-category="requirement">
+                                <span class="custom-check"></span>
+                                <div>Lab. Ácido (Brickade 6x6)</div>
+                            </label>
+                            <label class="check-row">
+                                <input type="checkbox" data-id="req-nightclub" data-category="requirement">
+                                <span class="custom-check"></span>
+                                <div>Club Nocturno (5 Técnicos)</div>
+                            </label>
+                            <label class="check-row">
+                                <input type="checkbox" data-id="req-bunker" data-category="requirement">
+                                <span class="custom-check"></span>
+                                <div>Búnker (Mejorado)</div>
+                            </label>
+                            <label class="check-row">
+                                <input type="checkbox" data-id="req-arcade" data-category="requirement">
+                                <span class="custom-check"></span>
+                                <div>Arcade (MCT)</div>
+                            </label>
+                            <label class="check-row">
+                                <input type="checkbox" data-id="req-salvage" data-category="requirement">
+                                <span class="custom-check"></span>
+                                <div>Desguace (Salvage Yard)</div>
+                            </label>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- PHASE 1 -->
+                <div class="card glass-panel phase-card phase-1">
+                    <div class="card-header">
+                        <div class="header-content">
+                            <span class="phase-tag">FASE 1</span>
+                            <h2>GESTIÓN INICIAL</h2>
+                        </div>
+                        <div class="time-est">15m</div>
+                    </div>
+                    <div class="card-body">
+                        <div class="task-list">
+                            <label class="task-item">
+                                <input type="checkbox" data-id="spawn-loc" data-category="routine">
+                                <div class="task-content">
+                                    <div class="task-main">Spawn: Arcade/Club</div>
+                                    <div class="task-sub">Gestión centralizada.</div>
+                                </div>
+                            </label>
+
+                            <label class="task-item">
+                                <input type="checkbox" data-id="casino-wheel" data-category="routine">
+                                <div class="task-content">
+                                    <div class="task-main">Ruleta de Casino</div>
+                                    <div class="task-sub">Giro diario gratuito.</div>
+                                </div>
+                                <span class="profit-badge luck">Suerte</span>
+                            </label>
+
+                            <label class="task-item">
+                                <input type="checkbox" data-id="stash-house" data-value="75000" data-category="routine">
+                                <div class="task-content">
+                                    <div class="task-main">Alijo Oculto (Stash House)</div>
+                                    <div class="task-sub">Casa morada. Suministros.</div>
+                                </div>
+                                <span class="profit-badge savings">+$75k</span>
+                            </label>
+
+                            <label class="task-item">
+                                <input type="checkbox" data-id="acid-boost" data-category="routine">
+                                <div class="task-content">
+                                    <div class="task-main">Lab. Ácido: Acelerar</div>
+                                    <div class="task-sub">Icono matraz. +Producción.</div>
+                                </div>
+                            </label>
+
+                            <label class="task-item">
+                                <input type="checkbox" data-id="mct-manage" data-category="routine">
+                                <div class="task-content">
+                                    <div class="task-main">Gestión MCT (Arcade)</div>
+                                    <div class="task-sub">Compra sumis / Pop. Club.</div>
+                                </div>
+                            </label>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+
+            <!-- MIDDLE COLUMN: THE ANCHOR (Phase 2 & Timers) -->
+            <div class="grid-column">
+
+                <!-- PHASE 2: CAYO -->
+                <div class="card glass-panel phase-card phase-2 glow-border">
+                    <div class="card-header">
+                        <div class="header-content">
+                            <span class="phase-tag">FASE 2</span>
+                            <h2>EL GOLPE ANCHOR</h2>
+                        </div>
+                        <div class="time-est">60m</div>
+                    </div>
+                    <div class="card-body">
+                        <div class="highlight-task">
+                            <label class="task-item large">
+                                <input type="checkbox" data-id="cayo-perico" data-value="1400000"
+                                    data-category="routine">
+                                <div class="task-content">
+                                    <div class="task-main">GOLPE A CAYO PERICO</div>
+                                    <div class="task-sub">Solo • Longfin • Muelle N • Túnel</div>
+                                </div>
+                                <span class="profit-badge gold">~$1.4m</span>
+                            </label>
+                        </div>
+
+                        <!-- TIMER WIDGET -->
+                        <div class="timer-widget" id="timer-cayo">
+                            <div class="timer-header">
+                                <ion-icon name="timer-outline"></ion-icon>
+                                <span>COOLDOWN (SOLO)</span>
+                            </div>
+                            <div class="timer-display">02:24:00</div>
+                            <button class="btn accent-btn" onclick="startTimer('cayo', 144)">INICIAR TIMER</button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- PHASE 4: FILLER -->
+                <div class="card glass-panel phase-card phase-4">
+                    <div class="card-header">
+                        <div class="header-content">
+                            <span class="phase-tag">FASE 4</span>
+                            <h2>RELLENO (OPCIONAL)</h2>
+                        </div>
+                    </div>
+                    <div class="card-body">
+                        <div class="task-list">
+                            <label class="task-item">
+                                <input type="checkbox" data-id="dr-dre" data-value="1000000" data-category="routine">
+                                <div class="task-content">
+                                    <div class="task-main">Contrato Dr. Dre</div>
+                                    <div class="task-sub">Agencia. 1h 15m.</div>
+                                </div>
+                                <span class="profit-badge">+$1m</span>
+                            </label>
+
+                            <label class="task-item">
+                                <input type="checkbox" data-id="union-depository" data-value="270000"
+                                    data-category="routine">
+                                <div class="task-content">
+                                    <div class="task-main">Union Depository</div>
+                                    <div class="task-sub">Auto Shop. 20 min.</div>
+                                </div>
+                                <span class="profit-badge">+$270k</span>
+                            </label>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+
+            <!-- RIGHT COLUMN: COOLDOWN & MISC -->
+            <div class="grid-column">
+
+                <!-- PHASE 3 -->
+                <div class="card glass-panel phase-card phase-3">
+                    <div class="card-header">
+                        <div class="header-content">
+                            <span class="phase-tag">FASE 3</span>
+                            <h2>ALTO RENDIMIENTO</h2>
+                        </div>
+                        <span class="badge-public">SESIÓN PÚBLICA</span>
+                    </div>
+                    <div class="card-body">
+                        <div class="task-list">
+                            <label class="task-item">
+                                <input type="checkbox" data-id="hsw-time-trial" data-value="253000"
+                                    data-category="routine">
+                                <div class="task-content">
+                                    <div class="task-main">Contrarreloj HSW</div>
+                                    <div class="task-sub">Semanal. "H" Morada.</div>
+                                </div>
+                                <span class="profit-badge">+$253k</span>
+                            </label>
+
+                            <label class="task-item">
+                                <input type="checkbox" data-id="acid-sell" data-value="500000" data-category="routine">
+                                <div class="task-content">
+                                    <div class="task-main">Venta Lab. Ácido</div>
+                                    <div class="task-sub">Pública + Org. Fantasma.</div>
+                                </div>
+                                <span class="profit-badge gold">~$500k</span>
+                            </label>
+
+                            <label class="task-item">
+                                <input type="checkbox" data-id="ammu-bunker" data-value="50000" data-category="routine">
+                                <div class="task-content">
+                                    <div class="task-main">Ammu-Nation</div>
+                                    <div class="task-sub">Duneloader a tienda.</div>
+                                </div>
+                                <span class="profit-badge">+$50k</span>
+                            </label>
+
+                            <!-- PAYPHONE BLOCK -->
+                            <div class="task-block">
+                                <label class="task-item">
+                                    <input type="checkbox" data-id="payphone-hit" data-value="45000"
+                                        data-category="routine">
+                                    <div class="task-content">
+                                        <div class="task-main">Payphone Hit</div>
+                                        <div class="task-sub">Bono de asesinato.</div>
+                                    </div>
+                                    <span class="profit-badge">+$45k</span>
+                                </label>
+                                <div class="mini-timer" id="timer-payphone">
+                                    <span>CD: 10m</span>
+                                    <button class="btn sm-btn" onclick="startTimer('payphone', 10)">Start</button>
+                                </div>
+                            </div>
+
+                            <label class="task-item">
+                                <input type="checkbox" data-id="salvage-tow" data-value="40000" data-category="routine">
+                                <div class="task-content">
+                                    <div class="task-main">Desguace: Grúa x2</div>
+                                    <div class="task-sub">Mantener pasivo.</div>
+                                </div>
+                                <span class="profit-badge">Inv.</span>
+                            </label>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- LINKS -->
+                <div class="quick-links">
+                    <a href="group_routine.html" class="btn link-btn">
+                        <ion-icon name="people-outline"></ion-icon> Rutina Grupo
+                    </a>
+                    <a href="requirements.html" class="btn link-btn">
+                        <ion-icon name="book-outline"></ion-icon> Tutorial
+                    </a>
+                </div>
+
+            </div>
+
+        </div>
     </div>
-    </header>
 
-    <div class="dashboard">
-        <!-- Sidebar / Requirements -->
-        <aside class="requirements-panel">
-            <h2>🛠️ Requisitos</h2>
-            <div class="checklist" id="requirements-list">
-                <!-- Javascript will populate this, but hardcoding for structure clarity -->
-                <label class="checkbox-item">
-                    <input type="checkbox" data-id="req-kosatka" data-category="requirement">
-                    <span class="checkmark"></span>
-                    <span class="label-text">Submarino Kosatka</span>
-                </label>
-                <label class="checkbox-item">
-                    <input type="checkbox" data-id="req-agency" data-category="requirement">
-                    <span class="checkmark"></span>
-                    <span class="label-text">Agencia (Dr. Dre)</span>
-                </label>
-                <label class="checkbox-item">
-                    <input type="checkbox" data-id="req-acidlab" data-category="requirement">
-                    <span class="checkmark"></span>
-                    <span class="label-text">Laboratorio de Ácido (Mejorado)</span>
-                </label>
-                <label class="checkbox-item">
-                    <input type="checkbox" data-id="req-nightclub" data-category="requirement">
-                    <span class="checkmark"></span>
-                    <span class="label-text">Club Nocturno (Full)</span>
-                </label>
-            </div>
-        </aside>
-
-
-        <!-- Main Routine -->
-        <main class="routine-panel">
-
-            <!-- Earnings Display -->
-            <div class="earnings-card">
-                <h3>Ganancia Estimada Sesión</h3>
-                <div class="amount" id="total-earnings">$0</div>
-            </div>
-
-            <div class="phase-group">
-                <div class="phase-header green">
-                    <h3>🟢 Fase 1: Inicio (Calentamiento)</h3>
-                </div>
-                <div class="checklist">
-                    <label class="checkbox-item">
-                        <input type="checkbox" data-id="casino-wheel" data-value="0" data-category="routine">
-                        <span class="checkmark"></span>
-                        <div class="content">
-                            <span class="title">Ruleta de la Suerte (Casino)</span>
-                            <span class="desc">1 giro diario. Coche, Dinero, RP.</span>
-                        </div>
-                        <span class="price">Suerte</span>
-                    </label>
-
-                    <label class="checkbox-item">
-                        <input type="checkbox" data-id="casino-visitor" data-value="1000" data-category="routine">
-                        <span class="checkmark"></span>
-                        <div class="content">
-                            <span class="title">Bono Visitante (Casino)</span>
-                            <span class="desc">Recoge fichas en taquilla.</span>
-                        </div>
-                        <span class="price">+$1k</span>
-                    </label>
-
-                    <label class="checkbox-item">
-                        <input type="checkbox" data-id="hsw-time-trial" data-value="250000" data-category="routine">
-                        <span class="checkmark"></span>
-                        <div class="content">
-                            <span class="title">Contrarreloj HSW <span class="badge weekly">Semanal</span></span>
-                            <span class="desc">Busca la "H" morada. (1 vez/semana)</span>
-                        </div>
-                        <span class="price">+$250k</span>
-                    </label>
-
-                    <label class="checkbox-item">
-                        <input type="checkbox" data-id="stash-house" data-value="0" data-category="routine">
-                        <span class="checkmark"></span>
-                        <div class="content">
-                            <span class="title">Alijo Oculto (Stash House)</span>
-                            <span class="desc">Icono casa morada. Reabastece Búnker/Ácido.</span>
-                        </div>
-                        <span class="price">Suministros</span>
-                    </label>
-
-                    <label class="checkbox-item">
-                        <input type="checkbox" data-id="gs-cache" data-value="16000" data-category="routine">
-                        <span class="checkmark"></span>
-                        <div class="content">
-                            <span class="title">Caja G (G's Cache)</span>
-                            <span class="desc">Caja morada en el mapa.</span>
-                        </div>
-                        <span class="price">+$16k</span>
-                    </label>
-                </div>
-            </div>
-
-            <div class="phase-group">
-                <div class="phase-header yellow">
-                    <h3>🟡 Fase 2: Gestión Pasiva</h3>
-                </div>
-                <div class="checklist">
-                    <label class="checkbox-item">
-                        <input type="checkbox" data-id="acid-boost" data-value="0" data-category="routine">
-                        <span class="checkmark"></span>
-                        <div class="content">
-                            <span class="title">Lab. Ácido: Acelerar Producción</span>
-                            <span class="desc">Icono de matraz. 1 vez al día.</span>
-                        </div>
-                    </label>
-                    <label class="checkbox-item">
-                        <input type="checkbox" data-id="nightclub-safe" data-value="100000" data-category="routine">
-                        <span class="checkmark"></span>
-                        <div class="content">
-                            <span class="title">Club Nocturno: Caja Fuerte</span>
-                            <span class="desc">Cobrar si tiene >$100k (Máx $250k).</span>
-                        </div>
-                        <span class="price">+$100k</span>
-                    </label>
-                    <label class="checkbox-item">
-                        <input type="checkbox" data-id="nightclub-pop" data-value="0" data-category="routine">
-                        <span class="checkmark"></span>
-                        <div class="content">
-                            <span class="title">Club Nocturno: Popularidad</span>
-                            <span class="desc">Entra en Modo Pasivo -> Echar al borracho.</span>
-                        </div>
-                    </label>
-                    <label class="checkbox-item">
-                        <input type="checkbox" data-id="salvage-tow" data-value="35000" data-category="routine">
-                        <span class="checkmark"></span>
-                        <div class="content">
-                            <span class="title">Desguace: Grúa</span>
-                            <span class="desc">Remolcar un vehículo.</span>
-                        </div>
-                        <span class="price">+$35k</span>
-                    </label>
-                </div>
-            </div>
-
-            <div class="phase-group">
-                <div class="phase-header red">
-                    <h3>🔴 Fase 3: El Plato Principal</h3>
-                </div>
-                <div class="checklist">
-                    <label class="checkbox-item">
-                        <input type="checkbox" data-id="cayo-perico" data-value="1400000" data-category="routine">
-                        <span class="checkmark"></span>
-                        <div class="content">
-                            <span class="title">Golpe a Cayo Perico (Solo)</span>
-                            <span class="desc">Desagüe > Muelle Principal > Coca/Cuadros. (Oro = 2p).</span>
-                        </div>
-                        <span class="price">+$1.4m</span>
-                    </label>
-                </div>
-            </div>
-
-            <div class="phase-group">
-                <div class="phase-header blue">
-                    <h3>🔵 Fase 4: Cooldown</h3>
-                    <span class="time-note">2h 24m espera</span>
-                </div>
-                <div class="checklist">
-                    <label class="checkbox-item">
-                        <input type="checkbox" data-id="acid-sell" data-value="500000" data-category="routine">
-                        <span class="checkmark"></span>
-                        <div class="content">
-                            <span class="title">Venta Lab. Ácido</span>
-                            <span class="desc">En pública para bono. Cierra app si te atacan.</span>
-                        </div>
-                        <span class="price">+$500k</span>
-                    </label>
-
-                    <label class="checkbox-item">
-                        <input type="checkbox" data-id="ammu-bunker" data-value="50000" data-category="routine">
-                        <span class="checkmark"></span>
-                        <div class="content">
-                            <span class="title">Ammu-Nation (Búnker)</span>
-                            <span class="desc">Entregar partes de armas sobrantes.</span>
-                        </div>
-                        <span class="price">+$50k</span>
-                    </label>
-
-                    <label class="checkbox-item">
-                        <input type="checkbox" data-id="payphone-hit" data-value="45000" data-category="routine">
-                        <span class="checkmark"></span>
-                        <div class="content">
-                            <span class="title">Asesinato por Teléfono</span>
-                            <span class="desc">Llama a Franklin. Cumple el bono.</span>
-                        </div>
-                        <span class="price">+$45k</span>
-                    </label>
-
-                    <label class="checkbox-item">
-                        <input type="checkbox" data-id="mixed-goods" data-value="50000" data-category="routine">
-                        <span class="checkmark"></span>
-                        <div class="content">
-                            <span class="title">Exportar Bienes Variados</span>
-                            <span class="desc">Desde oficina de CEO.</span>
-                        </div>
-                        <span class="price">+$50k</span>
-                    </label>
-                </div>
-            </div>
-            <div class="phase-group">
-                <div class="phase-header purple">
-                    <h3>🟣 Opcionales / Extra</h3>
-                </div>
-                <div class="checklist">
-                    <label class="checkbox-item">
-                        <input type="checkbox" data-id="dr-dre" data-value="1000000" data-category="routine">
-                        <span class="checkmark"></span>
-                        <div class="content">
-                            <span class="title">Contrato Dr. Dre</span>
-                            <span class="desc">Si sobra tiempo.</span>
-                        </div>
-                        <span class="price">+$1m</span>
-                    </label>
-                    <label class="checkbox-item">
-                        <input type="checkbox" data-id="union-depository" data-value="270000" data-category="routine">
-                        <span class="checkmark"></span>
-                        <div class="content">
-                            <span class="title">Robo Union Depository</span>
-                            <span class="desc">Taller. 20 min.</span>
-                        </div>
-                        <span class="price">+$270k</span>
-                    </label>
-                </div>
-            </div>
-        </main>
-    </div>
-    </div>
     <script src="script.js"></script>
+    <script>
+        // Inline toggle for requirements card
+        function toggleCard(header) {
+            header.parentElement.classList.toggle('collapsed');
+        }
+    </script>
 </body>
 
 </html>

@@ -4,147 +4,261 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>GTA V Group Routine Tracker</title>
+    <title>GTA V Squad Protocol Tracker</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600;800&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="style.css">
+    <!-- Ionicons for better visuals -->
+    <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
 </head>
 
 <body>
-    <div class="container">
-        <header>
-            <h1>GTA V <span class="accent">GROUP ROUTINE</span></h1>
-            <p class="subtitle">Maximiza ganancias en equipo (2-4 Jugadores)</p>
-            <a href="index.html" class="btn">Volver a Solo Routine</a>
-            <a href="requirements.html" class="btn">Ver Tutorial Requisitos</a>
-            <button id="reset-btn" class="btn danger">Reiniciar Rutina</button>
+    <div class="app-container">
+
+        <!-- TOP BAR: Stats & Controls -->
+        <header class="top-bar">
+            <div class="logo-area">
+                <h1>SQUAD <span class="highlight">PROTOCOL</span></h1>
+                <span class="version-tag">2-4 Jugadores</span>
+            </div>
+
+            <div class="global-stats">
+                <div class="stat-item">
+                    <span class="label">GANANCIA LÍDER</span>
+                    <span class="value" id="grp-earnings">$0</span>
+                </div>
+                <!-- Logic for group progress can be added later, keeping structure consistent -->
+            </div>
+
+            <div class="actions">
+                <button id="reset-btn-grp" class="btn icon-btn" title="Reiniciar Día">
+                    <ion-icon name="refresh-outline"></ion-icon>
+                </button>
+            </div>
+        </header>
+
+        <div class="main-grid">
+
+            <!-- LEFT COLUMN: Requirements & Phase 1 -->
+            <div class="grid-column">
+
+                <!-- REQUIREMENTS -->
+                <div class="card glass-panel requirements-card">
+                    <div class="card-header" onclick="toggleCard(this)">
+                        <h2><ion-icon name="people-outline"></ion-icon> ROLES & REQ.</h2>
+                        <ion-icon name="chevron-down-outline" class="toggle-icon"></ion-icon>
+                    </div>
+                    <div class="card-body">
+                        <div class="checklist">
+                            <label class="check-row">
+                                <span class="custom-check-static"><ion-icon name="star"></ion-icon></span>
+                                <div><b>Líder:</b> Kosatka/Arcade/Búnker</div>
+                            </label>
+                            <label class="check-row">
+                                <span class="custom-check-static"><ion-icon name="code-slash"></ion-icon></span>
+                                <div><b>Hacker:</b> Huellas (Casino/Cayo)</div>
+                            </label>
+                            <label class="check-row">
+                                <span class="custom-check-static"><ion-icon name="airplane"></ion-icon></span>
+                                <div><b>Piloto:</b> Sparrow/Avenger</div>
+                            </label>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- PHASE 1 -->
+                <div class="card glass-panel phase-card phase-1">
+                    <div class="card-header">
+                        <div class="header-content">
+                            <span class="phase-tag">FASE 1</span>
+                            <h2>SINCRONIZACIÓN</h2>
+                        </div>
+                        <div class="time-est">15m</div>
+                    </div>
+                    <div class="card-body">
+                        <div class="task-list">
+                            <label class="task-item">
+                                <input type="checkbox" data-id="grp-challenges" data-value="30000"
+                                    data-category="group-routine">
+                                <div class="task-content">
+                                    <div class="task-main">Challenges Diarios</div>
+                                    <div class="task-sub">Menú Interacción > Desafíos.</div>
+                                </div>
+                                <span class="profit-badge">+$30k</span>
+                            </label>
+
+                            <label class="task-item">
+                                <input type="checkbox" data-id="grp-stash" data-value="30000"
+                                    data-category="group-routine">
+                                <div class="task-content">
+                                    <div class="task-main">Stash House (Squad)</div>
+                                    <div class="task-sub">Todos saquean la misma casa.</div>
+                                </div>
+                                <span class="profit-badge savings">Suministros</span>
+                            </label>
+
+                            <label class="task-item">
+                                <input type="checkbox" data-id="grp-gcache" data-value="16000"
+                                    data-category="group-routine">
+                                <div class="task-content">
+                                    <div class="task-main">Caja G (G's Cache)</div>
+                                    <div class="task-sub">Limpieza rápida en grupo.</div>
+                                </div>
+                                <span class="profit-badge">+$16k</span>
+                            </label>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- LINKS -->
+                <div class="quick-links">
+                    <a href="index.html" class="btn link-btn">
+                        <ion-icon name="person-outline"></ion-icon> Ir a Solo Routine
+                    </a>
+                </div>
+
+            </div>
+
+            <!-- MIDDLE COLUMN: THE BIG SCORES -->
+            <div class="grid-column">
+
+                <!-- PHASE 2: CAYO GROUP -->
+                <div class="card glass-panel phase-card phase-2 glow-border">
+                    <div class="card-header">
+                        <div class="header-content">
+                            <span class="phase-tag">FASE 2</span>
+                            <h2>GOLPES ASIMÉTRICOS</h2>
+                        </div>
+                        <div class="time-est">90m</div>
+                    </div>
+                    <div class="card-body">
+
+                        <!-- Cayo Group -->
+                        <label class="task-item large">
+                            <input type="checkbox" data-id="grp-cayo" data-value="1200000"
+                                data-category="group-routine">
+                            <div class="task-content">
+                                <div class="task-main">CAYO PERICO (GRUPO)</div>
+                                <div class="task-sub">2+ Jugadores (Oro) • 50% Corte</div>
+                            </div>
+                            <span class="profit-badge gold">~$1.2M</span>
+                        </label>
+                        <div class="timer-widget compact" id="timer-grp_cayo">
+                            <div class="timer-header">
+                                <ion-icon name="timer-outline"></ion-icon> CD LÍDER (48m)
+                            </div>
+                            <button class="btn sm-btn accent-btn" onclick="startTimer('grp_cayo', 48)">INICIAR</button>
+                        </div>
+
+                        <div class="spacer" style="height: 1rem;"></div>
+
+                        <!-- Casino -->
+                        <label class="task-item large"
+                            style="background: linear-gradient(135deg, rgba(0, 210, 255, 0.1), transparent);">
+                            <input type="checkbox" data-id="grp-casino" data-value="1300000"
+                                data-category="group-routine">
+                            <div class="task-content">
+                                <div class="task-main">DIAMOND CASINO</div>
+                                <div class="task-sub">Big Con / Silent • Arte/Oro</div>
+                            </div>
+                            <span class="profit-badge gold">~$1.3M</span>
+                        </label>
+                        <div class="timer-widget compact" id="timer-grp_casino">
+                            <button class="btn sm-btn accent-btn" onclick="startTimer('grp_casino', 48)">INICIAR
+                                (48m)</button>
+                        </div>
+
+                    </div>
+                </div>
+
+            </div>
+
+            <!-- RIGHT COLUMN: PRO SALES -->
+            <div class="grid-column">
+
+                <!-- PHASE 3 -->
+                <div class="card glass-panel phase-card phase-3">
+                    <div class="card-header">
+                        <div class="header-content">
+                            <span class="phase-tag">FASE 3</span>
+                            <h2>VENTAS DE ALTO RIESGO</h2>
+                        </div>
+                        <span class="badge-public">PÚBLICA +50%</span>
+                    </div>
+                    <div class="card-body">
+                        <div class="task-list">
+                            <div class="alert-box">
+                                <ion-icon name="shield-checkmark-outline"></ion-icon>
+                                <small>Requiere escolta aérea.</small>
+                            </div>
+
+                            <label class="task-item">
+                                <input type="checkbox" data-id="grp-bunker" data-value="1500000"
+                                    data-category="group-routine">
+                                <div class="task-content">
+                                    <div class="task-main">Venta Búnker (Full)</div>
+                                    <div class="task-sub">Líder vende, Squad defiende.</div>
+                                </div>
+                                <span class="profit-badge gold">~$1.5M</span>
+                            </label>
+
+                            <label class="task-item">
+                                <input type="checkbox" data-id="grp-mc" data-value="500000"
+                                    data-category="group-routine">
+                                <div class="task-content">
+                                    <div class="task-main">Venta MC (Coca/Meta)</div>
+                                    <div class="task-sub">3-4 Conductores necesarios.</div>
+                                </div>
+                                <span class="profit-badge">Volumen</span>
+                            </label>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- PHASE 4 -->
+                <div class="card glass-panel phase-card phase-4">
+                    <div class="card-header">
+                        <div class="header-content">
+                            <span class="phase-tag">FASE 4</span>
+                            <h2>CAOS RENTABLE</h2>
+                        </div>
+                    </div>
+                    <div class="card-body">
+                        <div class="task-list">
+                            <label class="task-item">
+                                <input type="checkbox" data-id="grp-dre" data-value="1000000"
+                                    data-category="group-routine">
+                                <div class="task-content">
+                                    <div class="task-main">Contrato Dr. Dre</div>
+                                    <div class="task-sub">Preps rápidas entre 4.</div>
+                                </div>
+                                <span class="profit-badge">+$1M</span>
+                            </label>
+                            <label class="task-item">
+                                <input type="checkbox" data-id="grp-events" data-value="50000"
+                                    data-category="group-routine">
+                                <div class="task-content">
+                                    <div class="task-main">Eventos Modo Libre</div>
+                                    <div class="task-sub">Daño Criminal / Desafíos.</div>
+                                </div>
+                                <span class="profit-badge">Fun</span>
+                            </label>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+
+        </div>
     </div>
-    </header>
 
-    <div class="dashboard">
-        <!-- Sidebar / Requirements -->
-        <aside class="requirements-panel">
-            <h2>🛠️ Requisitos Grupo</h2>
-            <div class="checklist" id="requirements-list">
-                <label class="checkbox-item">
-                    <input type="checkbox" data-id="grp-req-kosatka" data-category="requirement">
-                    <span class="checkmark"></span>
-                    <span class="label-text">Kosatka (Cayo)</span>
-                </label>
-                <label class="checkbox-item">
-                    <input type="checkbox" data-id="grp-req-arcade" data-category="requirement">
-                    <span class="checkmark"></span>
-                    <span class="label-text">Arcade (Casino)</span>
-                </label>
-                <label class="checkbox-item">
-                    <input type="checkbox" data-id="grp-req-bunker" data-category="requirement">
-                    <span class="checkmark"></span>
-                    <span class="label-text">Búnker (Full Upgrade)</span>
-                </label>
-                <label class="checkbox-item">
-                    <input type="checkbox" data-id="grp-req-facility" data-category="requirement">
-                    <span class="checkmark"></span>
-                    <span class="label-text">Instalaciones (Facility)</span>
-                </label>
-            </div>
-        </aside>
-
-        <!-- Main Routine -->
-        <main class="routine-panel">
-
-            <!-- Earnings Display -->
-            <div class="earnings-card">
-                <h3>Ganancia Estimada (Por Persona/Líder)</h3>
-                <div class="amount" id="total-earnings">$0</div>
-            </div>
-
-            <div class="phase-group">
-                <div class="phase-header red">
-                    <h3>🔴 Fase 1: Golpes Principales</h3>
-                </div>
-                <div class="checklist">
-                    <label class="checkbox-item">
-                        <input type="checkbox" data-id="grp-cayo" data-value="1100000" data-category="routine">
-                        <span class="checkmark"></span>
-                        <div class="content">
-                            <span class="title">Cayo Perico (Grupo)</span>
-                            <span class="desc">Con Oro. Ganancia est. 50%.</span>
-                        </div>
-                        <span class="price">~$1.1m</span>
-                    </label>
-
-                    <label class="checkbox-item">
-                        <input type="checkbox" data-id="grp-casino" data-value="1200000" data-category="routine">
-                        <span class="checkmark"></span>
-                        <div class="content">
-                            <span class="title">Diamond Casino Heist</span>
-                            <span class="desc">Big Con / Silent. Diamantes/Oro.</span>
-                        </div>
-                        <span class="price">~$1.2m</span>
-                    </label>
-
-                    <label class="checkbox-item">
-                        <input type="checkbox" data-id="grp-doomsday" data-value="1125000" data-category="routine">
-                        <span class="checkmark"></span>
-                        <div class="content">
-                            <span class="title">Doomsday (Acto 3)</span>
-                            <span class="desc">Hard Mode. Ganancia est. 50%</span>
-                        </div>
-                        <span class="price">~$1.1m</span>
-                    </label>
-                </div>
-            </div>
-
-            <div class="phase-group">
-                <div class="phase-header green">
-                    <h3>🟢 Fase 2: Ventas Masivas</h3>
-                    <span class="time-note">Sesión Pública + Bonus</span>
-                </div>
-                <div class="checklist">
-                    <label class="checkbox-item">
-                        <input type="checkbox" data-id="grp-bunker-sell" data-value="1500000" data-category="routine">
-                        <span class="checkmark"></span>
-                        <div class="content">
-                            <span class="title">Venta Búnker (Full)</span>
-                            <span class="desc">Con escolta en pública.</span>
-                        </div>
-                        <span class="price">~$1.5m</span>
-                    </label>
-
-                    <label class="checkbox-item">
-                        <input type="checkbox" data-id="grp-mc-sell" data-value="500000" data-category="routine">
-                        <span class="checkmark"></span>
-                        <div class="content">
-                            <span class="title">Venta MC (Coca/Meta)</span>
-                            <span class="desc">Varios vehículos con amigos.</span>
-                        </div>
-                        <span class="price">~$500k+</span>
-                    </label>
-                </div>
-            </div>
-
-            <div class="phase-group">
-                <div class="phase-header purple">
-                    <h3>🟣 Actividades Rápidas (Extras)</h3>
-                </div>
-                <div class="checklist">
-                    <label class="checkbox-item">
-                        <input type="checkbox" data-id="grp-dre" data-value="1000000" data-category="routine">
-                        <span class="checkmark"></span>
-                        <div class="content">
-                            <span class="title">The Contract (Dr. Dre)</span>
-                            <span class="desc">Se puede hacer en grupo (el líder cobra más).</span>
-                        </div>
-                        <span class="price">+$1m</span>
-                    </label>
-                </div>
-            </div>
-
-        </main>
-    </div>
-    </div>
     <script src="script.js"></script>
+    <script>
+        function toggleCard(header) {
+            header.parentElement.classList.toggle('collapsed');
+        }
+    </script>
 </body>
 
 </html>
