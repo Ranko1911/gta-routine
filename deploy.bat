@@ -13,9 +13,7 @@ if %errorlevel% neq 0 (
 
 echo 2. Committing changes...
 git commit -m "deploy: quick update via script"
-if %errorlevel% neq 0 (
-    echo [ERROR] Git Commit failed (maybe nothing to commit?).
-)
+REM Ignoramos errores en commit por si no hay cambios nuevos.
 
 echo 3. Pushing to main...
 git push origin main
