@@ -511,13 +511,39 @@ body {
 /* Requirements Card Specifics */
 .check-row {
     display: flex;
+    align-items: center;
     gap: 1rem;
-    padding: 0.5rem 0;
+    padding: 0.5rem 0.5rem;
     color: var(--text-secondary);
+    cursor: pointer;
+    border-radius: 4px;
+    transition: background 0.2s;
 }
 
-.custom-check-static {
-    color: var(--accent-blue);
+.check-row:hover {
+    background: rgba(255, 255, 255, 0.05);
+}
+
+.check-row input {
+    display: none;
+}
+
+.check-row input:checked+.custom-check {
+    background: var(--accent-green);
+    border-color: var(--accent-green);
+    box-shadow: 0 0 10px rgba(0, 255, 157, 0.5);
+}
+
+.check-row input:checked+.custom-check::after {
+    content: '✓';
+    color: #000;
+    font-weight: 800;
+    font-size: 14px;
+}
+
+.check-row input:checked~div {
+    opacity: 0.7;
+    color: var(--accent-green);
 }
 
 .toggle-icon {
