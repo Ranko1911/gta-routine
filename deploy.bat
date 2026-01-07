@@ -12,7 +12,12 @@ if %errorlevel% neq 0 (
 )
 
 echo 2. Committing changes...
-git commit -m "deploy: quick update via script"
+if "%~1"=="" (
+    set "msg=deploy: quick update via script"
+) else (
+    set "msg=%~1"
+)
+git commit -m "%msg%"
 REM Ignoramos errores en commit por si no hay cambios nuevos.
 
 echo 3. Pushing to main...
