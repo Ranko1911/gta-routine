@@ -104,9 +104,18 @@ function updateCalculations() {
     const progressText = document.getElementById('progress-text');
     const checkboxes = document.querySelectorAll('input[type="checkbox"]');
 
-    let total = 0;
+    // --- CATALOG VARIABLES ---
+    const catalogTotalEl = document.getElementById('catalog-total');
+    const catalogOwnedEl = document.getElementById('catalog-owned');
+    const catalogProgressFill = document.getElementById('catalog-progress-fill');
+    const catalogPercentEl = document.getElementById('catalog-percent');
+
+    let total = 0; // Routine total
     let checkedCount = 0;
     let totalCount = 0;
+
+    let catTotalValue = 0; // Catalog Total
+    let catOwnedValue = 0; // Catalog Owned
 
     // Determine Context
     let targetCategory = 'routine';
@@ -114,38 +123,62 @@ function updateCalculations() {
     if (weeklyEarningsDisplay) targetCategory = 'weekly-routine';
 
     checkboxes.forEach(cb => {
+        const val = cb.dataset.value ? parseInt(cb.dataset.value) : 0;
+
+        // CATALOG LOGIC (Always calculate if on catalog page, or check category)
+        if (cb.dataset.category === 'catalog') {
+            catTotalValue += val;
+            if (cb.checked) {
+                catOwnedValue += val;
+            }
+        }
+
+        // ROUTINE LOGIC
         if (cb.dataset.category === targetCategory) {
             totalCount++;
             if (cb.checked) {
                 checkedCount++;
-                if (cb.dataset.value) {
-                    total += parseInt(cb.dataset.value);
-                }
+                total += val;
             }
         }
     });
 
-    // Update Money
-    const formattedMoney = new Intl.NumberFormat('en-US', {
-        style: 'currency',
-        currency: 'USD',
-        maximumFractionDigits: 0
-    }).format(total);
+    // Update Money Helper
+    const formatMoney = (amount) => {
+        return new Intl.NumberFormat('en-US', {
+            style: 'currency',
+            currency: 'USD',
+            maximumFractionDigits: 0
+        }).format(amount);
+    };
 
+    // Update Routine Display
     if (earningsDisplay) {
-        earningsDisplay.textContent = formattedMoney;
+        earningsDisplay.textContent = formatMoney(total);
         popElement(earningsDisplay);
     }
     if (grpEarningsDisplay) {
-        grpEarningsDisplay.textContent = formattedMoney;
+        grpEarningsDisplay.textContent = formatMoney(total);
         popElement(grpEarningsDisplay);
     }
     if (weeklyEarningsDisplay) {
-        weeklyEarningsDisplay.textContent = formattedMoney;
+        weeklyEarningsDisplay.textContent = formatMoney(total);
         popElement(weeklyEarningsDisplay);
     }
 
-    // Update Progress
+    // Update Catalog Display
+    if (catalogTotalEl && catalogOwnedEl) {
+        catalogTotalEl.textContent = formatMoney(catTotalValue);
+        catalogOwnedEl.textContent = formatMoney(catOwnedValue);
+
+        if (catTotalValue > 0) {
+            const catPercent = Math.round((catOwnedValue / catTotalValue) * 100);
+            if (catalogProgressFill) catalogProgressFill.style.width = `${catPercent}%`;
+            if (catalogPercentEl) catalogPercentEl.textContent = `${catPercent}%`;
+        }
+    }
+
+    // Update Progress (Routine)
     if (totalCount > 0 && progressBar) {
         const percentage = Math.round((checkedCount / totalCount) * 100);
         progressBar.style.width = `${percentage}%`;
