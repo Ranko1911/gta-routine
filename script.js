@@ -33,6 +33,7 @@ document.addEventListener('DOMContentLoaded', () => {
     const resetBtn = document.getElementById('reset-btn');
     const resetBtnGrp = document.getElementById('reset-btn-grp');
     const resetBtnWeekly = document.getElementById('reset-btn-weekly');
+    const resetBtnCatalog = document.getElementById('reset-btn-catalog');
 
     // --- STATE MANAGEMENT ---
     function restoreCheckboxState() {
@@ -64,6 +65,7 @@ document.addEventListener('DOMContentLoaded', () => {
         btn.addEventListener('click', () => {
             let msg = '¿Reiniciar progreso de la sesión?';
             if (category === 'weekly-routine') msg = '¿Reiniciar progreso SEMANAL?';
+            if (category === 'catalog') msg = '¿Reiniciar TODA la colección del catálogo?';
 
             if (confirm(msg)) {
                 // Use global STORAGE_PREFIX
@@ -81,6 +83,7 @@ document.addEventListener('DOMContentLoaded', () => {
     attachReset(resetBtn, 'routine');
     attachReset(resetBtnGrp, 'group-routine');
     attachReset(resetBtnWeekly, 'weekly-routine');
+    attachReset(resetBtnCatalog, 'catalog');
 
 
     // Run Init

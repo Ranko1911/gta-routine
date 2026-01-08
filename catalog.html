@@ -1,0 +1,347 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Catálogo Global | GTA V Elite</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css?v=2026.2">
+    <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
+    <style>
+        /* Page Specific Styles (will move to style.css later) */
+        .search-container {
+            margin-bottom: 2rem;
+            position: relative;
+        }
+
+        .search-input {
+            width: 100%;
+            padding: 1rem 1rem 1rem 3rem;
+            background: rgba(0, 0, 0, 0.3);
+            border: 1px solid var(--glass-border);
+            border-radius: var(--radius-sm);
+            color: var(--text-primary);
+            font-family: inherit;
+            font-size: 1rem;
+            backdrop-filter: blur(10px);
+        }
+
+        .search-icon {
+            position: absolute;
+            left: 1rem;
+            top: 50%;
+            transform: translateY(-50%);
+            color: var(--text-tertiary);
+            font-size: 1.2rem;
+        }
+
+        .catalog-section {
+            margin-bottom: 3rem;
+        }
+
+        .section-title {
+            font-size: 1.5rem;
+            font-weight: 800;
+            color: var(--text-primary);
+            margin-bottom: 1rem;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            border-bottom: 2px solid rgba(255, 255, 255, 0.05);
+            padding-bottom: 0.5rem;
+        }
+
+        .catalog-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+            gap: 1rem;
+        }
+
+        .catalog-item {
+            background: rgba(255, 255, 255, 0.03);
+            border: 1px solid var(--glass-border);
+            padding: 1rem;
+            border-radius: var(--radius-sm);
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+            transition: all 0.2s;
+        }
+
+        .catalog-item:hover {
+            background: rgba(255, 255, 255, 0.08);
+            transform: translateY(-2px);
+        }
+
+        .item-info {
+            flex-grow: 1;
+        }
+
+        .item-name {
+            font-weight: 600;
+            color: var(--text-primary);
+            margin-bottom: 2px;
+        }
+
+        .item-price {
+            font-size: 0.85rem;
+            color: var(--accent-green);
+            font-family: monospace;
+        }
+
+        .item-category {
+            font-size: 0.7rem;
+            color: var(--text-tertiary);
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class="app-container">
+        <!-- TOP BAR (Unified Nav) -->
+        <div class="top-bar glass-panel">
+            <div class="logo">
+                <ion-icon name="cart-outline"></ion-icon>
+                <span>CATÁLOGO</span>
+            </div>
+
+            <nav class="main-nav">
+                <a href="index.html" class="nav-link">
+                    <ion-icon name="person-outline"></ion-icon>
+                    <span>Solo</span>
+                </a>
+                <a href="group_routine.html" class="nav-link">
+                    <ion-icon name="people-outline"></ion-icon>
+                    <span>Grupo</span>
+                </a>
+                <a href="weekly_routine.html" class="nav-link">
+                    <ion-icon name="calendar-outline"></ion-icon>
+                    <span>Semanal</span>
+                </a>
+                <a href="requirements.html" class="nav-link">
+                    <ion-icon name="book-outline"></ion-icon>
+                    <span>Guía</span>
+                </a>
+                <a href="catalog.html" class="nav-link active">
+                    <ion-icon name="cart-outline"></ion-icon>
+                    <span>Catálogo</span>
+                </a>
+            </nav>
+
+            <div class="actions">
+                <button class="btn sm-btn" id="reset-btn-catalog"
+                    style="border-color: var(--accent-red); color: var(--accent-red);">
+                    <ion-icon name="refresh-outline"></ion-icon>
+                    <span class="desktop-only">RESET</span>
+                </button>
+            </div>
+        </div>
+
+        <div class="content-area">
+
+            <div class="search-container">
+                <ion-icon name="search-outline" class="search-icon"></ion-icon>
+                <input type="text" id="catalog-search" class="search-input"
+                    placeholder="Buscar vehículo, propiedad o arma...">
+            </div>
+
+            <!-- PROPERTIES -->
+            <div class="catalog-section">
+                <div class="section-title">
+                    <ion-icon name="business-outline"></ion-icon> PROPIEDADES (META)
+                </div>
+                <div class="catalog-grid">
+                    <!-- Agency -->
+                    <label class="catalog-item">
+                        <input type="checkbox" data-id="cat-agency" data-category="catalog" data-value="2000000">
+                        <span class="custom-check"></span>
+                        <div class="item-info">
+                            <div class="item-name">Agencia (F. Clinton)</div>
+                            <div class="item-category">Dynasty8 Executive</div>
+                            <div class="item-price">~$2,000,000</div>
+                        </div>
+                    </label>
+                    <!-- Kosatka -->
+                    <label class="catalog-item">
+                        <input type="checkbox" data-id="cat-kosatka" data-category="catalog" data-value="2200000">
+                        <span class="custom-check"></span>
+                        <div class="item-info">
+                            <div class="item-name">Submarino Kosatka</div>
+                            <div class="item-category">Warstock</div>
+                            <div class="item-price">$2,200,000</div>
+                        </div>
+                    </label>
+                    <!-- Arcade -->
+                    <label class="catalog-item">
+                        <input type="checkbox" data-id="cat-arcade" data-category="catalog" data-value="1800000">
+                        <span class="custom-check"></span>
+                        <div class="item-info">
+                            <div class="item-name">Arcade (Videogeddon)</div>
+                            <div class="item-category">Maze Bank Foreclosures</div>
+                            <div class="item-price">~$1,800,000</div>
+                        </div>
+                    </label>
+                    <!-- Auto Shop -->
+                    <label class="catalog-item">
+                        <input type="checkbox" data-id="cat-autoshop" data-category="catalog" data-value="1700000">
+                        <span class="custom-check"></span>
+                        <div class="item-info">
+                            <div class="item-name">Auto Shop (Burton)</div>
+                            <div class="item-category">Maze Bank Foreclosures</div>
+                            <div class="item-price">~$1,700,000</div>
+                        </div>
+                    </label>
+                    <!-- Nightclub -->
+                    <label class="catalog-item">
+                        <input type="checkbox" data-id="cat-nightclub" data-category="catalog" data-value="1600000">
+                        <span class="custom-check"></span>
+                        <div class="item-info">
+                            <div class="item-name">Nightclub (Downtown)</div>
+                            <div class="item-category">Maze Bank Foreclosures</div>
+                            <div class="item-price">~$1,600,000</div>
+                        </div>
+                    </label>
+                    <!-- Acid Lab -->
+                    <label class="catalog-item">
+                        <input type="checkbox" data-id="cat-acidlab" data-category="catalog" data-value="750000">
+                        <span class="custom-check"></span>
+                        <div class="item-info">
+                            <div class="item-name">Acid Lab (Brickade 6x6)</div>
+                            <div class="item-category">Warstock</div>
+                            <div class="item-price">~$750,000</div>
+                        </div>
+                    </label>
+                </div>
+            </div>
+
+            <!-- WARSTOCK / WEAPONIZED -->
+            <div class="catalog-section">
+                <div class="section-title">
+                    <ion-icon name="shield-checkmark-outline"></ion-icon> WARSTOCK
+                </div>
+                <div class="catalog-grid">
+                    <label class="catalog-item">
+                        <input type="checkbox" data-id="cat-mk2" data-category="catalog" data-value="6000000">
+                        <span class="custom-check"></span>
+                        <div class="item-info">
+                            <div class="item-name">Oppressor Mk II</div>
+                            <div class="item-category">Motos</div>
+                            <div class="item-price">~$6,000,000</div>
+                        </div>
+                    </label>
+                    <label class="catalog-item">
+                        <input type="checkbox" data-id="cat-toreador" data-category="catalog" data-value="4250000">
+                        <span class="custom-check"></span>
+                        <div class="item-info">
+                            <div class="item-name">Pegassi Toreador</div>
+                            <div class="item-category">Anfibio</div>
+                            <div class="item-price">$4,250,000</div>
+                        </div>
+                    </label>
+                    <label class="catalog-item">
+                        <input type="checkbox" data-id="cat-deluxo" data-category="catalog" data-value="5750000">
+                        <span class="custom-check"></span>
+                        <div class="item-info">
+                            <div class="item-name">Imponte Deluxo</div>
+                            <div class="item-category">Volador</div>
+                            <div class="item-price">~$5,750,000</div>
+                        </div>
+                    </label>
+                    <label class="catalog-item">
+                        <input type="checkbox" data-id="cat-sparrow" data-category="catalog" data-value="1815000">
+                        <span class="custom-check"></span>
+                        <div class="item-info">
+                            <div class="item-name">Sparrow (Kosatka)</div>
+                            <div class="item-category">Helicóptero</div>
+                            <div class="item-price">$1,815,000</div>
+                        </div>
+                    </label>
+                    <label class="catalog-item">
+                        <input type="checkbox" data-id="cat-raiju" data-category="catalog" data-value="5100000">
+                        <span class="custom-check"></span>
+                        <div class="item-info">
+                            <div class="item-name">F-160 Raiju</div>
+                            <div class="item-category">Avión Caza</div>
+                            <div class="item-price">~$5,100,000</div>
+                        </div>
+                    </label>
+                </div>
+            </div>
+
+            <!-- SUPERCARS -->
+            <div class="catalog-section">
+                <div class="section-title">
+                    <ion-icon name="car-sport-outline"></ion-icon> LEGENDARY / SSASA
+                </div>
+                <div class="catalog-grid">
+                    <label class="catalog-item">
+                        <input type="checkbox" data-id="cat-krieger" data-category="catalog" data-value="2875000">
+                        <span class="custom-check"></span>
+                        <div class="item-info">
+                            <div class="item-name">Benefactor Krieger</div>
+                            <div class="item-category">Super</div>
+                            <div class="item-price">$2,875,000</div>
+                        </div>
+                    </label>
+                    <label class="catalog-item">
+                        <input type="checkbox" data-id="cat-emerus" data-category="catalog" data-value="2750000">
+                        <span class="custom-check"></span>
+                        <div class="item-info">
+                            <div class="item-name">Progen Emerus</div>
+                            <div class="item-category">Super</div>
+                            <div class="item-price">$2,750,000</div>
+                        </div>
+                    </label>
+                    <label class="catalog-item">
+                        <input type="checkbox" data-id="cat-hsw-drag" data-category="catalog" data-value="976000">
+                        <span class="custom-check"></span>
+                        <div class="item-info">
+                            <div class="item-name">Hakuchou Drag (HSW)</div>
+                            <div class="item-category">Moto</div>
+                            <div class="item-price">$976,000 + Upgrades</div>
+                        </div>
+                    </label>
+                    <label class="catalog-item">
+                        <input type="checkbox" data-id="cat-buffalo" data-category="catalog" data-value="1600000">
+                        <span class="custom-check"></span>
+                        <div class="item-info">
+                            <div class="item-name">Buffalo STX (Imani)</div>
+                            <div class="item-category">Muscle</div>
+                            <div class="item-price">$2,150,000</div>
+                        </div>
+                    </label>
+                </div>
+            </div>
+
+        </div>
+    </div>
+
+    <script src="script.js?v=2026.2"></script>
+    <script>
+        // Inline Search Logic
+        const searchInput = document.getElementById('catalog-search');
+        if (searchInput) {
+            searchInput.addEventListener('input', (e) => {
+                const term = e.target.value.toLowerCase();
+                const items = document.querySelectorAll('.catalog-item');
+
+                items.forEach(item => {
+                    const text = item.innerText.toLowerCase();
+                    if (text.includes(term)) {
+                        item.style.display = 'flex';
+                    } else {
+                        item.style.display = 'none';
+                    }
+                });
+            });
+        }
+    </script>
+</body>
+
+</html>
