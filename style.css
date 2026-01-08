@@ -632,10 +632,9 @@ body {
     padding: 1rem;
     border-radius: var(--radius-sm);
     display: flex;
-    align-items: center;
-    gap: 1rem;
+    flex-direction: column;
+    gap: 0.5rem;
     transition: all 0.2s;
-    cursor: pointer;
     user-select: none;
 }
 
@@ -643,6 +642,32 @@ body {
     background: rgba(255, 255, 255, 0.08);
     transform: translateY(-2px);
     border-color: rgba(255, 255, 255, 0.2);
+}
+
+.catalog-header {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    width: 100%;
+    cursor: pointer;
+}
+
+.catalog-header input {
+    display: none;
+}
+
+/* Checked State for Catalog Items */
+.catalog-header input:checked+.custom-check {
+    background: var(--accent-green);
+    border-color: var(--accent-green);
+    box-shadow: 0 0 10px rgba(0, 255, 157, 0.5);
+}
+
+.catalog-header input:checked+.custom-check::after {
+    content: '✓';
+    color: #000;
+    font-weight: 800;
+    font-size: 14px;
 }
 
 .item-info {
@@ -666,4 +691,57 @@ body {
     color: var(--text-tertiary);
     text-transform: uppercase;
     letter-spacing: 1px;
+}
+
+/* Upgrades Section */
+.catalog-upgrades {
+    margin-top: 0.5rem;
+    padding-top: 0.5rem;
+    border-top: 1px solid rgba(255, 255, 255, 0.1);
+    display: flex;
+    flex-direction: column;
+    gap: 0.3rem;
+    padding-left: 2.2rem;
+    /* Indent to align with text */
+}
+
+.upgrade-row {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    font-size: 0.8rem;
+    color: var(--text-secondary);
+    cursor: pointer;
+}
+
+.upgrade-row:hover {
+    color: var(--text-primary);
+}
+
+.upgrade-row input {
+    display: none;
+}
+
+/* Small custom checkbox for upgrades */
+.upgrade-check-box {
+    width: 14px;
+    height: 14px;
+    border: 1px solid var(--text-tertiary);
+    border-radius: 3px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: all 0.2s;
+}
+
+.upgrade-row input:checked+.upgrade-check-box {
+    background: var(--accent-green);
+    border-color: var(--accent-green);
+}
+
+.upgrade-row input:checked+.upgrade-check-box::after {
+    content: '✓';
+    font-size: 10px;
+    color: #000;
+    font-weight: 800;
 }
