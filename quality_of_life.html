@@ -5,7 +5,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Elite Protocol - Quality of Life</title>
-    <link rel="stylesheet" href="style.css?v=2026.2">
+    <link rel="stylesheet" href="style.css?v=2026.3">
     <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600;700&display=swap" rel="stylesheet">
     <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
     <script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
@@ -18,7 +18,7 @@
         <header class="top-bar">
             <div class="logo-area">
                 <h1>ELITE <span class="highlight">QoL</span></h1>
-                <span class="version-tag">Descuentos & Tips</span>
+                <span class="version-tag">Tips & Tricks</span>
             </div>
 
             <div class="global-stats">
@@ -60,35 +60,41 @@
             </div>
         </header>
 
-        <div class="main-grid">
+        <div class="main-grid" style="grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));">
 
-            <!-- COL 1: DISCOUNTS -->
+            <!-- COL 1: SAVINGS & DAILY -->
             <div class="grid-column">
                 <div class="card glass-panel glow-border" style="--accent-green: var(--accent-yellow);">
                     <div class="card-header">
                         <div class="header-content">
-                            <span class="phase-tag">AHORRO</span>
-                            <h2><ion-icon name="pricetag-outline"></ion-icon> DESCUENTOS</h2>
+                            <span class="phase-tag">EFICIENCIA DIARIA</span>
+                            <h2><ion-icon name="pricetag-outline"></ion-icon> AHORRO & DIARIO</h2>
                         </div>
                     </div>
                     <div class="card-body">
                         <div class="task-list">
                             <label class="task-item">
                                 <div class="task-content">
-                                    <div class="task-main">Gun Van (Furgoneta)</div>
-                                    <div class="task-sub">5-10% descuento en Armas. Ubicación diaria.</div>
+                                    <div class="task-main">Stash House (Piso Franco) <span class="tag tag-daily">DAILY</span><span class="tag tag-money">SAVE 75K</span></div>
+                                    <div class="task-sub">Raid diario. Otorga suministros GRATIS a un negocio al azar. Hazlo antes de comprar nada.</div>
                                 </div>
                             </label>
                             <label class="task-item">
                                 <div class="task-content">
-                                    <div class="task-main">Trade Prices (Precios Especiales)</div>
-                                    <div class="task-sub">Ahorra ~25% haciendo misiones de vehículo.</div>
+                                    <div class="task-main">Street Dealers (Camellos) <span class="tag tag-daily">DAILY</span><span class="tag tag-money">CASH</span></div>
+                                    <div class="task-sub">Vende excedente de MC/Acid sin misiones de venta. Busca la "Estrella" para vender a precio premium.</div>
                                 </div>
                             </label>
                             <label class="task-item">
                                 <div class="task-content">
-                                    <div class="task-main">Actualización Semanal (Jueves)</div>
-                                    <div class="task-sub">Revisar Newswire: 30-40% en vehículos/propiedades.</div>
+                                    <div class="task-main">Gun Van (Furgoneta) <span class="tag tag-money">DISCOUNT</span></div>
+                                    <div class="task-sub">Ubicación diaria oculta. Armas exclusivas (Railgun) y blindaje barato.</div>
+                                </div>
+                            </label>
+                             <label class="task-item">
+                                <div class="task-content">
+                                    <div class="task-main">Actualización Semanal <span class="tag tag-money">INFO</span></div>
+                                    <div class="task-sub">Cada Jueves: Nuevos descuentos (30-40%) y Bonificaciones (x2 $).</div>
                                 </div>
                             </label>
                         </div>
@@ -96,34 +102,33 @@
                 </div>
             </div>
 
-            <!-- COL 2: EMPIRE -->
+            <!-- COL 2: EMPIRE MANAGEMENT -->
             <div class="grid-column">
                 <div class="card glass-panel">
                     <div class="card-header">
                         <div class="header-content">
-                            <span class="phase-tag">GESTIÓN</span>
-                            <h2><ion-icon name="business-outline"></ion-icon> IMPERIO</h2>
+                            <span class="phase-tag">LOGÍSTICA</span>
+                            <h2><ion-icon name="business-outline"></ion-icon> GESTIÓN IMPERIO</h2>
                         </div>
                     </div>
                     <div class="card-body">
                         <div class="task-list">
                             <label class="task-item">
                                 <div class="task-content">
-                                    <div class="task-main">Master Control Terminal (Arcade)</div>
-                                    <div class="task-sub">Gestiona TODOS los negocios desde un PC.</div>
+                                    <div class="task-main">Master Control Terminal <span class="tag tag-manage">MUST HAVE</span></div>
+                                    <div class="task-sub">Compra en Arcade. Gestiona reabastecimiento de TODOS los negocios desde una sola silla.</div>
                                 </div>
                             </label>
                             <label class="task-item">
                                 <div class="task-content">
-                                    <div class="task-main">Terrorbyte</div>
-                                    <div class="task-sub">Inicia I/E y Cajas desde cualquier lugar.</div>
+                                    <div class="task-main">Comprar vs Robar <span class="tag tag-manage">TIP</span></div>
+                                    <div class="task-sub">SIEMPRE compra suministros ($75k) si tienes mejoras. El tiempo robando es dinero perdido.</div>
                                 </div>
                             </label>
-                            <label class="task-item">
+                             <label class="task-item">
                                 <div class="task-content">
-                                    <div class="task-main">Comprar Suministros</div>
-                                    <div class="task-sub">Es más eficiente comprar ($75k) y hacer misiones rápidas.
-                                    </div>
+                                    <div class="task-main">Terrorbyte <span class="tag tag-manage">REMOTE</span></div>
+                                    <div class="task-sub">Estaciónalo centro mapa. Úsalo para iniciar Cajas CEO o I/E Vehículos rápidamente.</div>
                                 </div>
                             </label>
                         </div>
@@ -131,34 +136,73 @@
                 </div>
             </div>
 
-            <!-- COL 3: UTILITY -->
+            <!-- COL 3: TRAVEL & MOVEMENT -->
             <div class="grid-column">
                 <div class="card glass-panel">
                     <div class="card-header">
                         <div class="header-content">
-                            <span class="phase-tag">ATAJOS</span>
-                            <h2><ion-icon name="construct-outline"></ion-icon> UTILIDADES</h2>
+                            <span class="phase-tag">MOVILIDAD</span>
+                            <h2><ion-icon name="airplane-outline"></ion-icon> VIAJE RÁPIDO</h2>
                         </div>
                     </div>
                     <div class="card-body">
                         <div class="task-list">
                             <label class="task-item">
                                 <div class="task-content">
-                                    <div class="task-main">Menú Interacción: Snacks</div>
-                                    <div class="task-sub">D-Pad Arriba / "C" para curación instantánea.</div>
+                                    <div class="task-main">Heist Warp <span class="tag tag-travel">EXPERT</span></div>
+                                    <div class="task-sub">Mantén un Heist activo (Facility/Apartment). Acepta el invite de Lester para TP a casa.</div>
                                 </div>
                             </label>
                             <label class="task-item">
                                 <div class="task-content">
-                                    <div class="task-main">Llamar: Lester</div>
-                                    <div class="task-sub">Quitar estrellas de búsqueda gratis (si acabaste Doomsday).
-                                    </div>
+                                    <div class="task-main">Job Teleport (PC) <span class="tag tag-travel">PC ONLY</span></div>
+                                    <div class="task-sub">Inicia actividad azul en mapa > Desconecta mando/Únete a amigo (Puntería diferente) > Cancela.</div>
+                                </div>
+                            </label>
+                             <label class="task-item">
+                                <div class="task-content">
+                                    <div class="task-main">Kosatka / Agencia <span class="tag tag-travel">FAST TRAVEL</span></div>
+                                    <div class="task-sub">Kosatka ($2k) o Helicóptero Agencia (Gratis) para cruzar mapa sin conducir.</div>
+                                </div>
+                            </label>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- COL 4: COMBAT & UTILITY -->
+             <div class="grid-column">
+                <div class="card glass-panel" style="--accent-green: var(--accent-red);">
+                    <div class="card-header">
+                        <div class="header-content">
+                            <span class="phase-tag">SUPERVIVENCIA</span>
+                            <h2><ion-icon name="shield-checkmark-outline"></ion-icon> COMBATE</h2>
+                        </div>
+                    </div>
+                    <div class="card-body">
+                        <div class="task-list">
+                            <label class="task-item">
+                                <div class="task-content">
+                                    <div class="task-main">Snacks & Armor <span class="tag tag-combat">HOTKEY</span></div>
+                                    <div class="task-sub">Usa la Rueda de Armas (D-pad Arriba / C) para comer instantáneamente apuntando.</div>
+                                </div>
+                            </label>
+                             <label class="task-item">
+                                <div class="task-content">
+                                    <div class="task-main">Ghost Org (CEO) <span class="tag tag-combat">STEALTH</span></div>
+                                    <div class="task-sub">$12k. Oculta a todo el equipo y mercancía por 3 min. Vital para ventas en pública.</div>
                                 </div>
                             </label>
                             <label class="task-item">
                                 <div class="task-content">
-                                    <div class="task-main">Franklin: Imani Tech</div>
-                                    <div class="task-sub">Zona "Out of Sight" para ocultarte del radar.</div>
+                                    <div class="task-main">Imani "Out of Sight" <span class="tag tag-combat">DEFENSE</span></div>
+                                    <div class="task-sub">Llama a Franklin. Crea zona invisible de 500m. Útil para PvP o esconderse.</div>
+                                </div>
+                            </label>
+                            <label class="task-item">
+                                <div class="task-content">
+                                    <div class="task-main">Llamar a Lester <span class="tag tag-combat">WANTED</span></div>
+                                    <div class="task-sub">"Remove Wanted Level" es gratis si completaste Doomsday Heist.</div>
                                 </div>
                             </label>
                         </div>
@@ -168,7 +212,6 @@
 
         </div>
     </div>
-    <script src="script.js?v=2026.2"></script>
+    <script src="script.js?v=2026.3"></script>
 </body>
-
 </html>
