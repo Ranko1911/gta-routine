@@ -1,3 +1,9 @@
+// ==========================================
+// ELITE PROTOCOL ENGINE (v2026.2)
+// ==========================================
+
+const STORAGE_PREFIX = 'gta_elite_v26_';
+
 document.addEventListener('DOMContentLoaded', () => {
     // --- INITIALIZATION ---
     function init() {
@@ -30,7 +36,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
     // --- STATE MANAGEMENT ---
     function restoreCheckboxState() {
-        const STORAGE_PREFIX = 'gta_elite_v26_';
+        // Use global STORAGE_PREFIX
         checkboxes.forEach(checkbox => {
             const id = checkbox.dataset.id;
             const savedState = localStorage.getItem(STORAGE_PREFIX + id);
@@ -49,7 +55,6 @@ document.addEventListener('DOMContentLoaded', () => {
     }
 
     function saveState(id, isChecked) {
-        const STORAGE_PREFIX = 'gta_elite_v26_';
         localStorage.setItem(STORAGE_PREFIX + id, isChecked);
     }
 
@@ -61,7 +66,7 @@ document.addEventListener('DOMContentLoaded', () => {
             if (category === 'weekly-routine') msg = '¿Reiniciar progreso SEMANAL?';
 
             if (confirm(msg)) {
-                const STORAGE_PREFIX = 'gta_elite_v26.2_'; // Version Bump
+                // Use global STORAGE_PREFIX
                 checkboxes.forEach(cb => {
                     if (cb.dataset.category === category) {
                         cb.checked = false;
@@ -85,8 +90,7 @@ document.addEventListener('DOMContentLoaded', () => {
 // ==========================================
 // GLOBAL FUNCTIONS (Timers & Shared Logic)
 // ==========================================
-
-const STORAGE_PREFIX = 'gta_elite_v26_';
+// STORAGE_PREFIX is accessible here (defined at top)
 
 // --- CALCULATIONS ---
 function updateCalculations() {
@@ -182,9 +186,20 @@ window.startTimer = function (id, minutes) {
 function restoreTimers() {
     const buttons = document.querySelectorAll('button[onclick^="startTimer"]');
     buttons.forEach(btn => {
-        const match = btn.getAttribute('onclick').match(/'([^']+)'/);
-        if (match) {
-            const id = match[1];
+        let id;
+        // Priority 1: Data Attribute (Robust)
+        if (btn.dataset.timerId) {
+            id = btn.dataset.timerId;
+        }
+        // Priority 2: Regex (Legacy/Fallback)
+        else {
+            const match = btn.getAttribute('onclick').match(/'([^']+)'/);
+            if (match) {
+                id = match[1];
+            }
+        }
+
+        if (id) {
             const endTime = localStorage.getItem(STORAGE_PREFIX + 'timer_' + id);
             if (endTime && parseInt(endTime) > Date.now()) {
                 updateTimerUI(id, parseInt(endTime));

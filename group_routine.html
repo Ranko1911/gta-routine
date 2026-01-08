@@ -171,7 +171,8 @@
                             <div class="timer-header">
                                 <ion-icon name="timer-outline"></ion-icon> CD LÍDER (48m)
                             </div>
-                            <button class="btn sm-btn accent-btn" onclick="startTimer('grp_cayo', 48)">INICIAR</button>
+                            <button class="btn sm-btn accent-btn" data-timer-id="grp_cayo"
+                                onclick="startTimer('grp_cayo', 48)">INICIAR</button>
                         </div>
 
                         <div class="spacer" style="height: 1rem;"></div>
@@ -281,7 +282,7 @@
         </div>
     </div>
 
-    <script src="script.js"></script>
+    <script src="script.js?v=2026.2"></script>
     <script>
         function toggleCard(header) {
             header.parentElement.classList.toggle('collapsed');
