@@ -918,3 +918,10 @@ body {
     color: #8080ff;
     border-color: rgba(100, 100, 255, 0.3);
 }
+
+.tag-meta {
+    background: rgba(255, 215, 0, 0.15);
+    color: #ffd700;
+    border-color: rgba(255, 215, 0, 0.3);
+    box-shadow: 0 0 5px rgba(255, 215, 0, 0.2);
+}
