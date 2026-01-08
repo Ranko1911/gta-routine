@@ -862,3 +862,59 @@ body {
         text-align: center;
     }
 }
+
+/* --- TAGS (QoL Page) --- */
+.tag {
+    display: inline-block;
+    padding: 2px 6px;
+    border-radius: 4px;
+    font-size: 0.7rem;
+    font-weight: 800;
+    text-transform: uppercase;
+    margin-left: 6px;
+    vertical-align: middle;
+    letter-spacing: 0.5px;
+    border: 1px solid transparent;
+}
+
+.tag-daily {
+    background: rgba(0, 210, 255, 0.15);
+    color: #00d2ff;
+    border-color: rgba(0, 210, 255, 0.3);
+}
+
+.tag-money {
+    background: rgba(0, 255, 157, 0.15);
+    color: #00ff9d;
+    border-color: rgba(0, 255, 157, 0.3);
+}
+
+.tag-manage {
+    background: rgba(189, 0, 255, 0.15);
+    color: #bd00ff;
+    border-color: rgba(189, 0, 255, 0.3);
+}
+
+.tag-travel {
+    background: rgba(255, 165, 0, 0.15);
+    color: #ffa500;
+    border-color: rgba(255, 165, 0, 0.3);
+}
+
+.tag-combat {
+    background: rgba(255, 59, 59, 0.15);
+    color: #ff3b3b;
+    border-color: rgba(255, 59, 59, 0.3);
+}
+
+.tag-info {
+    background: rgba(255, 255, 255, 0.1);
+    color: #e0e0e0;
+    border-color: rgba(255, 255, 255, 0.2);
+}
+
+.tag-defense {
+    background: rgba(100, 100, 255, 0.15);
+    color: #8080ff;
+    border-color: rgba(100, 100, 255, 0.3);
+}
