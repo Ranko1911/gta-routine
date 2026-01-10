@@ -11,6 +11,7 @@ document.addEventListener('DOMContentLoaded', () => {
         restoreCheckboxState();
         restoreTimers(); // Restores UI for running timers
         updateCalculations();
+        restoreCounters(); // Restore counters after checkboxes
 
         // Start Global Ticker
         setInterval(tickTimers, 1000);
@@ -124,21 +125,22 @@ function updateCalculations() {
 
     checkboxes.forEach(cb => {
         const val = cb.dataset.value ? parseInt(cb.dataset.value) : 0;
+        const repeats = cb.dataset.repeats ? parseInt(cb.dataset.repeats) : 1;
 
         // CATALOG LOGIC (Always calculate if on catalog page, or check category)
         if (cb.dataset.category === 'catalog') {
-            catTotalValue += val;
+            catTotalValue += val * repeats;
             if (cb.checked) {
-                catOwnedValue += val;
+                catOwnedValue += val * repeats;
             }
         }
 
         // ROUTINE LOGIC
         if (cb.dataset.category === targetCategory) {
-            totalCount++;
+            totalCount++; // Counts as 1 task item regardless of repeats for progress bar
             if (cb.checked) {
                 checkedCount++;
-                total += val;
+                total += val * repeats;
             }
         }
     });
@@ -195,6 +197,52 @@ function popElement(el) {
 
 function triggerConfetti(el) {
     // Placeholder
+}
+
+
+// --- REPETITION COUNTERS ---
+function restoreCounters() {
+    const counters = document.querySelectorAll('.task-counter');
+    counters.forEach(counter => {
+        const input = counter.closest('.task-item').querySelector('input[type="checkbox"]');
+        if (!input) return;
+
+        const id = input.dataset.id;
+        const savedCount = localStorage.getItem(STORAGE_PREFIX + 'count_' + id);
+
+        if (savedCount) {
+            const countVal = parseInt(savedCount);
+            if (countVal > 1) {
+                updateCountUI(counter, input, countVal);
+            }
+        }
+    });
+}
+
+window.updateCount = function (btn, change) {
+    // Prevent event bubbling to the label (checkbox toggle)
+    event.preventDefault();
+    event.stopPropagation();
+
+    const counter = btn.closest('.task-counter');
+    const input = counter.closest('.task-item').querySelector('input[type="checkbox"]');
+
+    let currentCount = input.dataset.repeats ? parseInt(input.dataset.repeats) : 1;
+    let newCount = currentCount + change;
+
+    if (newCount < 1) newCount = 1;
+
+    updateCountUI(counter, input, newCount);
+
+    // Save state
+    localStorage.setItem(STORAGE_PREFIX + 'count_' + input.dataset.id, newCount);
+    updateCalculations();
+}
+
+function updateCountUI(counter, input, count) {
+    const display = counter.querySelector('.count-val');
+    display.textContent = count;
+    input.dataset.repeats = count;
 }
 
 
