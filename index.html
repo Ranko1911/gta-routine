@@ -28,15 +28,7 @@
                     <span class="label">SESIÓN ACTUAL</span>
                     <span class="value" id="total-earnings">$0</span>
                 </div>
-                <div class="stat-item progress-container">
-                    <div class="progress-labels">
-                        <span class="label">PROGRESO</span>
-                        <span class="value" id="progress-text">0%</span>
-                    </div>
-                    <div class="progress-bar-bg">
-                        <div class="progress-bar-fill" id="global-progress"></div>
-                    </div>
-                </div>
+
             </div>
 
             <nav class="main-nav">
@@ -190,60 +182,82 @@
             <!-- MIDDLE COLUMN: THE ANCHOR (Phase 2 & Timers) -->
             <div class="grid-column">
 
-                <!-- PHASE 2: CAYO -->
+                <!-- PHASE 2: MAIN LOOP -->
                 <div class="card glass-panel phase-card phase-2 glow-border">
                     <div class="card-header">
                         <div class="header-content">
                             <span class="phase-tag">FASE 2</span>
-                            <h2>EL GOLPE ANCHOR</h2>
+                            <h2>BUCLE PRINCIPAL</h2>
                         </div>
-                        <div class="time-est">60m</div>
+                        <div class="time-est">~2h</div>
                     </div>
                     <div class="card-body">
                         <div class="highlight-task">
                             <label class="task-item large">
-                                <input type="checkbox" data-id="cayo-perico" data-value="1400000"
-                                    data-category="routine">
+                                <input type="checkbox" data-id="dr-dre" data-value="1000000" data-category="routine">
                                 <span class="custom-check"></span>
                                 <div class="task-content">
-                                    <div class="task-main">GOLPE A CAYO PERICO</div>
-                                    <div class="task-sub">Solo • Longfin • Muelle N • Túnel</div>
+                                    <div class="task-main">CONTRATO DR. DRE</div>
+                                    <div class="task-sub">Agencia • Vip Contract • 1h 15m</div>
                                 </div>
-                                <span class="profit-badge gold">~$1.4m</span>
+                                <span class="profit-badge gold">$1m</span>
                             </label>
                         </div>
 
-                        <!-- TIMER WIDGET -->
-                        <div class="timer-widget" id="timer-cayo">
+                        <div class="highlight-task" style="margin-top: 10px;">
+                            <label class="task-item large">
+                                <input type="checkbox" data-id="cluckin-bell" data-value="500000"
+                                    data-category="routine">
+                                <span class="custom-check"></span>
+                                <div class="task-content">
+                                    <div class="task-main">CLUCKIN' BELL RAID</div>
+                                    <div class="task-sub">Vespucci PD • Setup + Finale • 45m</div>
+                                </div>
+                                <span class="profit-badge gold">$500k</span>
+                            </label>
+                        </div>
+
+                        <!-- TIMERS -->
+                        <div class="timer-widget" id="timer-dre">
                             <div class="timer-header">
                                 <ion-icon name="timer-outline"></ion-icon>
-                                <span>COOLDOWN (SOLO)</span>
+                                <span>COOLDOWN (DRE)</span>
                             </div>
-                            <div class="timer-display">02:24:00</div>
-                            <button class="btn accent-btn" data-timer-id="cayo"
-                                onclick="startTimer('cayo', 144)">INICIAR TIMER</button>
+                            <div class="timer-display">00:48:00</div>
+                            <button class="btn accent-btn" data-timer-id="dre"
+                                onclick="startTimer('dre', 48)">INICIAR</button>
+                        </div>
+                        <div class="timer-widget" id="timer-cluckin" style="margin-top: 5px;">
+                            <div class="timer-header">
+                                <ion-icon name="timer-outline"></ion-icon>
+                                <span>COOLDOWN (CLUCKIN)</span>
+                            </div>
+                            <div class="timer-display">00:48:00</div>
+                            <button class="btn accent-btn" data-timer-id="cluckin"
+                                onclick="startTimer('cluckin', 48)">INICIAR</button>
                         </div>
                     </div>
                 </div>
 
-                <!-- PHASE 4: FILLER -->
+                <!-- PHASE 4: ALTERNATIVAS -->
                 <div class="card glass-panel phase-card phase-4">
                     <div class="card-header">
                         <div class="header-content">
                             <span class="phase-tag">FASE 4</span>
-                            <h2>RELLENO (OPCIONAL)</h2>
+                            <h2>ALTERNATIVAS</h2>
                         </div>
                     </div>
                     <div class="card-body">
                         <div class="task-list">
                             <label class="task-item">
-                                <input type="checkbox" data-id="dr-dre" data-value="1000000" data-category="routine">
+                                <input type="checkbox" data-id="cayo-perico" data-value="1400000"
+                                    data-category="routine">
                                 <span class="custom-check"></span>
                                 <div class="task-content">
-                                    <div class="task-main">Contrato Dr. Dre</div>
-                                    <div class="task-sub">Agencia. 1h 15m.</div>
+                                    <div class="task-main">Cayo Perico</div>
+                                    <div class="task-sub">Solo • Muelle Norte.</div>
                                 </div>
-                                <span class="profit-badge">+$1m</span>
+                                <span class="profit-badge">~$1.4m</span>
                             </label>
 
                             <label class="task-item">
