@@ -15,6 +15,11 @@ document.addEventListener('DOMContentLoaded', () => {
 
         // Start Global Ticker
         setInterval(tickTimers, 1000);
+
+        // Request Notification Permission
+        if ("Notification" in window) {
+            Notification.requestPermission();
+        }
     }
 
     // Fix for missing custom-check spans in older HTML structures
@@ -305,6 +310,8 @@ function tickTimers() {
             } else {
                 localStorage.removeItem(STORAGE_PREFIX + 'timer_' + id);
                 resetTimerUI(id);
+                // Notification
+                sendNotification("Elite Protocol", `El temporizador ${id} ha finalizado.`);
             }
         }
     });
@@ -381,3 +388,12 @@ window.toggleCard = function (header) {
         card.classList.toggle('collapsed');
     }
 };
+
+// --- NOTIFICATIONS ---
+function sendNotification(title, body) {
+    if (!("Notification" in window)) return;
+
+    if (Notification.permission === "granted") {
+        new Notification(title, { body: body, icon: 'https://cdn-icons-png.flaticon.com/512/3602/3602145.png' });
+    }
+}
