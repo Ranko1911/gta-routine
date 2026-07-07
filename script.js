@@ -40,6 +40,7 @@ document.addEventListener('DOMContentLoaded', () => {
     const resetBtnGrp = document.getElementById('reset-btn-grp');
     const resetBtnWeekly = document.getElementById('reset-btn-weekly');
     const resetBtnCatalog = document.getElementById('reset-btn-catalog');
+    const resetBtnRetirement = document.getElementById('reset-btn-retirement');
 
     // --- STATE MANAGEMENT ---
     function restoreCheckboxState() {
@@ -72,6 +73,7 @@ document.addEventListener('DOMContentLoaded', () => {
             let msg = '¿Reiniciar progreso de la sesión?';
             if (category === 'weekly-routine') msg = '¿Reiniciar progreso SEMANAL?';
             if (category === 'catalog') msg = '¿Reiniciar TODA la colección del catálogo?';
+            if (category === 'retirement-routine') msg = '¿Reiniciar progreso de JUBILACIÓN?';
 
             if (confirm(msg)) {
                 // Use global STORAGE_PREFIX
@@ -90,6 +92,7 @@ document.addEventListener('DOMContentLoaded', () => {
     attachReset(resetBtnGrp, 'group-routine');
     attachReset(resetBtnWeekly, 'weekly-routine');
     attachReset(resetBtnCatalog, 'catalog');
+    attachReset(resetBtnRetirement, 'retirement-routine');
 
 
     // Run Init
@@ -106,6 +109,7 @@ function updateCalculations() {
     const earningsDisplay = document.getElementById('total-earnings');
     const grpEarningsDisplay = document.getElementById('grp-earnings');
     const weeklyEarningsDisplay = document.getElementById('weekly-earnings');
+    const retirementEarningsDisplay = document.getElementById('retirement-earnings');
     const progressBar = document.getElementById('global-progress');
     const progressText = document.getElementById('progress-text');
     const checkboxes = document.querySelectorAll('input[type="checkbox"]');
@@ -127,6 +131,7 @@ function updateCalculations() {
     let targetCategory = 'routine';
     if (grpEarningsDisplay) targetCategory = 'group-routine';
     if (weeklyEarningsDisplay) targetCategory = 'weekly-routine';
+    if (retirementEarningsDisplay) targetCategory = 'retirement-routine';
 
     checkboxes.forEach(cb => {
         const val = cb.dataset.value ? parseInt(cb.dataset.value) : 0;
@@ -171,6 +176,10 @@ function updateCalculations() {
     if (weeklyEarningsDisplay) {
         weeklyEarningsDisplay.textContent = formatMoney(total);
         popElement(weeklyEarningsDisplay);
+    }
+    if (retirementEarningsDisplay) {
+        retirementEarningsDisplay.textContent = formatMoney(total);
+        popElement(retirementEarningsDisplay);
     }
 
     // Update Catalog Display

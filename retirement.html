@@ -1,0 +1,256 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Elite Protocol - Retirement Routine</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css?v=2026.2">
+    <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
+</head>
+
+<body>
+    <div class="app-container">
+
+        <!-- TOP BAR -->
+        <header class="top-bar">
+            <div class="logo-area">
+                <h1>RETIREMENT <span class="highlight">PROTOCOL</span></h1>
+                <span class="version-tag">ChriSnake 2026</span>
+            </div>
+
+            <div class="global-stats">
+                <div class="stat-item">
+                    <span class="label">GANANCIA ESTIMADA</span>
+                    <span class="value" id="retirement-earnings">$0</span>
+                </div>
+            </div>
+
+            <nav class="main-nav">
+                <a href="index.html" class="nav-link">
+                    <ion-icon name="person"></ion-icon>
+                    <span>Solo</span>
+                </a>
+                <a href="group_routine.html" class="nav-link">
+                    <ion-icon name="people"></ion-icon>
+                    <span>Group</span>
+                </a>
+                <a href="weekly_routine.html" class="nav-link">
+                    <ion-icon name="calendar"></ion-icon>
+                    <span>Weekly</span>
+                </a>
+                <a href="retirement.html" class="nav-link active">
+                    <ion-icon name="cafe-outline"></ion-icon>
+                    <span>Retire</span>
+                </a>
+                <a href="requirements.html" class="nav-link">
+                    <ion-icon name="book"></ion-icon>
+                    <span>Guide</span>
+                </a>
+                <a href="catalog.html" class="nav-link">
+                    <ion-icon name="cart"></ion-icon>
+                    <span>Catalog</span>
+                </a>
+                <a href="quality_of_life.html" class="nav-link">
+                    <ion-icon name="flash"></ion-icon>
+                    <span>QoL</span>
+                </a>
+            </nav>
+
+            <div class="actions">
+                <button id="reset-btn-retirement" class="btn icon-btn" title="Reiniciar Ciclo">
+                    <ion-icon name="refresh-outline"></ion-icon>
+                </button>
+            </div>
+        </header>
+
+        <div class="main-grid">
+
+            <!-- COL 1: PREPARACIÓN PASIVA -->
+            <div class="grid-column">
+                <div class="card glass-panel phase-card phase-1 glow-border">
+                    <div class="card-header">
+                        <div class="header-content">
+                            <span class="phase-tag" style="background: var(--accent-purple); color: #fff;">FASE 1</span>
+                            <h2>GESTIÓN PASIVA</h2>
+                        </div>
+                        <div class="time-est">10m</div>
+                    </div>
+                    <div class="card-body">
+                        <div class="task-list">
+                            <label class="task-item">
+                                <input type="checkbox" data-id="ret-casino" data-category="retirement-routine">
+                                <span class="custom-check"></span>
+                                <div class="task-content">
+                                    <div class="task-main">Ruleta y Fichas (Casino)</div>
+                                    <div class="task-sub">Giro diario gratis + Bono taquilla.</div>
+                                </div>
+                                <span class="profit-badge luck">Suerte</span>
+                            </label>
+
+                            <label class="task-item">
+                                <input type="checkbox" data-id="ret-stash" data-value="75000" data-category="retirement-routine">
+                                <span class="custom-check"></span>
+                                <div class="task-content">
+                                    <div class="task-main">Alijo Oculto (Stash House)</div>
+                                    <div class="task-sub">Raid diario. Suministros gratis.</div>
+                                </div>
+                                <span class="profit-badge savings">+$75k</span>
+                            </label>
+
+                            <label class="task-item">
+                                <input type="checkbox" data-id="ret-acid" data-category="retirement-routine">
+                                <span class="custom-check"></span>
+                                <div class="task-content">
+                                    <div class="task-main">Lab. Ácido: Acelerar</div>
+                                    <div class="task-sub">Aumentar velocidad de producción diaria.</div>
+                                </div>
+                            </label>
+
+                            <label class="task-item">
+                                <input type="checkbox" data-id="ret-bail-agents" data-category="retirement-routine">
+                                <span class="custom-check"></span>
+                                <div class="task-content">
+                                    <div class="task-main">Mandar Agentes de Fianzas</div>
+                                    <div class="task-sub">Terminal de oficina. Dinero pasivo.</div>
+                                </div>
+                            </label>
+
+                            <label class="task-item">
+                                <input type="checkbox" data-id="ret-ceo-staff" data-value="-25000" data-category="retirement-routine">
+                                <span class="custom-check"></span>
+                                <div class="task-content">
+                                    <div class="task-main">Personal de Cajas (Lupe)</div>
+                                    <div class="task-sub">Pagar $25k/almacén para obtener cajas.</div>
+                                </div>
+                                <span class="profit-badge" style="background: rgba(255, 68, 68, 0.1); color: var(--accent-red); border-color: var(--accent-red);">-25k</span>
+                            </label>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- COL 2: ACCIONES ACTIVAS RÁPIDAS -->
+            <div class="grid-column">
+                <div class="card glass-panel phase-card phase-2">
+                    <div class="card-header">
+                        <div class="header-content">
+                            <span class="phase-tag">FASE 2</span>
+                            <h2>GESTIÓN ACTIVA</h2>
+                        </div>
+                        <div class="time-est">20m</div>
+                    </div>
+                    <div class="card-body">
+                        <div class="task-list">
+                            <label class="task-item large">
+                                <input type="checkbox" data-id="ret-mostwanted" data-value="120000" data-category="retirement-routine">
+                                <span class="custom-check"></span>
+                                <div class="task-content">
+                                    <div class="task-main">Fianza: Más Buscado</div>
+                                    <div class="task-sub">Cazar objetivo principal. Capturar vivo.</div>
+                                </div>
+                                <span class="profit-badge gold">+$120k</span>
+                            </label>
+
+                            <div class="timer-widget compact" id="timer-ret_mostwanted">
+                                <div class="timer-header">
+                                    <ion-icon name="timer-outline"></ion-icon> Cooldown Diario (24h)
+                                </div>
+                                <button class="btn sm-btn accent-btn" data-timer-id="ret_mostwanted"
+                                    onclick="startTimer('ret_mostwanted', 1440)">INICIAR</button>
+                            </div>
+
+                            <label class="task-item">
+                                <input type="checkbox" data-id="ret-tow" data-value="35000" data-category="retirement-routine">
+                                <span class="custom-check"></span>
+                                <div class="task-content">
+                                    <div class="task-main">Remolcar coche (Grúa)</div>
+                                    <div class="task-sub">Desguace. Sube popularidad.</div>
+                                </div>
+                                <span class="profit-badge">+$35k</span>
+                            </label>
+
+                            <label class="task-item">
+                                <input type="checkbox" data-id="ret-ammu" data-value="50000" data-category="retirement-routine">
+                                <span class="custom-check"></span>
+                                <div class="task-content">
+                                    <div class="task-main">Excedentes Ammu-Nation</div>
+                                    <div class="task-sub">Duneloader del Búnker a tienda.</div>
+                                </div>
+                                <span class="profit-badge gold">+$50k</span>
+                            </label>
+
+                            <label class="task-item">
+                                <input type="checkbox" data-id="ret-shop-cars" data-value="25000" data-category="retirement-routine">
+                                <span class="custom-check"></span>
+                                <div class="task-content">
+                                    <div class="task-main">Coche del Taller (Auto Shop)</div>
+                                    <div class="task-sub">Modificar y enviar empleados a entregar.</div>
+                                </div>
+                                <span class="profit-badge">+$25k</span>
+                            </label>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- COL 3: RECOLECCIÓN Y SUMINISTROS -->
+            <div class="grid-column">
+                <div class="card glass-panel phase-card phase-3">
+                    <div class="card-header">
+                        <div class="header-content">
+                            <span class="phase-tag" style="background: var(--accent-yellow); color: #000;">FASE 3</span>
+                            <h2>RECOLECCIÓN</h2>
+                        </div>
+                        <div class="time-est">10m</div>
+                    </div>
+                    <div class="card-body">
+                        <div class="task-list">
+                            <label class="task-item">
+                                <input type="checkbox" data-id="ret-safe-nightclub" data-value="50000" data-category="retirement-routine">
+                                <span class="custom-check"></span>
+                                <div class="task-content">
+                                    <div class="task-main">Caja Club Nocturno</div>
+                                    <div class="task-sub">Caja fuerte ($50k por día de juego).</div>
+                                </div>
+                                <span class="profit-badge gold">+$50k</span>
+                            </label>
+
+                            <label class="task-item">
+                                <input type="checkbox" data-id="ret-safe-agency" data-value="20000" data-category="retirement-routine">
+                                <span class="custom-check"></span>
+                                <div class="task-content">
+                                    <div class="task-main">Caja de Agencia</div>
+                                    <div class="task-sub">Basado en contratos completados.</div>
+                                </div>
+                                <span class="profit-badge">+$20k</span>
+                            </label>
+
+                            <label class="task-item">
+                                <input type="checkbox" data-id="ret-club-pop" data-category="retirement-routine">
+                                <span class="custom-check"></span>
+                                <div class="task-content">
+                                    <div class="task-main">Popularidad Club (Modo Pasivo)</div>
+                                    <div class="task-sub">Entra en pasivo para forzar "echar borracho".</div>
+                                </div>
+                            </label>
+
+                            <div class="alert-box" style="margin-top: 10px;">
+                                <ion-icon name="bulb-outline"></ion-icon>
+                                <small><b>Regla de Oro:</b> SIEMPRE compra suministros ($60k/$75k) en lugar de robarlos si tus negocios están mejorados. El tiempo que ahorras lo usas para divertirte o ganar dinero de forma activa.</small>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </div>
+
+    <script src="script.js?v=2026.3"></script>
+</body>
+
+</html>

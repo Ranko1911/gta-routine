@@ -44,6 +44,10 @@
                     <ion-icon name="calendar"></ion-icon>
                     <span>Weekly</span>
                 </a>
+                <a href="retirement.html" class="nav-link">
+                    <ion-icon name="cafe-outline"></ion-icon>
+                    <span>Retire</span>
+                </a>
                 <a href="requirements.html" class="nav-link">
                     <ion-icon name="book"></ion-icon>
                     <span>Guide</span>
@@ -173,10 +177,31 @@
 
                             <label class="task-item">
                                 <input type="checkbox" data-id="mct-manage" data-category="routine">
+                                <span class="custom-check"></span>
                                 <div class="task-content">
                                     <div class="task-main">Gestión MCT (Arcade)</div>
                                     <div class="task-sub">Compra sumis / Pop. Club.</div>
                                 </div>
+                            </label>
+
+                            <label class="task-item">
+                                <input type="checkbox" data-id="bail-mostwanted" data-value="120000" data-category="routine">
+                                <span class="custom-check"></span>
+                                <div class="task-content">
+                                    <div class="task-main">Fianza: Más Buscado</div>
+                                    <div class="task-sub">Oficina de Fianzas • Capturar vivo.</div>
+                                </div>
+                                <span class="profit-badge gold">+$120k</span>
+                            </label>
+
+                            <label class="task-item">
+                                <input type="checkbox" data-id="wildlife-photo" data-value="100000" data-category="routine">
+                                <span class="custom-check"></span>
+                                <div class="task-content">
+                                    <div class="task-main">Fotos de Fauna (3)</div>
+                                    <div class="task-sub">Cámara de móvil • Bosques / Desierto.</div>
+                                </div>
+                                <span class="profit-badge">+$100k</span>
                             </label>
                         </div>
                     </div>
@@ -348,12 +373,30 @@
 
                             <label class="task-item">
                                 <input type="checkbox" data-id="salvage-tow" data-value="40000" data-category="routine">
+                                <span class="custom-check"></span>
                                 <div class="task-content">
                                     <div class="task-main">Desguace: Grúa x2</div>
                                     <div class="task-sub">Mantener pasivo.</div>
                                 </div>
                                 <span class="profit-badge">Inv.</span>
                             </label>
+
+                            <!-- BAIL OFFICE STANDARD BOUNTY -->
+                            <div class="task-block">
+                                <label class="task-item">
+                                    <input type="checkbox" data-id="bail-standard" data-value="37500" data-category="routine">
+                                    <span class="custom-check"></span>
+                                    <div class="task-content">
+                                        <div class="task-main">Fianza Estándar</div>
+                                        <div class="task-sub">Bounty Hunt • Capturar vivo.</div>
+                                    </div>
+                                    <span class="profit-badge">+$37.5k</span>
+                                </label>
+                                <div class="mini-timer" id="timer-bail">
+                                    <span>CD: 48m</span>
+                                    <button class="btn sm-btn" onclick="startTimer('bail', 48)">Start</button>
+                                </div>
+                            </div>
                         </div>
                     </div>
                 </div>

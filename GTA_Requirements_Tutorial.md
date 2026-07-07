@@ -145,3 +145,19 @@ Para el "Golpe del Juicio Final".
 2. **Uso:**
     * Permite alojar los Actos I, II y III del Golpe del Juicio Final.
     * Almacena el Avenger (avión de combate).
+
+---
+
+## 🏢 10. Oficina de Fianzas (Bail Office)
+
+Para el negocio de cazarrecompensas (Bottom Dollar Bounties), disponible en consolas de nueva generación y PC.
+
+1. **Compra:**
+    * Móvil -> **Maze Bank Foreclosures**.
+    * **Ubicación:** Downtown Vinewood o Del Perro son excelentes opciones céntricas.
+    * *Evita:* Paleto Bay (cooldowns de viaje extremadamente altos).
+2. **Función:**
+    * **Objetivo Más Buscado (Daily):** Un objetivo de alto valor al día (~$120,000). Utiliza la Pistola Aturdidora (Stun Gun) para capturarlo vivo, ya que matarlo reduce el pago en un 75%. Cooldown de 24h.
+    * **Fianzas Estándar:** 3 objetivos de menor valor en el tablero (~$37,500 cada uno) con un cooldown de 48 minutos.
+    * **Agentes de Fianzas:** Contrata personal (hasta 2 agentes) desde la terminal para generar ingresos pasivos constantes automáticamente.
+

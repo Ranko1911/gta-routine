@@ -1,6 +1,6 @@
-# 💰 Rutina de Ingresos Máximos - GTA V Enhanced (PS5/Xbox Series)
+# 💰 Rutina de Ingresos Máximos - GTA V Enhanced (PC / PS5 / Xbox Series)
 
-Esta guía está diseñada para maximizar el dinero por hora ($/h) aprovechando las ventajas de la versión de nueva generación (tiempos de carga rápidos y vehículos HSW).
+Esta guía está diseñada para maximizar el dinero por hora ($/h) aprovechando las ventajas de la versión de nueva generación (tiempos de carga rápidos y vehículos HSW), ahora totalmente disponible también en PC.
 
 ---
 
@@ -12,10 +12,11 @@ Para ejecutar este ciclo al 100%, necesitas:
 * **Agencia:** Para contratos de seguridad y el contrato VIP de Dr. Dre.
 * **Laboratorio de Ácido (Acid Lab):** Con la mejora de equipo instalada.
 * **Club Nocturno:** Totalmente mejorado para ingresos pasivos.
+* **Oficina de Fianzas:** Para la caza de recompensas diaria y horaria.
 
 ---
 
-## ⏱️ 2. La Rutina (Ciclo de 2 Horas)
+## ⏱️ 2. La Rutina Activa (Ciclo de 2 Horas)
 
 ### 🟢 Fase 1: Inicio de Sesión (Calentamiento)
 
@@ -29,6 +30,10 @@ Para ejecutar este ciclo al 100%, necesitas:
     * *Beneficio:* Reabastece GRATIS un negocio (Búnker o Ácido).
 4. **Caja G (G's Cache):** Caja morada en el mapa.
     * *Ganancia:* ~$16,000 + munición/snacks.
+5. **Fotos de Fauna (Diario):** Fotografía los 3 animales solicitados por correo.
+    * *Ganancia:* $100,000 ($20k por foto + $40k bono).
+6. **Fianza: Más Buscado (Oficina de Fianzas):**
+    * *Ganancia:* ~$120,000. Captura al objetivo vivo con Pistola Aturdidora. Cooldown de 24h.
 
 ### 🟡 Fase 2: Gestión Pasiva
 
@@ -54,22 +59,52 @@ Para ejecutar este ciclo al 100%, necesitas:
 1. **Venta de Laboratorio de Ácido:**
     * Vende en **Sesión Pública** para el bono de alta demanda.
     * *Ganancia:* ~$350,000 - $500,000.
-2. **Ammu-Nation (Búnker):**
+2. **Fianzas Estándar:**
+    * Realiza los contratos estándar en el tablero. Captúralos vivos.
+    * *Ganancia:* ~$37,500 por fianza (48 min cooldown).
+3. **Ammu-Nation (Búnker):**
     * Entrega las partes de armas sobrantes (Camión Dune Loader).
     * *Ganancia:* $50,000 (5 min).
-3. **Asesinato por Teléfono (Agencia):**
+4. **Asesinato por Teléfono (Agencia):**
     * Llama a Franklin. Cumple el bono específico.
-    * *Ganancia:* $45,000 (5 min).
-4. **Exportar Bienes Variados:**
+    * *Ganancia:* $45,000 (10 min CD).
+5. **Exportar Bienes Variados:**
     * Desde la oficina de CEO (habla con la asistente).
     * *Ganancia:* $50,000 (5 min).
-5. **Opcional (Si sobra tiempo):**
+6. **Opcional (Si sobra tiempo):**
     * **Contrato Dr. Dre (Agencia):** $1,000,000 (Largo).
     * **Robo al Union Depository (Taller):** $270,000 (20 min).
 
 ---
 
-## 📊 Resumen de Ganancias (Estimado por Sesión)
+## ☕ 3. La Alternativa Pasiva: Protocolo de Jubilación (ChriSnake 2026)
+
+Esta alternativa está diseñada para jugadores veteranos que quieren **retirarse del farmeo activo de golpes** y ganar millones de manera relajada mediante un ciclo de **40 minutos** al día.
+
+### Las Reglas de Oro de la Jubilación
+1. **SIEMPRE compra suministros:** No pierdas tiempo robando suministros. Si tus negocios (Búnker/Ácido) tienen las mejoras compradas, el coste de comprar suministros ($60k/$75k) se amortiza solo y te libera tiempo valioso.
+2. **Evita los negocios basura:** Negocios como *Documentos Falsificados* o *Marihuana* tienen un retorno bajísimo. Manténlos activos sin stock únicamente para alimentar de forma pasiva el Club Nocturno, pero nunca los reabastezcas ni realices sus misiones de venta.
+3. **Optimiza la popularidad del Club:** Entra siempre en **Modo Pasivo** al club para garantizar que la tarea sea "Echar a un borracho" (toma 10 segundos) en lugar de llevar a un cliente borracho a un hospital o su casa (toma 5 minutos). Mantén tu popularidad al 100% para recibir **$50,000** limpios cada 48 minutos.
+
+### El Ciclo Diario Completo (40 Minutos activos)
+* **Gestión Inicial (10m):**
+  * Spin a la Ruleta del Casino y recoger bono.
+  * Saquear el Alijo Oculto (Stash House) diario (otorga suministros gratis a un negocio).
+  * Acelerar producción en el Lab de Ácido (1 vez al día).
+  * Enviar a los 2 agentes de la Oficina de Fianzas pasivamente a buscar fugitivos.
+  * Pagar a Lupe ($25k) en tus Almacenes de Cajas CEO para que busque mercancía pasivamente.
+* **Acciones de Alta Remuneración (20m):**
+  * Realizar la fianza de **Más Buscado** diario (+$120k). *¡Usa la pistola aturdidora! Matar al objetivo reduce el pago a un 25%.*
+  * Remolcar 2 coches con la grúa del Desguace. Esto aumenta los ingresos pasivos de la caja fuerte a `$24,000` diarios y da dinero al desguazar.
+  * Modificar coches de clientes en el Taller (Auto Shop) y enviar a tus empleados a entregarlos de forma pasiva.
+  * Entregar el Duneloader de Excedentes de Ammu-Nation (+$50k).
+* **Recolección final (10m):**
+  * Cobrar las cajas fuertes llenas (Club Nocturno: $250k máx, Agencia: $250k máx, Desguace, Fianzas).
+  * Reponer suministros faltantes comprándolos.
+
+---
+
+## 📊 Resumen de Ganancias (Estimado por Sesión Activa)
 
 | Actividad | Tiempo | Ganancia Aprox. |
 | :--- | :--- | :--- |
@@ -79,8 +114,11 @@ Para ejecutar este ciclo al 100%, necesitas:
 | Grúa (Desguace) | 5 min | $35,000 |
 | Ammu-Nation (Búnker) | 5 min | $50,000 |
 | Asesinato Teléfono | 5 min | $45,000 |
+| Fianza: Más Buscado | 10 min | $120,000 |
+| Fianza Estándar | 10 min | $37,500 |
+| Fotos de Fauna (Diario) | 5 min | $100,000 |
 | Caja Fuerte Club | - | $100,000 |
-| **TOTAL** | **~2 Horas** | **$2,380,000+** |
+| **TOTAL** | **~2.5 Horas** | **$2,637,500+** |
 
 ---
 
@@ -88,4 +126,4 @@ Para ejecutar este ciclo al 100%, necesitas:
 
 1. **Jueves de Bonos:** Revisa siempre las actualizaciones semanales de Rockstar. Si hay "Doble Dinero" en Búnker o Cajas, prioriza eso sobre esta rutina.
 2. **Menú Rápido:** Compra munición y chalecos desde el menú de interacción (Inventario) para no perder tiempo viajando a Ammu-Nation.
-3. **Salir Rápido:** Si te atacan vendiendo el Ácido en pública, cierra el juego inmediatamente (botón PS/Xbox -> Cerrar App). Solo perderás una pizca de producto en lugar de todo el cargamento.
+3. **Salir Rápido:** Si te atacan vendiendo el Ácido en pública, cierra el juego inmediatamente (botón PS/Xbox / ALT+F4 en PC). Solo perderás una pizca de producto en lugar de todo el cargamento.
