@@ -10,62 +10,15 @@
     <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600;800&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="../assets/css/style.css?v=2026.3">
     <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
+    <script src="../assets/js/components.js?v=2026.3"></script>
 </head>
 
 <body>
     <div class="app-container">
 
-        <!-- TOP BAR -->
-        <header class="top-bar">
-            <div class="logo-area">
-                <h1>ELITE <span class="highlight">WEEKLY</span></h1>
-                <span class="version-tag">Reset: Jueves</span>
-            </div>
+        <!-- TOP BAR: Stats & Controls (Centralized Custom Element) -->
+        <elite-header active="weekly"></elite-header>
 
-            <div class="global-stats">
-                <div class="stat-item">
-                    <span class="label">GANANCIA SEMANAL</span>
-                    <span class="value" id="weekly-earnings">$0</span>
-                </div>
-            </div>
-
-            <nav class="main-nav">
-                <a href="../index.html" class="nav-link">
-                    <ion-icon name="person"></ion-icon>
-                    <span>Solo</span>
-                </a>
-                <a href="group_routine.html" class="nav-link">
-                    <ion-icon name="people"></ion-icon>
-                    <span>Group</span>
-                </a>
-                <a href="weekly_routine.html" class="nav-link active">
-                    <ion-icon name="calendar"></ion-icon>
-                    <span>Weekly</span>
-                </a>
-                <a href="retirement.html" class="nav-link">
-                    <ion-icon name="cafe-outline"></ion-icon>
-                    <span>Retire</span>
-                </a>
-                <a href="requirements.html" class="nav-link">
-                    <ion-icon name="book"></ion-icon>
-                    <span>Guide</span>
-                </a>
-                <a href="catalog.html" class="nav-link">
-                    <ion-icon name="cart"></ion-icon>
-                    <span>Catálogo</span>
-                </a>
-                <a href="quality_of_life.html" class="nav-link">
-                    <ion-icon name="flash"></ion-icon>
-                    <span>QoL</span>
-                </a>
-            </nav>
-
-            <div class="actions">
-                <button id="reset-btn-weekly" class="btn icon-btn" title="Reiniciar Semana">
-                    <ion-icon name="refresh-circle-outline"></ion-icon>
-                </button>
-            </div>
-        </header>
 
         <div class="main-grid">
 

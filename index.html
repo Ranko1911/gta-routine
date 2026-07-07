@@ -11,63 +11,15 @@
     <link rel="stylesheet" href="assets/css/style.css?v=2026.3">
     <!-- Ionicons for better visuals -->
     <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
+    <script src="assets/js/components.js?v=2026.3"></script>
 </head>
 
 <body>
     <div class="app-container">
 
-        <!-- TOP BAR: Stats & Controls -->
-        <header class="top-bar">
-            <div class="logo-area">
-                <h1>ELITE <span class="highlight">PROTOCOL</span></h1>
-                <span class="version-tag">v26.1</span>
-            </div>
+        <!-- TOP BAR: Stats & Controls (Centralized Custom Element) -->
+        <elite-header active="solo"></elite-header>
 
-            <div class="global-stats">
-                <div class="stat-item">
-                    <span class="label">SESIÓN ACTUAL</span>
-                    <span class="value" id="total-earnings">$0</span>
-                </div>
-
-            </div>
-
-            <nav class="main-nav">
-                <a href="index.html" class="nav-link active">
-                    <ion-icon name="person"></ion-icon>
-                    <span>Solo</span>
-                </a>
-                <a href="pages/group_routine.html" class="nav-link">
-                    <ion-icon name="people"></ion-icon>
-                    <span>Group</span>
-                </a>
-                <a href="pages/weekly_routine.html" class="nav-link">
-                    <ion-icon name="calendar"></ion-icon>
-                    <span>Weekly</span>
-                </a>
-                <a href="pages/retirement.html" class="nav-link">
-                    <ion-icon name="cafe-outline"></ion-icon>
-                    <span>Retire</span>
-                </a>
-                <a href="pages/requirements.html" class="nav-link">
-                    <ion-icon name="book"></ion-icon>
-                    <span>Guide</span>
-                </a>
-                <a href="pages/catalog.html" class="nav-link">
-                    <ion-icon name="cart"></ion-icon>
-                    <span>Catalog</span>
-                </a>
-                <a href="pages/quality_of_life.html" class="nav-link">
-                    <ion-icon name="flash"></ion-icon>
-                    <span>QoL</span>
-                </a>
-            </nav>
-
-            <div class="actions">
-                <button id="reset-btn" class="btn icon-btn" title="Reiniciar Día">
-                    <ion-icon name="refresh-outline"></ion-icon>
-                </button>
-            </div>
-        </header>
 
         <div class="main-grid">
 
@@ -405,12 +357,6 @@
     </div>
 
     <script src="assets/js/script.js?v=2026.3"></script>
-    <script>
-        // Inline toggle for requirements card
-        function toggleCard(header) {
-            header.parentElement.classList.toggle('collapsed');
-        }
-    </script>
 </body>
 
 </html>

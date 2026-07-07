@@ -97,6 +97,23 @@ document.addEventListener('DOMContentLoaded', () => {
 
     // Run Init
     init();
+
+    // --- CATALOG SEARCH ---
+    const searchInput = document.getElementById('catalog-search');
+    if (searchInput) {
+        searchInput.addEventListener('input', (e) => {
+            const term = e.target.value.toLowerCase();
+            const items = document.querySelectorAll('.catalog-item');
+            items.forEach(item => {
+                const text = item.innerText.toLowerCase();
+                if (text.includes(term)) {
+                    item.style.display = 'flex';
+                } else {
+                    item.style.display = 'none';
+                }
+            });
+        });
+    }
 });
 
 // ==========================================
@@ -210,8 +227,37 @@ function popElement(el) {
 }
 
 function triggerConfetti(el) {
-    // Placeholder
+    if (!el.checked) return; // Only trigger when checked
+    const rect = el.getBoundingClientRect();
+    const x = rect.left + rect.width / 2;
+    const y = rect.top + rect.height / 2;
+
+    const colors = ['#00ff9d', '#00d2ff', '#bd00ff', '#ff3b3b', '#ffd700'];
+
+    for (let i = 0; i < 20; i++) {
+        const p = document.createElement('div');
+        p.className = 'confetti-particle';
+        p.style.backgroundColor = colors[Math.floor(Math.random() * colors.length)];
+        
+        // Physics randomization
+        const angle = Math.random() * Math.PI * 2;
+        const velocity = 30 + Math.random() * 60;
+        const xDiff = Math.cos(angle) * velocity;
+        const yDiff = Math.sin(angle) * velocity;
+        
+        p.style.setProperty('--x', `${xDiff}px`);
+        p.style.setProperty('--y', `${yDiff}px`);
+        
+        p.style.left = `${x + window.scrollX}px`;
+        p.style.top = `${y + window.scrollY}px`;
+        
+        document.body.appendChild(p);
+        
+        // Remove after animation completes
+        setTimeout(() => p.remove(), 800);
+    }
 }
+
 
 
 // --- REPETITION COUNTERS ---
@@ -392,7 +438,7 @@ function pad(num) {
 }
 
 window.toggleCard = function (header) {
-    const card = header.closest('.card');
+    const card = header.closest('.card') || header.parentElement;
     if (card) {
         card.classList.toggle('collapsed');
     }
