@@ -161,3 +161,20 @@ Para el negocio de cazarrecompensas (Bottom Dollar Bounties), disponible en cons
     * **Fianzas Estándar:** 3 objetivos de menor valor en el tablero (~$37,500 cada uno) con un cooldown de 48 minutos.
     * **Agentes de Fianzas:** Contrata personal (hasta 2 agentes) desde la terminal para generar ingresos pasivos constantes automáticamente.
 
+---
+
+## 🚓 11. Vehículos de Policía (Para Trabajo de Vigilante de Vincent)
+
+Obligatorios para activar las misiones de Trabajo de Vigilante (LSPD Dispatch Work) solicitadas por Vincent.
+
+1. **Cómo Desbloquear:**
+    *   **Vapid Stanier LE Cruiser**: Completa la misión inicial "Fondo de Maniobra" (Slush Fund) del Cluckin' Bell Farm Raid para desbloquear el precio especial (Trade Price). Completa la finale del mismo golpe para desbloquear su compra.
+    *   **Bravado Gauntlet Interceptor**: Completa la finale del Cluckin' Bell Farm Raid como líder para desbloquear su compra.
+2. **Compra:**
+    *   Móvil -> Internet -> **Warstock Cache & Carry**.
+    *   **Stanier LE Cruiser**: ~$4,690,000 (Trade Price: $3,517,500).
+    *   **Gauntlet Interceptor**: ~$5,420,000 (Trade Price: $4,065,000).
+3. **Uso:**
+    *   Solicita la patrulla al mecánico, súbete al vehículo y llama a **Vincent** desde el teléfono o presiona el botón interactivo indicado para iniciar el **Trabajo de Vigilante** (recompensa de **$25,000** por misión, cooldown de **1 minuto**).
+
+

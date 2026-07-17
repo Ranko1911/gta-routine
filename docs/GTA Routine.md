@@ -13,6 +13,8 @@ Para ejecutar este ciclo al 100%, necesitas:
 * **Laboratorio de Ácido (Acid Lab):** Con la mejora de equipo instalada.
 * **Club Nocturno:** Totalmente mejorado para ingresos pasivos.
 * **Oficina de Fianzas:** Para la caza de recompensas diaria y horaria.
+* **Vehículo de Policía (Patrulla):** Para el Trabajo de Vigilante de Vincent.
+* **Mansión + Estudio de Arte:** Para alojar el Golpe al Centro Kortz.
 
 ---
 
@@ -45,35 +47,44 @@ Para ejecutar este ciclo al 100%, necesitas:
     * **Servicio de Grúa:** Remolca un coche (~5 min).
     * *Ganancia:* ~$30,000 - $40,000 por coche + aumenta ingresos pasivos del negocio.
 
-### 🔴 Fase 3: El Plato Principal (Cayo Perico)
+### 🔴 Fase 3: El Plato Principal (Cayo Perico con Penalización por Repetición)
 
-* **Misión:** Golpe a Cayo Perico (Solo).
+> [!WARNING]
+> **Penalización por Repetición (Nerf a Cayo Perico):** Si completas Cayo Perico y lo reinicias en menos de **72 horas reales**, el valor del botín principal se reduce drásticamente (hasta un 30% menos; ej. la Tequila baja a $630,000) y el costo de preparación sube de $25,000 a $100,000.
+> **La Solución:** Rotar obligatoriamente entre diferentes golpes y contratos (Dr. Dre, Cluckin' Bell, Union Depository).
+
+* **Misión:** Golpe a Cayo Perico (Solo o Grupo).
 * **Estrategia:** Vehículo Longfin/Kosatka -> Túnel de desagüe -> Robar principal -> Llenar bolsa en muelle principal/aeropuerto (Coca > Cuadros > Dinero) -> Nadar mar adentro. *Nota: El oro requiere 2 personas.*
 * **Tiempo:** 45-60 min (incluyendo preliminares).
-* **Ganancia:** **$1,300,000 - $1,500,000**.
+* **Ganancia:** **$1,300,000 - $1,500,000** (sin penalización) / **~$900,000 - $1,100,000** (con penalización).
 
-### 🔵 Fase 4: El "Cooldown" (Tiempo de espera)
+---
 
-*El tiempo de espera para Cayo Perico (Solo) es de ~2 horas y 24 min (3 días in-game). Rellena este tiempo con:*
+### 🔵 Fase 4: La Rotación Estratégica (Evitando Cooldowns y Penalizaciones)
 
-1. **Venta de Laboratorio de Ácido:**
-    * Vende en **Sesión Pública** para el bono de alta demanda.
-    * *Ganancia:* ~$350,000 - $500,000.
-2. **Fianzas Estándar:**
-    * Realiza los contratos estándar en el tablero. Captúralos vivos.
-    * *Ganancia:* ~$37,500 por fianza (48 min cooldown).
-3. **Ammu-Nation (Búnker):**
-    * Entrega las partes de armas sobrantes (Camión Dune Loader).
-    * *Ganancia:* $50,000 (5 min).
-4. **Asesinato por Teléfono (Agencia):**
-    * Llama a Franklin. Cumple el bono específico.
-    * *Ganancia:* $45,000 (10 min CD).
-5. **Exportar Bienes Variados:**
-    * Desde la oficina de CEO (habla con la asistente).
-    * *Ganancia:* $50,000 (5 min).
-6. **Opcional (Si sobra tiempo):**
-    * **Contrato Dr. Dre (Agencia):** $1,000,000 (Largo).
-    * **Robo al Union Depository (Taller):** $270,000 (20 min).
+*El tiempo de espera para Cayo Perico (Solo) es de **2 horas y 24 min** (3 días in-game). Para maximizar tus ganancias por hora sin sufrir la penalización por repetición, utiliza la **Estrategia de Rotación de Golpes**:*
+
+1.  **Cluckin' Bell Farm Raid (Finale: $500,000 | Cooldown: 48 min):**
+    *   Misiones de preparación y golpe final realizables en ~45 minutos desde la comisaría de Vespucci. Sin costo de preparación.
+2.  **Contrato VIP de Dr. Dre (Agencia - $1,000,000 | Cooldown: 48 min):**
+    *   Una serie de misiones de historia que garantizan un millón limpio. Ideal para jugar mientras esperas el enfriamiento de otros golpes.
+3.  **Golpe al Centro Kortz (Mansión + Estudio de Arte - ~$2,000,000 | Cooldown: 48 min):**
+    *   El gran atraco a la colección Albert Crisp en Pacific Bluffs. Tu primera finalización de la semana paga **$2,000,000+**. Las repeticiones en la misma semana caen a **~$400,000** (el bono se reinicia cada jueves).
+4.  **Contrato Union Depository (Taller - $270,000 | 20 min):**
+    *   El minigolpe más rentable del taller. Corto y de pago elevado.
+5.  **Venta de Laboratorio de Ácido (Sesión Pública):**
+    *   Vende con el bono de alta demanda.
+    *   *Ganancia:* ~$350,000 - $500,000.
+6.  **Contratos de Fianza Estándar:**
+    *   Captura fugitivos vivos en el tablero.
+    *   *Ganancia:* ~$37,500 por fianza (48 min cooldown).
+7.  **Trabajo de Vigilante (Vincent):**
+    *   Consigue un vehículo policial personal (comprado en Warstock, ej. Stanier LE Cruiser) y solicita el trabajo a Vincent.
+    *   *Ganancia:* $25,000 (1 min cooldown, misiones rápidas de 3-5 min).
+8.  **Negocios Rápidos de Relleno:**
+    *   **Ammu-Nation (Búnker):** Duneloader sobrante (+$50,000).
+    *   **Asesinato por Teléfono (Payphone Hit):** Franklin (+$45,000 | 10 min CD).
+    *   **Exportar Bienes Variados:** Asistente de Oficina (+$50,000).
 
 ---
 

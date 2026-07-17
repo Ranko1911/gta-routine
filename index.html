@@ -26,58 +26,6 @@
             <!-- LEFT COLUMN: Requirements & Phase 1 -->
             <div class="grid-column">
 
-                <!-- REQUIREMENTS (Collapsible or Compact) -->
-                <div class="card glass-panel requirements-card">
-                    <div class="card-header" onclick="toggleCard(this)">
-                        <h2><ion-icon name="construct-outline"></ion-icon> REQUISITOS</h2>
-                        <ion-icon name="chevron-down-outline" class="toggle-icon"></ion-icon>
-                    </div>
-                    <div class="card-body">
-                        <div class="checklist">
-                            <label class="check-row">
-                                <input type="checkbox" data-id="req-kosatka" data-category="requirement">
-                                <span class="custom-check"></span>
-                                <div>Submarino Kosatka + Sparrow</div>
-                            </label>
-                            <label class="check-row">
-                                <input type="checkbox" data-id="req-agency" data-category="requirement">
-                                <span class="custom-check"></span>
-                                <div>Agencia (Dre + Payphone)</div>
-                            </label>
-                            <label class="check-row">
-                                <input type="checkbox" data-id="req-acidlab" data-category="requirement">
-                                <span class="custom-check"></span>
-                                <div>Lab. Ácido (Brickade 6x6)</div>
-                            </label>
-                            <label class="check-row">
-                                <input type="checkbox" data-id="req-nightclub" data-category="requirement">
-                                <span class="custom-check"></span>
-                                <div>Club Nocturno (5 Técnicos)</div>
-                            </label>
-                            <label class="check-row">
-                                <input type="checkbox" data-id="req-bunker" data-category="requirement">
-                                <span class="custom-check"></span>
-                                <div>Búnker (Mejorado)</div>
-                            </label>
-                            <label class="check-row">
-                                <input type="checkbox" data-id="req-arcade" data-category="requirement">
-                                <span class="custom-check"></span>
-                                <div>Arcade (MCT)</div>
-                            </label>
-                            <label class="check-row">
-                                <input type="checkbox" data-id="req-autoshop" data-category="requirement">
-                                <span class="custom-check"></span>
-                                <div>Taller (Auto Shop)</div>
-                            </label>
-                            <label class="check-row">
-                                <input type="checkbox" data-id="req-salvage" data-category="requirement">
-                                <span class="custom-check"></span>
-                                <div>Desguace (Salvage Yard)</div>
-                            </label>
-                        </div>
-                    </div>
-                </div>
-
                 <!-- PHASE 1 -->
                 <div class="card glass-panel phase-card phase-1">
                     <div class="card-header">
@@ -119,7 +67,7 @@
                             </label>
 
                             <label class="task-item">
-                                <input type="checkbox" data-id="acid-boost" data-category="routine">
+                                <input type="checkbox" data-id="acid-boost" data-category="routine" data-requires="req-acidlab">
                                 <span class="custom-check"></span>
                                 <div class="task-content">
                                     <div class="task-main">Lab. Ácido: Acelerar</div>
@@ -128,7 +76,7 @@
                             </label>
 
                             <label class="task-item">
-                                <input type="checkbox" data-id="mct-manage" data-category="routine">
+                                <input type="checkbox" data-id="mct-manage" data-category="routine" data-requires="req-arcade">
                                 <span class="custom-check"></span>
                                 <div class="task-content">
                                     <div class="task-main">Gestión MCT (Arcade)</div>
@@ -137,7 +85,7 @@
                             </label>
 
                             <label class="task-item">
-                                <input type="checkbox" data-id="bail-mostwanted" data-value="120000" data-category="routine">
+                                <input type="checkbox" data-id="bail-mostwanted" data-value="120000" data-category="routine" data-requires="req-bail-office">
                                 <span class="custom-check"></span>
                                 <div class="task-content">
                                     <div class="task-main">Fianza: Más Buscado</div>
@@ -164,106 +112,111 @@
             <!-- MIDDLE COLUMN: THE ANCHOR (Phase 2 & Timers) -->
             <div class="grid-column">
 
-                <!-- PHASE 2: MAIN LOOP -->
+                <!-- PHASE 2: BUCLE DE ROTACIÓN (GOLPES) -->
                 <div class="card glass-panel phase-card phase-2 glow-border">
                     <div class="card-header">
                         <div class="header-content">
                             <span class="phase-tag">FASE 2</span>
-                            <h2>BUCLE PRINCIPAL</h2>
+                            <h2>BUCLE DE ROTACIÓN</h2>
                         </div>
-                        <div class="time-est">~2h</div>
+                        <div class="time-est">~2.5h</div>
                     </div>
                     <div class="card-body">
-                        <div class="highlight-task">
-                            <label class="task-item large">
-                                <input type="checkbox" data-id="dr-dre" data-value="1000000" data-category="routine">
-                                <span class="custom-check"></span>
-                                <div class="task-content">
-                                    <div class="task-main">CONTRATO DR. DRE</div>
-                                    <div class="task-sub">Agencia • Vip Contract • 1h 15m</div>
-                                </div>
-                                <div class="task-counter">
-                                    <button class="btn-count" onclick="updateCount(this, -1)">-</button>
-                                    <span class="count-val">1</span>
-                                    <button class="btn-count" onclick="updateCount(this, 1)">+</button>
-                                </div>
-                                <span class="profit-badge gold">$1m</span>
-                            </label>
+                        <div class="alert-box warning">
+                            <ion-icon name="warning-outline"></ion-icon>
+                            <small><b>Meta de Rotación:</b> Repetir el mismo golpe antes de 72h reales reduce el botín principal (hasta -30% en Cayo Perico) y sube el setup a $100k. Rota activamente entre estos golpes.</small>
                         </div>
 
-                        <div class="timer-widget" id="timer-dre">
-                            <div class="timer-header">
-                                <ion-icon name="timer-outline"></ion-icon>
-                                <span>COOLDOWN (DRE)</span>
-                            </div>
-                            <div class="timer-display">00:48:00</div>
-                            <button class="btn accent-btn" data-timer-id="dre"
-                                onclick="startTimer('dre', 48)">INICIAR</button>
-                        </div>
-
-                        <div class="highlight-task" style="margin-top: 10px;">
-                            <label class="task-item large">
-                                <input type="checkbox" data-id="cluckin-bell" data-value="500000"
-                                    data-category="routine">
-                                <span class="custom-check"></span>
-                                <div class="task-content">
-                                    <div class="task-main">CLUCKIN' BELL RAID</div>
-                                    <div class="task-sub">Vespucci PD • Setup + Finale • 45m</div>
-                                </div>
-                                <div class="task-counter">
-                                    <button class="btn-count" onclick="updateCount(this, -1)">-</button>
-                                    <span class="count-val">1</span>
-                                    <button class="btn-count" onclick="updateCount(this, 1)">+</button>
-                                </div>
-                                <span class="profit-badge gold">$500k</span>
-                            </label>
-                        </div>
-
-                        <!-- TIMERS -->
-
-                        <div class="timer-widget" id="timer-cluckin" style="margin-top: 5px;">
-                            <div class="timer-header">
-                                <ion-icon name="timer-outline"></ion-icon>
-                                <span>COOLDOWN (CLUCKIN)</span>
-                            </div>
-                            <div class="timer-display">00:48:00</div>
-                            <button class="btn accent-btn" data-timer-id="cluckin"
-                                onclick="startTimer('cluckin', 48)">INICIAR</button>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- PHASE 4: ALTERNATIVAS -->
-                <div class="card glass-panel phase-card phase-4">
-                    <div class="card-header">
-                        <div class="header-content">
-                            <span class="phase-tag">FASE 4</span>
-                            <h2>ALTERNATIVAS</h2>
-                        </div>
-                    </div>
-                    <div class="card-body">
                         <div class="task-list">
-                            <label class="task-item">
-                                <input type="checkbox" data-id="cayo-perico" data-value="1400000"
-                                    data-category="routine">
-                                <span class="custom-check"></span>
-                                <div class="task-content">
-                                    <div class="task-main">Cayo Perico</div>
-                                    <div class="task-sub">Solo • Muelle Norte.</div>
-                                </div>
-                                <span class="profit-badge">~$1.4m</span>
-                            </label>
+                            <!-- Cayo Perico -->
+                            <div class="highlight-task">
+                                <label class="task-item large">
+                                    <input type="checkbox" data-id="cayo-perico" data-value="1400000" data-category="routine" data-requires="req-kosatka">
+                                    <span class="custom-check"></span>
+                                    <div class="task-content">
+                                        <div class="task-main">CAYO PERICO (ROTADO)</div>
+                                        <div class="task-sub">Kosatka • Muelle Norte • Sigilo. (Nerfeado: $1.0M)</div>
+                                    </div>
+                                    <div class="task-counter">
+                                        <button class="btn-count" onclick="updateCount(this, -1)">-</button>
+                                        <span class="count-val">1</span>
+                                        <button class="btn-count" onclick="updateCount(this, 1)">+</button>
+                                    </div>
+                                    <span class="profit-badge gold">~$1.4M</span>
+                                </label>
+                            </div>
 
-                            <label class="task-item">
-                                <input type="checkbox" data-id="union-depository" data-value="270000"
-                                    data-category="routine">
-                                <span class="custom-check"></span>
-                                <div class="task-content">
-                                    <div class="task-main">Union Depository</div>
-                                    <div class="task-sub">Auto Shop. 20 min.</div>
-                                </div>
-                                <span class="profit-badge">+$270k</span>
-                            </label>
+                            <!-- Contrato Dr. Dre -->
+                            <div class="highlight-task" style="margin-top: 10px;">
+                                <label class="task-item large">
+                                    <input type="checkbox" data-id="dr-dre" data-value="1000000" data-category="routine" data-requires="req-agency">
+                                    <span class="custom-check"></span>
+                                    <div class="task-content">
+                                        <div class="task-main">CONTRATO DR. DRE</div>
+                                        <div class="task-sub">Agencia • Contrato VIP • ~1h 15m</div>
+                                    </div>
+                                    <div class="task-counter">
+                                        <button class="btn-count" onclick="updateCount(this, -1)">-</button>
+                                        <span class="count-val">1</span>
+                                        <button class="btn-count" onclick="updateCount(this, 1)">+</button>
+                                    </div>
+                                    <span class="profit-badge gold">$1.0M</span>
+                                </label>
+                            </div>
+
+                            <!-- Kortz Center Heist -->
+                            <div class="highlight-task" style="margin-top: 10px;">
+                                <label class="task-item large">
+                                    <input type="checkbox" data-id="kortz-heist" data-value="2000000" data-category="routine" data-requires="req-artstudio">
+                                    <span class="custom-check"></span>
+                                    <div class="task-content">
+                                        <div class="task-main">GOLPE CENTRO KORTZ</div>
+                                        <div class="task-sub">Estudio de Arte • Semanal Premium ($2.0M). Repetición: $400k.</div>
+                                    </div>
+                                    <div class="task-counter">
+                                        <button class="btn-count" onclick="updateCount(this, -1)">-</button>
+                                        <span class="count-val">1</span>
+                                        <button class="btn-count" onclick="updateCount(this, 1)">+</button>
+                                    </div>
+                                    <span class="profit-badge gold">~$2.0M</span>
+                                </label>
+                            </div>
+
+                            <!-- Cluckin' Bell Raid -->
+                            <div class="highlight-task" style="margin-top: 10px;">
+                                <label class="task-item large">
+                                    <input type="checkbox" data-id="cluckin-bell" data-value="500000" data-category="routine">
+                                    <span class="custom-check"></span>
+                                    <div class="task-content">
+                                        <div class="task-main">CLUCKIN' BELL RAID</div>
+                                        <div class="task-sub">Vespucci PD • Setup + Finale • ~45m</div>
+                                    </div>
+                                    <div class="task-counter">
+                                        <button class="btn-count" onclick="updateCount(this, -1)">-</button>
+                                        <span class="count-val">1</span>
+                                        <button class="btn-count" onclick="updateCount(this, 1)">+</button>
+                                    </div>
+                                    <span class="profit-badge gold">$500k</span>
+                                </label>
+                            </div>
+
+                            <!-- Union Depository -->
+                            <div class="highlight-task" style="margin-top: 10px;">
+                                <label class="task-item large">
+                                    <input type="checkbox" data-id="union-depository" data-value="270000" data-category="routine" data-requires="req-autoshop">
+                                    <span class="custom-check"></span>
+                                    <div class="task-content">
+                                        <div class="task-main">UNION DEPOSITORY</div>
+                                        <div class="task-sub">Auto Shop • Contrato • ~20m</div>
+                                    </div>
+                                    <div class="task-counter">
+                                        <button class="btn-count" onclick="updateCount(this, -1)">-</button>
+                                        <span class="count-val">1</span>
+                                        <button class="btn-count" onclick="updateCount(this, 1)">+</button>
+                                    </div>
+                                    <span class="profit-badge">+$270k</span>
+                                </label>
+                            </div>
                         </div>
                     </div>
                 </div>
@@ -287,44 +240,47 @@
                     <div class="card-body">
                         <div class="task-list">
                             <label class="task-item">
-                                <input type="checkbox" data-id="acid-sell" data-value="335000" data-category="routine">
+                                <input type="checkbox" data-id="acid-sell" data-value="500000" data-category="routine" data-requires="req-acidlab">
                                 <span class="custom-check"></span>
                                 <div class="task-content">
-                                    <div class="task-main">Venta Lab. Ácido</div>
-                                    <div class="task-sub">Venta en Solitario.</div>
+                                    <div class="task-main">Venta Lab. Ácido (Pública)</div>
+                                    <div class="task-sub">Bono de Alta Demanda • 10m.</div>
                                 </div>
-                                <span class="profit-badge gold">~$335k</span>
+                                <span class="profit-badge gold">~$500k</span>
                             </label>
 
                             <label class="task-item">
-                                <input type="checkbox" data-id="ammu-bunker" data-value="50000" data-category="routine">
+                                <input type="checkbox" data-id="ammu-bunker" data-value="50000" data-category="routine" data-requires="req-bunker">
                                 <span class="custom-check"></span>
                                 <div class="task-content">
                                     <div class="task-main">Ammu-Nation</div>
                                     <div class="task-sub">Duneloader a tienda.</div>
                                 </div>
                                 <span class="profit-badge">+$50k</span>
+                            <!-- PAYPHONE BLOCK -->
+                            <label class="task-item">
+                                <input type="checkbox" data-id="payphone-hit" data-value="45000" data-category="routine" data-requires="req-agency">
+                                <span class="custom-check"></span>
+                                <div class="task-content">
+                                    <div class="task-main">Payphone Hit</div>
+                                    <div class="task-sub">Bono de asesinato.</div>
+                                </div>
+                                <span class="profit-badge">+$45k</span>
                             </label>
 
-                            <!-- PAYPHONE BLOCK -->
-                            <div class="task-block">
-                                <label class="task-item">
-                                    <input type="checkbox" data-id="payphone-hit" data-value="45000"
-                                        data-category="routine">
-                                    <div class="task-content">
-                                        <div class="task-main">Payphone Hit</div>
-                                        <div class="task-sub">Bono de asesinato.</div>
-                                    </div>
-                                    <span class="profit-badge">+$45k</span>
-                                </label>
-                                <div class="mini-timer" id="timer-payphone">
-                                    <span>CD: 10m</span>
-                                    <button class="btn sm-btn" onclick="startTimer('payphone', 10)">Start</button>
+                            <!-- VINCENT DISPATCH WORK -->
+                            <label class="task-item">
+                                <input type="checkbox" data-id="vincent-dispatch" data-value="25000" data-category="routine" data-requires="req-police-vehicle">
+                                <span class="custom-check"></span>
+                                <div class="task-content">
+                                    <div class="task-main">Vigilante (Vincent)</div>
+                                    <div class="task-sub">Trabajo de LSPD • Solicitar en patrulla.</div>
                                 </div>
-                            </div>
+                                <span class="profit-badge">+$25k</span>
+                            </label>
 
                             <label class="task-item">
-                                <input type="checkbox" data-id="salvage-tow" data-value="40000" data-category="routine">
+                                <input type="checkbox" data-id="salvage-tow" data-value="40000" data-category="routine" data-requires="req-salvage">
                                 <span class="custom-check"></span>
                                 <div class="task-content">
                                     <div class="task-main">Desguace: Grúa x2</div>
@@ -334,24 +290,102 @@
                             </label>
 
                             <!-- BAIL OFFICE STANDARD BOUNTY -->
-                            <div class="task-block">
-                                <label class="task-item">
-                                    <input type="checkbox" data-id="bail-standard" data-value="37500" data-category="routine">
-                                    <span class="custom-check"></span>
-                                    <div class="task-content">
-                                        <div class="task-main">Fianza Estándar</div>
-                                        <div class="task-sub">Bounty Hunt • Capturar vivo.</div>
-                                    </div>
-                                    <span class="profit-badge">+$37.5k</span>
-                                </label>
-                                <div class="mini-timer" id="timer-bail">
-                                    <span>CD: 48m</span>
-                                    <button class="btn sm-btn" onclick="startTimer('bail', 48)">Start</button>
+                            <label class="task-item">
+                                <input type="checkbox" data-id="bail-standard" data-value="37500" data-category="routine" data-requires="req-bail-office">
+                                <span class="custom-check"></span>
+                                <div class="task-content">
+                                    <div class="task-main">Fianza Estándar</div>
+                                    <div class="task-sub">Bounty Hunt • Capturar vivo.</div>
                                 </div>
+                                <span class="profit-badge">+$37.5k</span>
+                            </label>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- CONTROL DE COOLDOWNS -->
+                <div class="card glass-panel" style="margin-top: 1.5rem;">
+                    <div class="card-header">
+                        <div class="header-content">
+                            <span class="phase-tag">TEMPORIZADORES</span>
+                            <h2><ion-icon name="time-outline"></ion-icon> CONTROL DE COOLDOWNS</h2>
+                        </div>
+                    </div>
+                    <div class="card-body">
+                        <div class="timer-grid-layout" style="display: grid; grid-template-columns: 1fr; gap: 0.8rem;">
+                            <!-- Timer Cayo Perico -->
+                            <div class="timer-widget" id="timer-cayo" style="margin-top: 0; padding: 0.8rem;">
+                                <div class="timer-header">
+                                    <ion-icon name="timer-outline"></ion-icon>
+                                    <span>Cayo Perico Solo (2h 24m)</span>
+                                </div>
+                                <div class="timer-display" style="font-size: 1.5rem; margin-bottom: 0.5rem;">02:24:00</div>
+                                <button class="btn sm-btn accent-btn" data-timer-id="cayo" onclick="startTimer('cayo', 144)">INICIAR</button>
+                            </div>
+
+                            <!-- Timer Kortz Center -->
+                            <div class="timer-widget" id="timer-kortz" style="margin-top: 0; padding: 0.8rem;">
+                                <div class="timer-header">
+                                    <ion-icon name="timer-outline"></ion-icon>
+                                    <span>Golpe Centro Kortz (48m)</span>
+                                </div>
+                                <div class="timer-display" style="font-size: 1.5rem; margin-bottom: 0.5rem;">00:48:00</div>
+                                <button class="btn sm-btn accent-btn" data-timer-id="kortz" onclick="startTimer('kortz', 48)">INICIAR</button>
+                            </div>
+
+                            <!-- Timer Dr. Dre -->
+                            <div class="timer-widget" id="timer-dre" style="margin-top: 0; padding: 0.8rem;">
+                                <div class="timer-header">
+                                    <ion-icon name="timer-outline"></ion-icon>
+                                    <span>Contrato Dr. Dre (48m)</span>
+                                </div>
+                                <div class="timer-display" style="font-size: 1.5rem; margin-bottom: 0.5rem;">00:48:00</div>
+                                <button class="btn sm-btn accent-btn" data-timer-id="dre" onclick="startTimer('dre', 48)">INICIAR</button>
+                            </div>
+
+                            <!-- Timer Cluckin' Bell -->
+                            <div class="timer-widget" id="timer-cluckin" style="margin-top: 0; padding: 0.8rem;">
+                                <div class="timer-header">
+                                    <ion-icon name="timer-outline"></ion-icon>
+                                    <span>Cluckin' Bell Raid (48m)</span>
+                                </div>
+                                <div class="timer-display" style="font-size: 1.5rem; margin-bottom: 0.5rem;">00:48:00</div>
+                                <button class="btn sm-btn accent-btn" data-timer-id="cluckin" onclick="startTimer('cluckin', 48)">INICIAR</button>
+                            </div>
+
+                            <!-- Timer Payphone Hit -->
+                            <div class="timer-widget" id="timer-payphone" style="margin-top: 0; padding: 0.8rem;">
+                                <div class="timer-header">
+                                    <ion-icon name="timer-outline"></ion-icon>
+                                    <span>Payphone Hit (10m)</span>
+                                </div>
+                                <div class="timer-display" style="font-size: 1.5rem; margin-bottom: 0.5rem;">00:10:00</div>
+                                <button class="btn sm-btn accent-btn" data-timer-id="payphone" onclick="startTimer('payphone', 10)">INICIAR</button>
+                            </div>
+
+                            <!-- Timer Vincent Dispatch -->
+                            <div class="timer-widget" id="timer-vincent_dispatch" style="margin-top: 0; padding: 0.8rem;">
+                                <div class="timer-header">
+                                    <ion-icon name="timer-outline"></ion-icon>
+                                    <span>Vigilante Vincent (1m)</span>
+                                </div>
+                                <div class="timer-display" style="font-size: 1.5rem; margin-bottom: 0.5rem;">00:01:00</div>
+                                <button class="btn sm-btn accent-btn" data-timer-id="vincent_dispatch" onclick="startTimer('vincent_dispatch', 1)">INICIAR</button>
+                            </div>
+
+                            <!-- Timer Fianzas -->
+                            <div class="timer-widget" id="timer-bail" style="margin-top: 0; padding: 0.8rem;">
+                                <div class="timer-header">
+                                    <ion-icon name="timer-outline"></ion-icon>
+                                    <span>Fianza Estándar (48m)</span>
+                                </div>
+                                <div class="timer-display" style="font-size: 1.5rem; margin-bottom: 0.5rem;">00:48:00</div>
+                                <button class="btn sm-btn accent-btn" data-timer-id="bail" onclick="startTimer('bail', 48)">INICIAR</button>
                             </div>
                         </div>
                     </div>
                 </div>
+
             </div>
         </div>
     </div>

@@ -28,18 +28,23 @@ Roles asignados para eficiencia máxima:
 
 ---
 
-## 🟡 FASE 2: GOLPES ASIMÉTRICOS (90 - 120 Min)
+## 🟡 FASE 2: GOLPES ASIMÉTRICOS Y METODOLOGÍA DE ROTACIÓN (90 - 120 Min)
 
-*El núcleo de la ganancia. Alternar liderazgo para evitar cooldowns.*
+*El núcleo de la ganancia. Alternar liderazgo y tipo de golpe para evitar cooldowns y penalizaciones por repetición.*
+
+> [!IMPORTANT]
+> **Estrategia de Squad (Rotación Host + Golpe):**
+> 1. **Evitar Cooldowns:** El cooldown de Cayo Perico en grupo es de solo 48 minutos (en lugar de 2.4h). Si el Jugador A hospeda Cayo, al terminar pueden hacer el Casino del Jugador B, y luego el Cayo del Jugador B, eliminando tiempos muertos de cooldown.
+> 2. **Evitar Penalización por Repetición (Nerf 72h):** Para evitar que el valor del botín de Cayo Perico se reduzca en un 30%, alternen el tipo de golpe. Rote Cayo Perico con **The Diamond Casino Heist** y el **Doomsday Heist** en lugar de hacer Cayo de forma repetida.
 
 ### A. Golpe a Cayo Perico (Dúo/Trío)
 
 * **Condición:** Mínimo 2 personas para tarjetas de acceso (Oro).
 * **Botín:** Pantera > Diamante Rosa > Collar.
-* **Secundario:** **ORO** (Llenar bolsas es prioridad).
+* **Secundario:** **ORO** (Llenar bolsas es la prioridad absoluta).
 * **Ruta:** Túnel de Desagüe -> Compuesto (Sigilo) -> Salir nadando.
 * **Beneficio Squad:** **~$2.2M - $2.5M Total** (Repartido).
-* *Cooldown:* 48 Minutos (¡Esencial!).
+* *Cooldown:* 48 Minutos (¡Alternar Hosts!).
 
 ### B. The Diamond Casino Heist
 

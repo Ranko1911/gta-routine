@@ -15,6 +15,8 @@ Para ejecutar esto a la perfección, necesitas estos activos operativos:
 6.  **Arcade (Salón Recreativo):** Con la **Terminal de Control Maestro (MCT)** para gestión remota.
 7.  **Desguace (Salvage Yard):** Para ingresos pasivos y robos semanales.
 8.  **Oficina de Fianzas:** Para la caza de recompensas.
+9.  **Vehículo de Policía (Patrulla):** Para el Trabajo de Vigilante de Vincent.
+10. **Mansión + Estudio de Arte:** Para alojar el Golpe al Centro Kortz.
 
 ---
 
@@ -37,14 +39,18 @@ Para ejecutar esto a la perfección, necesitas estos activos operativos:
 
 ---
 
-## 🟡 FASE 2: EL GOLPE "ANCHOR" (45 - 60 Minutos)
-*Objetivo: Inyección masiva de capital líquido.*
+## 🟡 FASE 2: EL GOLPE "ANCHOR" Y LA METODOLOGÍA DE ROTACIÓN (45 - 60 Minutos)
+*Objetivo: Inyección masiva de capital líquido minimizando penalizaciones.*
 
-### Golpe a Cayo Perico (Solo)
+> [!WARNING]
+> **Meta de Rotación de Golpes (Anti-Nerf):** GTA Online penaliza la repetición del mismo golpe en intervalos cortos. Iniciar Cayo Perico en menos de 72h reales del último intento reduce el botín principal en hasta un 30% y sube el costo de setup a $100k.
+> **Estrategia:** Alterna Cayo Perico con el **Contrato VIP de Dr. Dre ($1,000,000)** y el **Cluckin' Bell Farm Raid ($500,000)** para mantener las ganancias al 100%.
+
+### Golpe a Cayo Perico (Solo/Grupo)
 * **Preparación:** Haz solo las obligatorias.
 * **Ruta Óptima:** Longfin (Lancha) -> Muelle Norte (Llenar bolsa: Coca > Oro > Cuadros) -> Túnel de Desagüe -> Compuesto (Sigilo) -> Salir nadando.
-* **Beneficio Neto:** **$1,300,000 - $1,500,000**.
-* *Nota:* Al terminar, inicia el cooldown de 2.5 horas.
+* **Beneficio Neto:** **$1,300,000 - $1,500,000** (sin penalización) / **~$1,000,000** (con penalización).
+* *Nota:* Al terminar, inicia el cooldown de 2 horas y 24 min (solo) o 48 min (grupo). Rota inmediatamente con otro golpe.
 
 ---
 
@@ -68,7 +74,10 @@ Para ejecutar esto a la perfección, necesitas estos activos operativos:
 5.  **Asesinato por Teléfono (Payphone Hit):**
     * Llama a Franklin. Cumple el requisito del bono.
     * *Beneficio:* **$45,000** (5 min). Cooldown de 10 min.
-6.  **Servicio de Grúa (Salvage Yard):**
+6.  **Trabajo de Vigilante (Vincent):**
+    * Súbete a una patrulla policial comprada e inicia misiones.
+    * *Beneficio:* **$25,000** (1 min cooldown, misiones de 3 min).
+7.  **Servicio de Grúa (Salvage Yard):**
     * Remolca 2 vehículos para mantener el ingreso pasivo al máximo.
 
 ---

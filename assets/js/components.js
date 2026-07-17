@@ -18,7 +18,7 @@ class EliteHeader extends HTMLElement {
             group:      { label: 'GRUPO',    id: 'grp-earnings',        resetId: 'reset-btn-grp' },
             weekly:     { label: 'SEMANAL',  id: 'weekly-earnings',     resetId: 'reset-btn-weekly' },
             retirement: { label: 'RETIRO',   id: 'retirement-earnings', resetId: 'reset-btn-retirement' },
-            guide:      { label: 'GUÍA',     id: null,  staticValue: 'INFRAESTRUCTURA' },
+            guide:      { label: 'REQUISITOS', id: null,  staticValue: 'INFRAESTRUCTURA', resetId: 'reset-btn-requirements' },
             catalog:    { label: null,        id: null,  resetId: 'reset-btn-catalog' },
             qol:        { label: null,        id: null,  staticValue: null },
         };
@@ -49,11 +49,11 @@ class EliteHeader extends HTMLElement {
 
         // ---------- Navigation items (Spanish, consistent) ----------
         const NAV_ITEMS = [
+            { key: 'guide', href: `${pages}requirements.html`, icon: 'construct', text: 'Requisitos' },
             { key: 'solo',       href: `${root}index.html`,                icon: 'person',   text: 'Solo' },
             { key: 'group',      href: `${pages}group_routine.html`,       icon: 'people',   text: 'Grupo' },
             { key: 'weekly',     href: `${pages}weekly_routine.html`,      icon: 'calendar',  text: 'Semanal' },
             { key: 'retirement', href: `${pages}retirement.html`,          icon: 'cafe',      text: 'Retiro' },
-            { key: 'guide',      href: `${pages}requirements.html`,        icon: 'book',      text: 'Guía' },
             { key: 'catalog',    href: `${pages}catalog.html`,             icon: 'cart',      text: 'Catálogo' },
             { key: 'qol',        href: `${pages}quality_of_life.html`,     icon: 'flash',     text: 'QoL' },
         ];

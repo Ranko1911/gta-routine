@@ -9,6 +9,7 @@ document.addEventListener('DOMContentLoaded', () => {
     function init() {
         injectCustomChecks(); // Fix legacy HTML missing custom spans
         restoreCheckboxState();
+        enforceRequirements(); // Lock tasks with unmet requirements on load
         restoreTimers(); // Restores UI for running timers
         updateCalculations();
         restoreCounters(); // Restore counters after checkboxes
@@ -34,6 +35,55 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     }
 
+    // Dynamic requirements enforcement system
+    function enforceRequirements() {
+        const tasks = document.querySelectorAll('input[data-requires]');
+        tasks.forEach(task => {
+            const reqId = task.dataset.requires;
+            const reqCheckbox = document.querySelector(`input[data-id="${reqId}"]`);
+            let isMet = false;
+            
+            if (reqCheckbox) {
+                isMet = reqCheckbox.checked;
+            } else {
+                isMet = (localStorage.getItem(STORAGE_PREFIX + reqId) === 'true');
+            }
+            
+            const taskItem = task.closest('.task-item') || task.parentElement;
+            
+            if (!isMet) {
+                task.disabled = true;
+                if (task.checked) {
+                    task.checked = false;
+                    localStorage.setItem(STORAGE_PREFIX + task.dataset.id, 'false');
+                }
+                if (taskItem) {
+                    taskItem.classList.add('locked');
+                    if (!taskItem.querySelector('.lock-badge')) {
+                        const badge = document.createElement('span');
+                        badge.className = 'lock-badge';
+                        badge.innerHTML = '<ion-icon name="lock-closed-outline"></ion-icon>';
+                        badge.style.position = 'absolute';
+                        badge.style.right = '10px';
+                        badge.style.top = '50%';
+                        badge.style.transform = 'translateY(-50%)';
+                        badge.style.color = 'var(--text-tertiary)';
+                        badge.style.fontSize = '1.1rem';
+                        badge.style.pointerEvents = 'none';
+                        taskItem.appendChild(badge);
+                    }
+                }
+            } else {
+                task.disabled = false;
+                if (taskItem) {
+                    taskItem.classList.remove('locked');
+                    const badge = taskItem.querySelector('.lock-badge');
+                    if (badge) badge.remove();
+                }
+            }
+        });
+    }
+
     // --- DOM ELEMENTS ---
     const checkboxes = document.querySelectorAll('input[type="checkbox"]');
     const resetBtn = document.getElementById('reset-btn');
@@ -41,6 +91,7 @@ document.addEventListener('DOMContentLoaded', () => {
     const resetBtnWeekly = document.getElementById('reset-btn-weekly');
     const resetBtnCatalog = document.getElementById('reset-btn-catalog');
     const resetBtnRetirement = document.getElementById('reset-btn-retirement');
+    const resetBtnRequirements = document.getElementById('reset-btn-requirements');
 
     // --- STATE MANAGEMENT ---
     function restoreCheckboxState() {
@@ -56,6 +107,7 @@ document.addEventListener('DOMContentLoaded', () => {
             // Event Listeners
             checkbox.addEventListener('change', () => {
                 saveState(id, checkbox.checked);
+                enforceRequirements(); // Re-evaluate locked state for all tasks
                 updateCalculations();
                 triggerConfetti(checkbox);
             });
@@ -74,6 +126,7 @@ document.addEventListener('DOMContentLoaded', () => {
             if (category === 'weekly-routine') msg = '¿Reiniciar progreso SEMANAL?';
             if (category === 'catalog') msg = '¿Reiniciar TODA la colección del catálogo?';
             if (category === 'retirement-routine') msg = '¿Reiniciar progreso de JUBILACIÓN?';
+            if (category === 'requirement') msg = '¿Reiniciar todos los REQUISITOS e INFRAESTRUCTURA? Esto bloqueará las actividades correspondientes.';
 
             if (confirm(msg)) {
                 // Use global STORAGE_PREFIX
@@ -83,6 +136,7 @@ document.addEventListener('DOMContentLoaded', () => {
                         saveState(cb.dataset.id, false);
                     }
                 });
+                enforceRequirements(); // Re-evaluate locked state for all tasks
                 updateCalculations();
             }
         });
@@ -93,6 +147,7 @@ document.addEventListener('DOMContentLoaded', () => {
     attachReset(resetBtnWeekly, 'weekly-routine');
     attachReset(resetBtnCatalog, 'catalog');
     attachReset(resetBtnRetirement, 'retirement-routine');
+    attachReset(resetBtnRequirements, 'requirement');
 
 
     // Run Init

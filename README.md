@@ -11,18 +11,19 @@ Diseñado específicamente para jugadores **Solo** y **Grupos Pequeños**, con u
 
 ### 1. 👤 Solo Routine (`index.html`)
 
-El núcleo del sistema. Rastrea tu rutina diaria de alta rentabilidad (~$1.5M/hora).
+El núcleo del sistema. Rastrea tu rutina diaria de alta rentabilidad (~$1.5M/hora) optimizada bajo la **Meta de Rotación de Golpes** (evitando la penalización por repetición continua de Cayo Perico).
 
-- **Fases Estructuradas**: Setup -> Golpe Principal -> Cooldown -> Relleno.
+- **Fases Estructuradas**: Setup -> Golpe Principal -> Cooldown -> Rotación y Relleno.
+- **Evitación del Nerf de Cayo**: Integra advertencias y recomendaciones de rotación (Dre, Cluckin' Bell, Union Depository) para no disparar el setup de $100k y la reducción de ganancias del 30%.
 - **Timers Inteligentes**: Temporizadores para Cayo Perico (2.5h), Payphone Hits (10m) y Fianza Estándar (48m) con persistencia y botón de cancelar.
 - **Actividades Diarias de E&E**: Integración de **Fotos de Fauna** (Wildlife Photography - $100k) y **Fianza: Más Buscado** (Most Wanted Bounty - $120k).
 - **Barra de Progreso**: Visualiza tu completitud diaria.
 
 ### 👥 2. Squad Protocol (`group_routine.html`)
 
-Tablero optimizado para coordinar sesiones de 2 a 4 jugadores.
+Tablero optimizado para coordinar sesiones de 2 a 4 jugadores alternando hosts y actividades.
 
-- **Golpes Asimétricos**: Rastreo de Cayo Perico y Casino en grupo.
+- **Golpes Asimétricos**: Rastreo de Cayo Perico y Casino en grupo con guías para alternar el host y tipo de golpe para eludir cooldowns y el nerf de repetición.
 - **Timer de Líder**: Control de cooldowns compartidos (48m).
 - **Lista de Roles**: Checklist rápida de requisitos para cada miembro (Líder, Hacker, Apoyo).
 
